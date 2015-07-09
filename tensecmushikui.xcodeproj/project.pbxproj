@@ -1,0 +1,974 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE0575211AE24FAA00A7E27E /* OpeningImageSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0575201AE24FAA00A7E27E /* OpeningImageSlider.m */; };
+		DE0575241AE24FB500A7E27E /* UIDeviseSize.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0575231AE24FB500A7E27E /* UIDeviseSize.m */; };
+		DE05752C1AE27D1200A7E27E /* NewinfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE05752A1AE27D1200A7E27E /* NewinfoTableViewCell.m */; };
+		DE05752D1AE27D1200A7E27E /* NewinfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE05752B1AE27D1200A7E27E /* NewinfoTableViewCell.xib */; };
+		DE0575301AE282B600A7E27E /* NewinfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE05752F1AE282B600A7E27E /* NewinfoController.m */; };
+		DE0575331AE2833E00A7E27E /* CalculatePointController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0575321AE2833E00A7E27E /* CalculatePointController.m */; };
+		DE0575361AE284A500A7E27E /* GameResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0575351AE284A500A7E27E /* GameResultController.m */; };
+		DE0861601B3AD6A200F76A2A /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = DE08615F1B3AD6A200F76A2A /* Answer.m */; };
+		DE2907D11B230B23009969B4 /* Chart.js in Resources */ = {isa = PBXBuildFile; fileRef = DE2907CE1B230B23009969B4 /* Chart.js */; };
+		DE2907D21B230B23009969B4 /* piechart.html in Resources */ = {isa = PBXBuildFile; fileRef = DE2907CF1B230B23009969B4 /* piechart.html */; };
+		DE2907D51B230BFF009969B4 /* ScoreImageSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2907D41B230BFF009969B4 /* ScoreImageSlider.m */; };
+		DE45858F1B344AD700C49465 /* csvdata in Resources */ = {isa = PBXBuildFile; fileRef = DE45858E1B344AD700C49465 /* csvdata */; };
+		DE8A1D9A1ADF31A3007508E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1D991ADF31A3007508E2 /* main.m */; };
+		DE8A1D9D1ADF31A3007508E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1D9C1ADF31A3007508E2 /* AppDelegate.m */; };
+		DE8A1DA01ADF31A3007508E2 /* StratController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1D9F1ADF31A3007508E2 /* StratController.m */; };
+		DE8A1DA31ADF31A3007508E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DA11ADF31A3007508E2 /* Main.storyboard */; };
+		DE8A1DA51ADF31A3007508E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DA41ADF31A3007508E2 /* Images.xcassets */; };
+		DE8A1DA81ADF31A3007508E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DA61ADF31A3007508E2 /* LaunchScreen.xib */; };
+		DE8A1DB41ADF31A3007508E2 /* tensecmushikuiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DB31ADF31A3007508E2 /* tensecmushikuiTests.m */; };
+		DE8A1DC81ADF31BC007508E2 /* WKStartController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DC71ADF31BC007508E2 /* WKStartController.m */; };
+		DE8A1DCB1ADF31BC007508E2 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DCA1ADF31BC007508E2 /* NotificationController.m */; };
+		DE8A1DCE1ADF31BC007508E2 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DCD1ADF31BC007508E2 /* GlanceController.m */; };
+		DE8A1DD01ADF31BC007508E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DCF1ADF31BC007508E2 /* Images.xcassets */; };
+		DE8A1DD41ADF31BC007508E2 /* tensecmushikui WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DD31ADF31BC007508E2 /* tensecmushikui WatchKit App.app */; };
+		DE8A1DDC1ADF31BC007508E2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DDA1ADF31BC007508E2 /* Interface.storyboard */; };
+		DE8A1DDE1ADF31BC007508E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DDD1ADF31BC007508E2 /* Images.xcassets */; };
+		DE8A1DE11ADF31BC007508E2 /* tensecmushikui WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE8A1DC11ADF31BC007508E2 /* tensecmushikui WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DE8A1DEB1ADF39AB007508E2 /* WKGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DEA1ADF39AB007508E2 /* WKGameController.m */; };
+		DE8A1DEE1ADF39C8007508E2 /* WKResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DED1ADF39C8007508E2 /* WKResultController.m */; };
+		DE8A1DF51AE141DF007508E2 /* IntroductionController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DF41AE141DF007508E2 /* IntroductionController.m */; };
+		DE8A1DF81AE14247007508E2 /* GameplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DF71AE14247007508E2 /* GameplayController.m */; };
+		DE8A1DFB1AE142A9007508E2 /* AnalyticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DFA1AE142A9007508E2 /* AnalyticsController.m */; };
+		DE8A1DFE1AE15C34007508E2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DFC1AE15C34007508E2 /* Model.xcdatamodeld */; };
+		DEB8456C1B0B695900C48E7A /* sample15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEB845691B0B695900C48E7A /* sample15.jpg */; };
+		DEB8456D1B0B695900C48E7A /* sample25.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEB8456A1B0B695900C48E7A /* sample25.jpg */; };
+		DEB8456E1B0B695900C48E7A /* sample35.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEB8456B1B0B695900C48E7A /* sample35.jpg */; };
+		DED4E1871AEFADC900B159AA /* CalculatePointTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED4E1851AEFADC900B159AA /* CalculatePointTableViewCell.m */; };
+		DED4E1881AEFADC900B159AA /* CalculatePointTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED4E1861AEFADC900B159AA /* CalculatePointTableViewCell.xib */; };
+		DED4E18B1AF0A19A00B159AA /* Problem.m in Sources */ = {isa = PBXBuildFile; fileRef = DED4E18A1AF0A19A00B159AA /* Problem.m */; };
+		DEDFAC591AE9596B00D2DE30 /* ScoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDFAC571AE9596B00D2DE30 /* ScoreTableViewCell.m */; };
+		DEDFAC5A1AE9596B00D2DE30 /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEDFAC581AE9596B00D2DE30 /* ScoreTableViewCell.xib */; };
+		DEDFAC5C1AEB765A00D2DE30 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDFAC5B1AEB765A00D2DE30 /* CoreData.framework */; };
+		DEDFAC5E1AEB766400D2DE30 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDFAC5D1AEB766400D2DE30 /* iAd.framework */; };
+		DEDFAC601AEB76F200D2DE30 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDFAC5F1AEB76F200D2DE30 /* Social.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE8A1DAE1ADF31A3007508E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE8A1D8C1ADF31A3007508E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE8A1D931ADF31A3007508E2;
+			remoteInfo = tensecmushikui;
+		};
+		DE8A1DD51ADF31BC007508E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE8A1D8C1ADF31A3007508E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE8A1DD21ADF31BC007508E2;
+			remoteInfo = "tensecmushikui WatchKit App";
+		};
+		DE8A1DDF1ADF31BC007508E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE8A1D8C1ADF31A3007508E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE8A1DC01ADF31BC007508E2;
+			remoteInfo = "tensecmushikui WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DE8A1DE81ADF31BC007508E2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DE8A1DE11ADF31BC007508E2 /* tensecmushikui WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DE05751F1AE24FAA00A7E27E /* OpeningImageSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpeningImageSlider.h; sourceTree = "<group>"; };
+		DE0575201AE24FAA00A7E27E /* OpeningImageSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpeningImageSlider.m; sourceTree = "<group>"; };
+		DE0575221AE24FB500A7E27E /* UIDeviseSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDeviseSize.h; sourceTree = "<group>"; };
+		DE0575231AE24FB500A7E27E /* UIDeviseSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDeviseSize.m; sourceTree = "<group>"; };
+		DE0575291AE27D1200A7E27E /* NewinfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewinfoTableViewCell.h; sourceTree = "<group>"; };
+		DE05752A1AE27D1200A7E27E /* NewinfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewinfoTableViewCell.m; sourceTree = "<group>"; };
+		DE05752B1AE27D1200A7E27E /* NewinfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewinfoTableViewCell.xib; sourceTree = "<group>"; };
+		DE05752E1AE282B600A7E27E /* NewinfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewinfoController.h; sourceTree = "<group>"; };
+		DE05752F1AE282B600A7E27E /* NewinfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewinfoController.m; sourceTree = "<group>"; };
+		DE0575311AE2833E00A7E27E /* CalculatePointController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatePointController.h; sourceTree = "<group>"; };
+		DE0575321AE2833E00A7E27E /* CalculatePointController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatePointController.m; sourceTree = "<group>"; };
+		DE0575341AE284A500A7E27E /* GameResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameResultController.h; sourceTree = "<group>"; };
+		DE0575351AE284A500A7E27E /* GameResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameResultController.m; sourceTree = "<group>"; };
+		DE08615E1B3AD6A200F76A2A /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Answer.h; sourceTree = "<group>"; };
+		DE08615F1B3AD6A200F76A2A /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
+		DE2907CE1B230B23009969B4 /* Chart.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Chart.js; sourceTree = "<group>"; };
+		DE2907CF1B230B23009969B4 /* piechart.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = piechart.html; sourceTree = "<group>"; };
+		DE2907D31B230BFF009969B4 /* ScoreImageSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreImageSlider.h; sourceTree = "<group>"; };
+		DE2907D41B230BFF009969B4 /* ScoreImageSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreImageSlider.m; sourceTree = "<group>"; };
+		DE45858E1B344AD700C49465 /* csvdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = csvdata; path = assets/csvdata; sourceTree = "<group>"; };
+		DE8A1D941ADF31A3007508E2 /* tensecmushikui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tensecmushikui.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE8A1D981ADF31A3007508E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE8A1D991ADF31A3007508E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DE8A1D9B1ADF31A3007508E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DE8A1D9C1ADF31A3007508E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DE8A1D9E1ADF31A3007508E2 /* StartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartController.h; sourceTree = "<group>"; };
+		DE8A1D9F1ADF31A3007508E2 /* StratController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StratController.m; sourceTree = "<group>"; };
+		DE8A1DA21ADF31A3007508E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE8A1DA41ADF31A3007508E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DE8A1DA71ADF31A3007508E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DE8A1DAD1ADF31A3007508E2 /* tensecmushikuiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tensecmushikuiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE8A1DB21ADF31A3007508E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE8A1DB31ADF31A3007508E2 /* tensecmushikuiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tensecmushikuiTests.m; sourceTree = "<group>"; };
+		DE8A1DC11ADF31BC007508E2 /* tensecmushikui WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "tensecmushikui WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE8A1DC41ADF31BC007508E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE8A1DC51ADF31BC007508E2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		DE8A1DC61ADF31BC007508E2 /* WKStartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKStartController.h; sourceTree = "<group>"; };
+		DE8A1DC71ADF31BC007508E2 /* WKStartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKStartController.m; sourceTree = "<group>"; };
+		DE8A1DC91ADF31BC007508E2 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		DE8A1DCA1ADF31BC007508E2 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		DE8A1DCC1ADF31BC007508E2 /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
+		DE8A1DCD1ADF31BC007508E2 /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
+		DE8A1DCF1ADF31BC007508E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DE8A1DD31ADF31BC007508E2 /* tensecmushikui WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tensecmushikui WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE8A1DD91ADF31BC007508E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE8A1DDB1ADF31BC007508E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		DE8A1DDD1ADF31BC007508E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DE8A1DE91ADF39AB007508E2 /* WKGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKGameController.h; sourceTree = "<group>"; };
+		DE8A1DEA1ADF39AB007508E2 /* WKGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKGameController.m; sourceTree = "<group>"; };
+		DE8A1DEC1ADF39C8007508E2 /* WKResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKResultController.h; sourceTree = "<group>"; };
+		DE8A1DED1ADF39C8007508E2 /* WKResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKResultController.m; sourceTree = "<group>"; };
+		DE8A1DF31AE141DF007508E2 /* IntroductionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionController.h; sourceTree = "<group>"; };
+		DE8A1DF41AE141DF007508E2 /* IntroductionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionController.m; sourceTree = "<group>"; };
+		DE8A1DF61AE14247007508E2 /* GameplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameplayController.h; sourceTree = "<group>"; };
+		DE8A1DF71AE14247007508E2 /* GameplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayController.m; sourceTree = "<group>"; };
+		DE8A1DF91AE142A9007508E2 /* AnalyticsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsController.h; sourceTree = "<group>"; };
+		DE8A1DFA1AE142A9007508E2 /* AnalyticsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsController.m; sourceTree = "<group>"; };
+		DE8A1DFD1AE15C34007508E2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		DEB845691B0B695900C48E7A /* sample15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sample15.jpg; path = tensecmushikui/sample15.jpg; sourceTree = "<group>"; };
+		DEB8456A1B0B695900C48E7A /* sample25.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sample25.jpg; path = tensecmushikui/sample25.jpg; sourceTree = "<group>"; };
+		DEB8456B1B0B695900C48E7A /* sample35.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sample35.jpg; path = tensecmushikui/sample35.jpg; sourceTree = "<group>"; };
+		DED4E1841AEFADC900B159AA /* CalculatePointTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatePointTableViewCell.h; sourceTree = "<group>"; };
+		DED4E1851AEFADC900B159AA /* CalculatePointTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatePointTableViewCell.m; sourceTree = "<group>"; };
+		DED4E1861AEFADC900B159AA /* CalculatePointTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalculatePointTableViewCell.xib; sourceTree = "<group>"; };
+		DED4E1891AF0A19A00B159AA /* Problem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Problem.h; sourceTree = "<group>"; };
+		DED4E18A1AF0A19A00B159AA /* Problem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Problem.m; sourceTree = "<group>"; };
+		DEDFAC561AE9596B00D2DE30 /* ScoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreTableViewCell.h; sourceTree = "<group>"; };
+		DEDFAC571AE9596B00D2DE30 /* ScoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreTableViewCell.m; sourceTree = "<group>"; };
+		DEDFAC581AE9596B00D2DE30 /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
+		DEDFAC5B1AEB765A00D2DE30 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DEDFAC5D1AEB766400D2DE30 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		DEDFAC5F1AEB76F200D2DE30 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE8A1D911ADF31A3007508E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEDFAC601AEB76F200D2DE30 /* Social.framework in Frameworks */,
+				DEDFAC5E1AEB766400D2DE30 /* iAd.framework in Frameworks */,
+				DEDFAC5C1AEB765A00D2DE30 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8A1DAA1ADF31A3007508E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8A1DBE1ADF31BC007508E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE05751D1AE24F7F00A7E27E /* UIDeviseSize */ = {
+			isa = PBXGroup;
+			children = (
+				DE0575221AE24FB500A7E27E /* UIDeviseSize.h */,
+				DE0575231AE24FB500A7E27E /* UIDeviseSize.m */,
+			);
+			name = UIDeviseSize;
+			sourceTree = "<group>";
+		};
+		DE05751E1AE24F9000A7E27E /* OpeningImageSlider */ = {
+			isa = PBXGroup;
+			children = (
+				DE05751F1AE24FAA00A7E27E /* OpeningImageSlider.h */,
+				DE0575201AE24FAA00A7E27E /* OpeningImageSlider.m */,
+				DE2907D31B230BFF009969B4 /* ScoreImageSlider.h */,
+				DE2907D41B230BFF009969B4 /* ScoreImageSlider.m */,
+			);
+			name = OpeningImageSlider;
+			sourceTree = "<group>";
+		};
+		DE0575251AE27C9800A7E27E /* NewinfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE0575291AE27D1200A7E27E /* NewinfoTableViewCell.h */,
+				DE05752A1AE27D1200A7E27E /* NewinfoTableViewCell.m */,
+				DE05752B1AE27D1200A7E27E /* NewinfoTableViewCell.xib */,
+			);
+			name = NewinfoCell;
+			sourceTree = "<group>";
+		};
+		DE0575441AE6136300A7E27E /* WebAssets */ = {
+			isa = PBXGroup;
+			children = (
+				DE2907CE1B230B23009969B4 /* Chart.js */,
+				DE2907CF1B230B23009969B4 /* piechart.html */,
+			);
+			name = WebAssets;
+			sourceTree = "<group>";
+		};
+		DE0575481AE6B33900A7E27E /* CalculatePointCell */ = {
+			isa = PBXGroup;
+			children = (
+				DED4E1841AEFADC900B159AA /* CalculatePointTableViewCell.h */,
+				DED4E1851AEFADC900B159AA /* CalculatePointTableViewCell.m */,
+				DED4E1861AEFADC900B159AA /* CalculatePointTableViewCell.xib */,
+			);
+			name = CalculatePointCell;
+			sourceTree = "<group>";
+		};
+		DE08615D1B390E5700F76A2A /* ShuffleArray */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ShuffleArray;
+			sourceTree = "<group>";
+		};
+		DE8A1D8B1ADF31A3007508E2 = {
+			isa = PBXGroup;
+			children = (
+				DE45858E1B344AD700C49465 /* csvdata */,
+				DEB845661B0B682400C48E7A /* Assets */,
+				DEDFAC5F1AEB76F200D2DE30 /* Social.framework */,
+				DEDFAC5D1AEB766400D2DE30 /* iAd.framework */,
+				DEDFAC5B1AEB765A00D2DE30 /* CoreData.framework */,
+				DE8A1D961ADF31A3007508E2 /* tensecmushikui */,
+				DE8A1DB01ADF31A3007508E2 /* tensecmushikuiTests */,
+				DE8A1DC21ADF31BC007508E2 /* tensecmushikui WatchKit Extension */,
+				DE8A1DD71ADF31BC007508E2 /* tensecmushikui WatchKit App */,
+				DE8A1D951ADF31A3007508E2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE8A1D951ADF31A3007508E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A1D941ADF31A3007508E2 /* tensecmushikui.app */,
+				DE8A1DAD1ADF31A3007508E2 /* tensecmushikuiTests.xctest */,
+				DE8A1DC11ADF31BC007508E2 /* tensecmushikui WatchKit Extension.appex */,
+				DE8A1DD31ADF31BC007508E2 /* tensecmushikui WatchKit App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE8A1D961ADF31A3007508E2 /* tensecmushikui */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A1D9B1ADF31A3007508E2 /* AppDelegate.h */,
+				DE8A1D9C1ADF31A3007508E2 /* AppDelegate.m */,
+				DE8A1DF21AE1414F007508E2 /* Model */,
+				DE8A1DEF1AE140F5007508E2 /* Lib */,
+				DE8A1DF01AE14122007508E2 /* Controllers */,
+				DE8A1DA11ADF31A3007508E2 /* Main.storyboard */,
+				DE8A1DA41ADF31A3007508E2 /* Images.xcassets */,
+				DE8A1DA61ADF31A3007508E2 /* LaunchScreen.xib */,
+				DE8A1D971ADF31A3007508E2 /* Supporting Files */,
+			);
+			path = tensecmushikui;
+			sourceTree = "<group>";
+		};
+		DE8A1D971ADF31A3007508E2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A1D981ADF31A3007508E2 /* Info.plist */,
+				DE8A1D991ADF31A3007508E2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE8A1DB01ADF31A3007508E2 /* tensecmushikuiTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A1DB31ADF31A3007508E2 /* tensecmushikuiTests.m */,
+				DE8A1DB11ADF31A3007508E2 /* Supporting Files */,
+			);
+			path = tensecmushikuiTests;
+			sourceTree = "<group>";
+		};
+		DE8A1DB11ADF31A3007508E2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A1DB21ADF31A3007508E2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE8A1DC21ADF31BC007508E2 /* tensecmushikui WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A1DC61ADF31BC007508E2 /* WKStartController.h */,
+				DE8A1DC71ADF31BC007508E2 /* WKStartController.m */,
+				DE8A1DE91ADF39AB007508E2 /* WKGameController.h */,
+				DE8A1DEA1ADF39AB007508E2 /* WKGameController.m */,
+				DE8A1DEC1ADF39C8007508E2 /* WKResultController.h */,
+				DE8A1DED1ADF39C8007508E2 /* WKResultController.m */,
+				DE8A1DC91ADF31BC007508E2 /* NotificationController.h */,
+				DE8A1DCA1ADF31BC007508E2 /* NotificationController.m */,
+				DE8A1DCC1ADF31BC007508E2 /* GlanceController.h */,
+				DE8A1DCD1ADF31BC007508E2 /* GlanceController.m */,
+				DE8A1DCF1ADF31BC007508E2 /* Images.xcassets */,
+				DE8A1DC31ADF31BC007508E2 /* Supporting Files */,
+			);
+			path = "tensecmushikui WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		DE8A1DC31ADF31BC007508E2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A1DC41ADF31BC007508E2 /* Info.plist */,
+				DE8A1DC51ADF31BC007508E2 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE8A1DD71ADF31BC007508E2 /* tensecmushikui WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A1DDA1ADF31BC007508E2 /* Interface.storyboard */,
+				DE8A1DDD1ADF31BC007508E2 /* Images.xcassets */,
+				DE8A1DD81ADF31BC007508E2 /* Supporting Files */,
+			);
+			path = "tensecmushikui WatchKit App";
+			sourceTree = "<group>";
+		};
+		DE8A1DD81ADF31BC007508E2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A1DD91ADF31BC007508E2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE8A1DEF1AE140F5007508E2 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				DE08615D1B390E5700F76A2A /* ShuffleArray */,
+				DE05751E1AE24F9000A7E27E /* OpeningImageSlider */,
+				DE05751D1AE24F7F00A7E27E /* UIDeviseSize */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
+		DE8A1DF01AE14122007508E2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A1DF11AE14130007508E2 /* Components */,
+				DE8A1D9E1ADF31A3007508E2 /* StartController.h */,
+				DE8A1D9F1ADF31A3007508E2 /* StratController.m */,
+				DE8A1DF31AE141DF007508E2 /* IntroductionController.h */,
+				DE8A1DF41AE141DF007508E2 /* IntroductionController.m */,
+				DE8A1DF61AE14247007508E2 /* GameplayController.h */,
+				DE8A1DF71AE14247007508E2 /* GameplayController.m */,
+				DE8A1DF91AE142A9007508E2 /* AnalyticsController.h */,
+				DE8A1DFA1AE142A9007508E2 /* AnalyticsController.m */,
+				DE05752E1AE282B600A7E27E /* NewinfoController.h */,
+				DE05752F1AE282B600A7E27E /* NewinfoController.m */,
+				DE0575311AE2833E00A7E27E /* CalculatePointController.h */,
+				DE0575321AE2833E00A7E27E /* CalculatePointController.m */,
+				DE0575341AE284A500A7E27E /* GameResultController.h */,
+				DE0575351AE284A500A7E27E /* GameResultController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DE8A1DF11AE14130007508E2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DEDFAC551AE93EF200D2DE30 /* ScoreCell */,
+				DE0575481AE6B33900A7E27E /* CalculatePointCell */,
+				DE0575441AE6136300A7E27E /* WebAssets */,
+				DE0575251AE27C9800A7E27E /* NewinfoCell */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		DE8A1DF21AE1414F007508E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A1DFC1AE15C34007508E2 /* Model.xcdatamodeld */,
+				DED4E1891AF0A19A00B159AA /* Problem.h */,
+				DED4E18A1AF0A19A00B159AA /* Problem.m */,
+				DE08615E1B3AD6A200F76A2A /* Answer.h */,
+				DE08615F1B3AD6A200F76A2A /* Answer.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DEB845661B0B682400C48E7A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DEB845681B0B68AA00C48E7A /* production */,
+				DEB845671B0B689C00C48E7A /* development */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		DEB845671B0B689C00C48E7A /* development */ = {
+			isa = PBXGroup;
+			children = (
+				DEB845691B0B695900C48E7A /* sample15.jpg */,
+				DEB8456A1B0B695900C48E7A /* sample25.jpg */,
+				DEB8456B1B0B695900C48E7A /* sample35.jpg */,
+			);
+			name = development;
+			sourceTree = "<group>";
+		};
+		DEB845681B0B68AA00C48E7A /* production */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = production;
+			sourceTree = "<group>";
+		};
+		DEDFAC551AE93EF200D2DE30 /* ScoreCell */ = {
+			isa = PBXGroup;
+			children = (
+				DEDFAC561AE9596B00D2DE30 /* ScoreTableViewCell.h */,
+				DEDFAC571AE9596B00D2DE30 /* ScoreTableViewCell.m */,
+				DEDFAC581AE9596B00D2DE30 /* ScoreTableViewCell.xib */,
+			);
+			name = ScoreCell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE8A1D931ADF31A3007508E2 /* tensecmushikui */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE8A1DB71ADF31A3007508E2 /* Build configuration list for PBXNativeTarget "tensecmushikui" */;
+			buildPhases = (
+				DE8A1D901ADF31A3007508E2 /* Sources */,
+				DE8A1D911ADF31A3007508E2 /* Frameworks */,
+				DE8A1D921ADF31A3007508E2 /* Resources */,
+				DE8A1DE81ADF31BC007508E2 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE8A1DE01ADF31BC007508E2 /* PBXTargetDependency */,
+			);
+			name = tensecmushikui;
+			productName = tensecmushikui;
+			productReference = DE8A1D941ADF31A3007508E2 /* tensecmushikui.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE8A1DAC1ADF31A3007508E2 /* tensecmushikuiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE8A1DBA1ADF31A3007508E2 /* Build configuration list for PBXNativeTarget "tensecmushikuiTests" */;
+			buildPhases = (
+				DE8A1DA91ADF31A3007508E2 /* Sources */,
+				DE8A1DAA1ADF31A3007508E2 /* Frameworks */,
+				DE8A1DAB1ADF31A3007508E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE8A1DAF1ADF31A3007508E2 /* PBXTargetDependency */,
+			);
+			name = tensecmushikuiTests;
+			productName = tensecmushikuiTests;
+			productReference = DE8A1DAD1ADF31A3007508E2 /* tensecmushikuiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DE8A1DC01ADF31BC007508E2 /* tensecmushikui WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE8A1DE51ADF31BC007508E2 /* Build configuration list for PBXNativeTarget "tensecmushikui WatchKit Extension" */;
+			buildPhases = (
+				DE8A1DBD1ADF31BC007508E2 /* Sources */,
+				DE8A1DBE1ADF31BC007508E2 /* Frameworks */,
+				DE8A1DBF1ADF31BC007508E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE8A1DD61ADF31BC007508E2 /* PBXTargetDependency */,
+			);
+			name = "tensecmushikui WatchKit Extension";
+			productName = "tensecmushikui WatchKit Extension";
+			productReference = DE8A1DC11ADF31BC007508E2 /* tensecmushikui WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		DE8A1DD21ADF31BC007508E2 /* tensecmushikui WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE8A1DE21ADF31BC007508E2 /* Build configuration list for PBXNativeTarget "tensecmushikui WatchKit App" */;
+			buildPhases = (
+				DE8A1DD11ADF31BC007508E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "tensecmushikui WatchKit App";
+			productName = "tensecmushikui WatchKit App";
+			productReference = DE8A1DD31ADF31BC007508E2 /* tensecmushikui WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE8A1D8C1ADF31A3007508E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = just1factory;
+				TargetAttributes = {
+					DE8A1D931ADF31A3007508E2 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					DE8A1DAC1ADF31A3007508E2 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = DE8A1D931ADF31A3007508E2;
+					};
+					DE8A1DC01ADF31BC007508E2 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					DE8A1DD21ADF31BC007508E2 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+				};
+			};
+			buildConfigurationList = DE8A1D8F1ADF31A3007508E2 /* Build configuration list for PBXProject "tensecmushikui" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE8A1D8B1ADF31A3007508E2;
+			productRefGroup = DE8A1D951ADF31A3007508E2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE8A1D931ADF31A3007508E2 /* tensecmushikui */,
+				DE8A1DAC1ADF31A3007508E2 /* tensecmushikuiTests */,
+				DE8A1DC01ADF31BC007508E2 /* tensecmushikui WatchKit Extension */,
+				DE8A1DD21ADF31BC007508E2 /* tensecmushikui WatchKit App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE8A1D921ADF31A3007508E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEDFAC5A1AE9596B00D2DE30 /* ScoreTableViewCell.xib in Resources */,
+				DED4E1881AEFADC900B159AA /* CalculatePointTableViewCell.xib in Resources */,
+				DEB8456C1B0B695900C48E7A /* sample15.jpg in Resources */,
+				DE8A1DA31ADF31A3007508E2 /* Main.storyboard in Resources */,
+				DE2907D21B230B23009969B4 /* piechart.html in Resources */,
+				DE45858F1B344AD700C49465 /* csvdata in Resources */,
+				DE05752D1AE27D1200A7E27E /* NewinfoTableViewCell.xib in Resources */,
+				DEB8456D1B0B695900C48E7A /* sample25.jpg in Resources */,
+				DE8A1DA81ADF31A3007508E2 /* LaunchScreen.xib in Resources */,
+				DE8A1DA51ADF31A3007508E2 /* Images.xcassets in Resources */,
+				DE2907D11B230B23009969B4 /* Chart.js in Resources */,
+				DEB8456E1B0B695900C48E7A /* sample35.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8A1DAB1ADF31A3007508E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8A1DBF1ADF31BC007508E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8A1DD01ADF31BC007508E2 /* Images.xcassets in Resources */,
+				DE8A1DD41ADF31BC007508E2 /* tensecmushikui WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8A1DD11ADF31BC007508E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8A1DDC1ADF31BC007508E2 /* Interface.storyboard in Resources */,
+				DE8A1DDE1ADF31BC007508E2 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE8A1D901ADF31A3007508E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8A1DA01ADF31A3007508E2 /* StratController.m in Sources */,
+				DE8A1DF51AE141DF007508E2 /* IntroductionController.m in Sources */,
+				DE2907D51B230BFF009969B4 /* ScoreImageSlider.m in Sources */,
+				DED4E18B1AF0A19A00B159AA /* Problem.m in Sources */,
+				DED4E1871AEFADC900B159AA /* CalculatePointTableViewCell.m in Sources */,
+				DE8A1D9D1ADF31A3007508E2 /* AppDelegate.m in Sources */,
+				DE0575301AE282B600A7E27E /* NewinfoController.m in Sources */,
+				DE0861601B3AD6A200F76A2A /* Answer.m in Sources */,
+				DE0575241AE24FB500A7E27E /* UIDeviseSize.m in Sources */,
+				DE8A1DFE1AE15C34007508E2 /* Model.xcdatamodeld in Sources */,
+				DEDFAC591AE9596B00D2DE30 /* ScoreTableViewCell.m in Sources */,
+				DE8A1DF81AE14247007508E2 /* GameplayController.m in Sources */,
+				DE0575361AE284A500A7E27E /* GameResultController.m in Sources */,
+				DE0575211AE24FAA00A7E27E /* OpeningImageSlider.m in Sources */,
+				DE8A1DFB1AE142A9007508E2 /* AnalyticsController.m in Sources */,
+				DE05752C1AE27D1200A7E27E /* NewinfoTableViewCell.m in Sources */,
+				DE8A1D9A1ADF31A3007508E2 /* main.m in Sources */,
+				DE0575331AE2833E00A7E27E /* CalculatePointController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8A1DA91ADF31A3007508E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8A1DB41ADF31A3007508E2 /* tensecmushikuiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8A1DBD1ADF31BC007508E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8A1DCB1ADF31BC007508E2 /* NotificationController.m in Sources */,
+				DE8A1DEB1ADF39AB007508E2 /* WKGameController.m in Sources */,
+				DE8A1DC81ADF31BC007508E2 /* WKStartController.m in Sources */,
+				DE8A1DCE1ADF31BC007508E2 /* GlanceController.m in Sources */,
+				DE8A1DEE1ADF39C8007508E2 /* WKResultController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE8A1DAF1ADF31A3007508E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE8A1D931ADF31A3007508E2 /* tensecmushikui */;
+			targetProxy = DE8A1DAE1ADF31A3007508E2 /* PBXContainerItemProxy */;
+		};
+		DE8A1DD61ADF31BC007508E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE8A1DD21ADF31BC007508E2 /* tensecmushikui WatchKit App */;
+			targetProxy = DE8A1DD51ADF31BC007508E2 /* PBXContainerItemProxy */;
+		};
+		DE8A1DE01ADF31BC007508E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE8A1DC01ADF31BC007508E2 /* tensecmushikui WatchKit Extension */;
+			targetProxy = DE8A1DDF1ADF31BC007508E2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE8A1DA11ADF31A3007508E2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE8A1DA21ADF31A3007508E2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE8A1DA61ADF31A3007508E2 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE8A1DA71ADF31A3007508E2 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		DE8A1DDA1ADF31BC007508E2 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE8A1DDB1ADF31BC007508E2 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE8A1DB51ADF31A3007508E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DE8A1DB61ADF31A3007508E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE8A1DB81ADF31A3007508E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = tensecmushikui/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DE8A1DB91ADF31A3007508E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = tensecmushikui/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DE8A1DBB1ADF31A3007508E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = tensecmushikuiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tensecmushikui.app/tensecmushikui";
+			};
+			name = Debug;
+		};
+		DE8A1DBC1ADF31A3007508E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = tensecmushikuiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tensecmushikui.app/tensecmushikui";
+			};
+			name = Release;
+		};
+		DE8A1DE31ADF31BC007508E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = tensecmushikui_WatchKit_Extension;
+				INFOPLIST_FILE = "tensecmushikui WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		DE8A1DE41ADF31BC007508E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = tensecmushikui_WatchKit_Extension;
+				INFOPLIST_FILE = "tensecmushikui WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		DE8A1DE61ADF31BC007508E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "tensecmushikui WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DE8A1DE71ADF31BC007508E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "tensecmushikui WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE8A1D8F1ADF31A3007508E2 /* Build configuration list for PBXProject "tensecmushikui" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE8A1DB51ADF31A3007508E2 /* Debug */,
+				DE8A1DB61ADF31A3007508E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE8A1DB71ADF31A3007508E2 /* Build configuration list for PBXNativeTarget "tensecmushikui" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE8A1DB81ADF31A3007508E2 /* Debug */,
+				DE8A1DB91ADF31A3007508E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE8A1DBA1ADF31A3007508E2 /* Build configuration list for PBXNativeTarget "tensecmushikuiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE8A1DBB1ADF31A3007508E2 /* Debug */,
+				DE8A1DBC1ADF31A3007508E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE8A1DE21ADF31BC007508E2 /* Build configuration list for PBXNativeTarget "tensecmushikui WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE8A1DE31ADF31BC007508E2 /* Debug */,
+				DE8A1DE41ADF31BC007508E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE8A1DE51ADF31BC007508E2 /* Build configuration list for PBXNativeTarget "tensecmushikui WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE8A1DE61ADF31BC007508E2 /* Debug */,
+				DE8A1DE71ADF31BC007508E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DE8A1DFC1AE15C34007508E2 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DE8A1DFD1AE15C34007508E2 /* Model.xcdatamodel */,
+			);
+			currentVersion = DE8A1DFD1AE15C34007508E2 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DE8A1D8C1ADF31A3007508E2 /* Project object */;
+}
