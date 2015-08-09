@@ -11,7 +11,7 @@
 @interface ScoreTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *correctNumOfTbl;
-
 @property (strong, nonatomic) IBOutlet UILabel *totalSecOfTbl;
+@property (strong, nonatomic) IBOutlet UILabel *graphColorOfTbl;
 
 @end

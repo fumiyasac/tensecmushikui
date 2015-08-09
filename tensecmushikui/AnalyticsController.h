@@ -9,21 +9,28 @@
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
 #import "ScoreTableViewCell.h"
+#import "ColorDefinition.h"
 
-@interface AnalyticsController : UIViewController<UIWebViewDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface AnalyticsController : UIViewController<UIWebViewDelegate,UITableViewDelegate,UITableViewDataSource,ADBannerViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UILabel *currentDisplayLabel;
+@property (strong, nonatomic) IBOutlet UILabel *currentDateLabel;
 
-@property (strong, nonatomic) IBOutlet UIButton *clearBtn;
+@property (strong, nonatomic) IBOutlet UILabel *currentAvgLabel;
+
 @property (strong, nonatomic) IBOutlet UIWebView *graphWebView;
+
 @property (strong, nonatomic) IBOutlet UITableView *scoreTableView;
 
-@property (strong, nonatomic) IBOutlet UISegmentedControl *deviceSegment;
 @property (strong, nonatomic) IBOutlet UIButton *prevBtn;
+
 @property (strong, nonatomic) IBOutlet UIButton *nextBtn;
 
-- (IBAction)switchDataResult:(UISegmentedControl *)sender;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *deviceSegment;
+
 - (IBAction)prevAction:(UIButton *)sender;
+
 - (IBAction)nextAction:(UIButton *)sender;
 
+- (IBAction)deviceSegment:(UISegmentedControl *)sender;
+ 
 @end

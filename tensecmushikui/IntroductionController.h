@@ -17,16 +17,12 @@
 @property (strong, nonatomic) IBOutlet UITableView *newinfoTableView;
 
 //フッター広告のインスタンス
-@property (strong, nonatomic) IBOutlet ADBannerView *footerBanner;
+@property (strong, nonatomic) IBOutlet ADBannerView *bottomBanner;
 
-//1.問題の更新ボタン
+//1.iphoneでゲームするボタン
 //2.これまでの結果を見るボタン
-//3.iphoneでゲームするボタン
-//4.虫食い算のポイントボタン
-@property (strong, nonatomic) IBOutlet UIButton *problemUpdateBtn;
-@property (strong, nonatomic) IBOutlet UIButton *resultHistoryBtn;
 @property (strong, nonatomic) IBOutlet UIButton *iphoneGameBtn;
-@property (strong, nonatomic) IBOutlet UIButton *calculatePointBtn;
+@property (strong, nonatomic) IBOutlet UIButton *viewResultBtn;
 
 //「戻る」ボタンの実装
 - (IBAction)backAction:(UIButton *)sender;

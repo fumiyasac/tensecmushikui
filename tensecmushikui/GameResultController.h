@@ -13,7 +13,7 @@
 @interface GameResultController : UIViewController<ADBannerViewDelegate>
 
 //フッター広告のインスタンス
-@property (strong, nonatomic) IBOutlet ADBannerView *footerBanner;
+@property (strong, nonatomic) IBOutlet ADBannerView *bottomBanner;
 
 //GameResultController自身のプロパティ
 @property (nonatomic ,strong) NSString *receiveCorrectNum;
@@ -25,19 +25,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *resultSecondLabel;
 @property (strong, nonatomic) IBOutlet UILabel *resultDifficultyLabel;
 
-//フッターバナーのインスタンス
-
-
 //「ソーシャル連携」ボタン
 @property (strong, nonatomic) IBOutlet UIButton *twitterBtn;
 @property (strong, nonatomic) IBOutlet UIButton *facebookBtn;
 
 //「結果記録」ボタン（画像・実体）
-@property (strong, nonatomic) IBOutlet UIImageView *syncBannerImage;
 @property (strong, nonatomic) IBOutlet UIButton *syncBannerBtn;
-
-//「戻る」ボタンの実装
-- (IBAction)backAction:(UIButton *)sender;
 
 //「ソーシャル連携」ボタンの実装
 - (IBAction)twitterAction:(UIButton *)sender;

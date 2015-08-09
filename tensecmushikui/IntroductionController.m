@@ -34,7 +34,7 @@
     buttonImageHeight = 80;
     
     //iPhone4s
-    if([deviceName isEqual:@"iPhone4s"]){
+    if ([deviceName isEqual:@"iPhone4s"]) {
         
         //buttonPosY = 0;
         buttonImageLeftWidth  = 160;
@@ -42,7 +42,7 @@
         buttonImageHeight     = 80;
         
     //iPhone5またはiPhone5s
-    }else if ([deviceName isEqual:@"iPhone5"]){
+    } else if ([deviceName isEqual:@"iPhone5"]) {
         
         //buttonPosY = 0;
         buttonImageLeftWidth  = 160;
@@ -50,7 +50,7 @@
         buttonImageHeight     = 80;
         
     //iPhone6
-    }else if ([deviceName isEqual:@"iPhone6"]){
+    } else if ([deviceName isEqual:@"iPhone6"]) {
         
         //buttonPosY = 0;
         buttonImageLeftWidth  = 187;
@@ -58,7 +58,7 @@
         buttonImageHeight     = 80;
         
     //iPhone6 plus
-    }else if ([deviceName isEqual:@"iPhone6plus"]){
+    } else if ([deviceName isEqual:@"iPhone6plus"]) {
         
         //buttonPosY = 0;
         buttonImageLeftWidth  = 207;
@@ -82,8 +82,10 @@
     
     //ナビゲーションバーのカスタマイズ
     [self.navigationController setNavigationBarHidden:NO animated:NO];
-    self.navigationItem.title = @"Menu";
     
+    self.navigationItem.title = @"Menu";
+    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:0.215f green:0.215f blue:0.215f alpha:1.0f];
+
     UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self action:@selector(backButtonAction:)];
     [self.navigationItem setLeftBarButtonItem:barItem];
     [self.navigationItem setHidesBackButton:YES];
@@ -91,6 +93,10 @@
     //Xibを読み込む
     UINib *newinfoCell = [UINib nibWithNibName:@"NewinfoTableViewCell" bundle:nil];
     [self.newinfoTableView registerNib:newinfoCell forCellReuseIdentifier:@"newinfoCell"];
+
+    //UINib *calculatePointCell = [UINib nibWithNibName:@"CalculatePointCell" bundle:nil];
+    //[self.newinfoTableView registerNib:newinfoCell forCellReuseIdentifier:@"newinfoCell"];
+
 }
 
 //前の画面に戻すアクション

@@ -56,7 +56,7 @@
     self.startScrollView.contentSize = CGSizeMake(targetFrame.size.width * pages.count, targetFrame.size.height);
     
     //コンテンツのセッティング
-    for(int i=0; i<pages.count; i++){
+    for (int i=0; i<pages.count; i++) {
         
         //1ページ分の情報を取り出す
         NSDictionary *pageDictionaryImage = pages[i];

@@ -11,8 +11,6 @@
 		DE0575241AE24FB500A7E27E /* UIDeviseSize.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0575231AE24FB500A7E27E /* UIDeviseSize.m */; };
 		DE05752C1AE27D1200A7E27E /* NewinfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE05752A1AE27D1200A7E27E /* NewinfoTableViewCell.m */; };
 		DE05752D1AE27D1200A7E27E /* NewinfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE05752B1AE27D1200A7E27E /* NewinfoTableViewCell.xib */; };
-		DE0575301AE282B600A7E27E /* NewinfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE05752F1AE282B600A7E27E /* NewinfoController.m */; };
-		DE0575331AE2833E00A7E27E /* CalculatePointController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0575321AE2833E00A7E27E /* CalculatePointController.m */; };
 		DE0575361AE284A500A7E27E /* GameResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0575351AE284A500A7E27E /* GameResultController.m */; };
 		DE0861601B3AD6A200F76A2A /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = DE08615F1B3AD6A200F76A2A /* Answer.m */; };
 		DE2907D11B230B23009969B4 /* Chart.js in Resources */ = {isa = PBXBuildFile; fileRef = DE2907CE1B230B23009969B4 /* Chart.js */; };
@@ -43,9 +41,9 @@
 		DEB8456C1B0B695900C48E7A /* sample15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEB845691B0B695900C48E7A /* sample15.jpg */; };
 		DEB8456D1B0B695900C48E7A /* sample25.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEB8456A1B0B695900C48E7A /* sample25.jpg */; };
 		DEB8456E1B0B695900C48E7A /* sample35.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEB8456B1B0B695900C48E7A /* sample35.jpg */; };
+		DEBB3D4A1B77451E00B08333 /* ColorDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBB3D491B77451E00B08333 /* ColorDefinition.m */; };
 		DED4E1871AEFADC900B159AA /* CalculatePointTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED4E1851AEFADC900B159AA /* CalculatePointTableViewCell.m */; };
 		DED4E1881AEFADC900B159AA /* CalculatePointTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED4E1861AEFADC900B159AA /* CalculatePointTableViewCell.xib */; };
-		DED4E18B1AF0A19A00B159AA /* Problem.m in Sources */ = {isa = PBXBuildFile; fileRef = DED4E18A1AF0A19A00B159AA /* Problem.m */; };
 		DEDFAC591AE9596B00D2DE30 /* ScoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDFAC571AE9596B00D2DE30 /* ScoreTableViewCell.m */; };
 		DEDFAC5A1AE9596B00D2DE30 /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEDFAC581AE9596B00D2DE30 /* ScoreTableViewCell.xib */; };
 		DEDFAC5C1AEB765A00D2DE30 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDFAC5B1AEB765A00D2DE30 /* CoreData.framework */; };
@@ -99,10 +97,6 @@
 		DE0575291AE27D1200A7E27E /* NewinfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewinfoTableViewCell.h; sourceTree = "<group>"; };
 		DE05752A1AE27D1200A7E27E /* NewinfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewinfoTableViewCell.m; sourceTree = "<group>"; };
 		DE05752B1AE27D1200A7E27E /* NewinfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewinfoTableViewCell.xib; sourceTree = "<group>"; };
-		DE05752E1AE282B600A7E27E /* NewinfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewinfoController.h; sourceTree = "<group>"; };
-		DE05752F1AE282B600A7E27E /* NewinfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewinfoController.m; sourceTree = "<group>"; };
-		DE0575311AE2833E00A7E27E /* CalculatePointController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatePointController.h; sourceTree = "<group>"; };
-		DE0575321AE2833E00A7E27E /* CalculatePointController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatePointController.m; sourceTree = "<group>"; };
 		DE0575341AE284A500A7E27E /* GameResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameResultController.h; sourceTree = "<group>"; };
 		DE0575351AE284A500A7E27E /* GameResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameResultController.m; sourceTree = "<group>"; };
 		DE08615E1B3AD6A200F76A2A /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Answer.h; sourceTree = "<group>"; };
@@ -153,11 +147,11 @@
 		DEB845691B0B695900C48E7A /* sample15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sample15.jpg; path = tensecmushikui/sample15.jpg; sourceTree = "<group>"; };
 		DEB8456A1B0B695900C48E7A /* sample25.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sample25.jpg; path = tensecmushikui/sample25.jpg; sourceTree = "<group>"; };
 		DEB8456B1B0B695900C48E7A /* sample35.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sample35.jpg; path = tensecmushikui/sample35.jpg; sourceTree = "<group>"; };
+		DEBB3D481B77451E00B08333 /* ColorDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorDefinition.h; sourceTree = "<group>"; };
+		DEBB3D491B77451E00B08333 /* ColorDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorDefinition.m; sourceTree = "<group>"; };
 		DED4E1841AEFADC900B159AA /* CalculatePointTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatePointTableViewCell.h; sourceTree = "<group>"; };
 		DED4E1851AEFADC900B159AA /* CalculatePointTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatePointTableViewCell.m; sourceTree = "<group>"; };
 		DED4E1861AEFADC900B159AA /* CalculatePointTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalculatePointTableViewCell.xib; sourceTree = "<group>"; };
-		DED4E1891AF0A19A00B159AA /* Problem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Problem.h; sourceTree = "<group>"; };
-		DED4E18A1AF0A19A00B159AA /* Problem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Problem.m; sourceTree = "<group>"; };
 		DEDFAC561AE9596B00D2DE30 /* ScoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreTableViewCell.h; sourceTree = "<group>"; };
 		DEDFAC571AE9596B00D2DE30 /* ScoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreTableViewCell.m; sourceTree = "<group>"; };
 		DEDFAC581AE9596B00D2DE30 /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
@@ -243,11 +237,31 @@
 			name = CalculatePointCell;
 			sourceTree = "<group>";
 		};
-		DE08615D1B390E5700F76A2A /* ShuffleArray */ = {
+		DE08615D1B390E5700F76A2A /* ColorDedinition */ = {
 			isa = PBXGroup;
 			children = (
+				DEBB3D481B77451E00B08333 /* ColorDefinition.h */,
+				DEBB3D491B77451E00B08333 /* ColorDefinition.m */,
 			);
-			name = ShuffleArray;
+			name = ColorDedinition;
+			sourceTree = "<group>";
+		};
+		DE28CC3D1B723CE7006E5038 /* AnalyticsComponent */ = {
+			isa = PBXGroup;
+			children = (
+				DE0575441AE6136300A7E27E /* WebAssets */,
+				DEDFAC551AE93EF200D2DE30 /* ScoreCell */,
+			);
+			name = AnalyticsComponent;
+			sourceTree = "<group>";
+		};
+		DE28CC3E1B723D04006E5038 /* NewinfoComponent */ = {
+			isa = PBXGroup;
+			children = (
+				DE0575481AE6B33900A7E27E /* CalculatePointCell */,
+				DE0575251AE27C9800A7E27E /* NewinfoCell */,
+			);
+			name = NewinfoComponent;
 			sourceTree = "<group>";
 		};
 		DE8A1D8B1ADF31A3007508E2 = {
@@ -368,7 +382,7 @@
 		DE8A1DEF1AE140F5007508E2 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				DE08615D1B390E5700F76A2A /* ShuffleArray */,
+				DE08615D1B390E5700F76A2A /* ColorDedinition */,
 				DE05751E1AE24F9000A7E27E /* OpeningImageSlider */,
 				DE05751D1AE24F7F00A7E27E /* UIDeviseSize */,
 			);
@@ -387,10 +401,6 @@
 				DE8A1DF71AE14247007508E2 /* GameplayController.m */,
 				DE8A1DF91AE142A9007508E2 /* AnalyticsController.h */,
 				DE8A1DFA1AE142A9007508E2 /* AnalyticsController.m */,
-				DE05752E1AE282B600A7E27E /* NewinfoController.h */,
-				DE05752F1AE282B600A7E27E /* NewinfoController.m */,
-				DE0575311AE2833E00A7E27E /* CalculatePointController.h */,
-				DE0575321AE2833E00A7E27E /* CalculatePointController.m */,
 				DE0575341AE284A500A7E27E /* GameResultController.h */,
 				DE0575351AE284A500A7E27E /* GameResultController.m */,
 			);
@@ -400,10 +410,8 @@
 		DE8A1DF11AE14130007508E2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				DEDFAC551AE93EF200D2DE30 /* ScoreCell */,
-				DE0575481AE6B33900A7E27E /* CalculatePointCell */,
-				DE0575441AE6136300A7E27E /* WebAssets */,
-				DE0575251AE27C9800A7E27E /* NewinfoCell */,
+				DE28CC3E1B723D04006E5038 /* NewinfoComponent */,
+				DE28CC3D1B723CE7006E5038 /* AnalyticsComponent */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -412,8 +420,6 @@
 			isa = PBXGroup;
 			children = (
 				DE8A1DFC1AE15C34007508E2 /* Model.xcdatamodeld */,
-				DED4E1891AF0A19A00B159AA /* Problem.h */,
-				DED4E18A1AF0A19A00B159AA /* Problem.m */,
 				DE08615E1B3AD6A200F76A2A /* Answer.h */,
 				DE08615F1B3AD6A200F76A2A /* Answer.m */,
 			);
@@ -629,10 +635,9 @@
 				DE8A1DA01ADF31A3007508E2 /* StratController.m in Sources */,
 				DE8A1DF51AE141DF007508E2 /* IntroductionController.m in Sources */,
 				DE2907D51B230BFF009969B4 /* ScoreImageSlider.m in Sources */,
-				DED4E18B1AF0A19A00B159AA /* Problem.m in Sources */,
 				DED4E1871AEFADC900B159AA /* CalculatePointTableViewCell.m in Sources */,
+				DEBB3D4A1B77451E00B08333 /* ColorDefinition.m in Sources */,
 				DE8A1D9D1ADF31A3007508E2 /* AppDelegate.m in Sources */,
-				DE0575301AE282B600A7E27E /* NewinfoController.m in Sources */,
 				DE0861601B3AD6A200F76A2A /* Answer.m in Sources */,
 				DE0575241AE24FB500A7E27E /* UIDeviseSize.m in Sources */,
 				DE8A1DFE1AE15C34007508E2 /* Model.xcdatamodeld in Sources */,
@@ -643,7 +648,6 @@
 				DE8A1DFB1AE142A9007508E2 /* AnalyticsController.m in Sources */,
 				DE05752C1AE27D1200A7E27E /* NewinfoTableViewCell.m in Sources */,
 				DE8A1D9A1ADF31A3007508E2 /* main.m in Sources */,
-				DE0575331AE2833E00A7E27E /* CalculatePointController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

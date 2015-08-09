@@ -24,7 +24,7 @@
     [super awakeWithContext:context];
     
     self.syncBtn.enabled = YES;
-    [self.syncBtn setTitle:@"iPhoneへ結果登録"];
+    [self.syncBtn setTitle:@"スコアを記録する"];
     
     //受け取った値を配列に格納
     resultArray = context;
@@ -62,7 +62,7 @@
     
     //ボタンを押せなくする
     self.syncBtn.enabled = NO;
-    [self.syncBtn setTitle:@"戻って再挑戦する"];
+    [self.syncBtn setTitle:@"戻って再挑戦してね！"];
 }
 
 - (void)didDeactivate {

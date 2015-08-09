@@ -210,7 +210,6 @@
     [self compareNextOrResult];
 }
 
-
 //遷移するか次の問題を表示するかを決めるメソッド
 - (void)compareNextOrResult {
     

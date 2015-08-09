@@ -37,14 +37,14 @@
     
     //デバイスタイプ
     int deviseType;
+    int segmentIndex;
     
-    //科目ごとの色分け
+    //データごとの色分け
     NSArray *colorArray;
     
     //科目ごとのパーセンテージ
     NSArray *percentArray;
 }
-
 @end
 
 @implementation AnalyticsController
@@ -53,13 +53,14 @@
     [super viewDidLoad];
     
     //色の配列を設定する
-    colorArray = @[@"f8c6c7",@"f2cb24",@"87c9a3",@"b9e4f7",@"face83",@"d2cce6",@"ccdc47",@"81b7ea",@"434348",@"d79759",@"9e9e9e",@"e66c85",@"f0a564",@"7c8ee8",@"266300"];
+    colorArray = @[@"f8c6c7",@"f2cb24",@"87c9a3",@"b9e4f7",@"face83",@"d2cce6",@"ccdc47",@"81b7ea",@"434348",@"d79759",@"9e9e9e"];
     
     //タイトル
-    self.navigationItem.title = @"ゲーム記録";
+    self.navigationItem.title = @"これまでのスコア";
     
     //デバイスタイプ
     deviseType = 1;
+    segmentIndex = 0;
     
     //忘れずデリゲート（webViewDidFinishLoadを拾うため）
     self.graphWebView.delegate = self;
@@ -94,6 +95,21 @@
     [self initGraphDataFromCoreData];
 }
 
+//WebViewをLoadする
+- (void)loadWebViewResource
+{
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"piechart" ofType:@"html"];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    [self.graphWebView loadRequest:req];
+}
+
+//グラフのベースを読み込む
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [self initializePieChart];
+}
+
 //ロード時に呼び出されて、セクション内のセル数を返す ※必須
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -111,44 +127,70 @@
 {
     ScoreTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ScoreCell" forIndexPath:indexPath];
     
-    //キャッシュのcellがあれば再利用して、なければ生成
-    //if (cell == nil) {
-    //    cell = [[ScoreTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ScoreCell"];
-    //}
-    
-    NSLog(@"%@", fetchDataArray);
-    
-    //セル1個分の配列を作成する
-    NSArray *dic = [fetchDataArray objectAtIndex:indexPath.row];
-    
     //セルの中に値を入れる
-    cell.correctNumOfTbl.text = [NSString stringWithFormat:@"%@",dic[1]];
-    cell.totalSecOfTbl.text = [NSString stringWithFormat:@"%@",dic[2]];
+    NSDictionary *scoreDictionary = [fetchDataArray objectAtIndex:indexPath.row];
+    NSString *scoreCorrect = scoreDictionary[@"score"];
+    NSString *scoreSum = scoreDictionary[@"sum"];
+    
+    //パーセンテージを算出
+    cell.graphColorOfTbl.backgroundColor = [ColorDefinition getUIColorFromHex:colorArray[indexPath.row]];
+    cell.graphColorOfTbl.text = [NSString stringWithFormat:@"%@", percentArray[indexPath.row]];
+    cell.correctNumOfTbl.text = [NSString stringWithFormat:@"%@/10", scoreCorrect];
+    cell.totalSecOfTbl.text = [NSString stringWithFormat:@"%@回", scoreSum];
     
     //クリック時のハイライトをオフにする
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     //アクセサリタイプの指定
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.accessoryType = UITableViewCellAccessoryNone;
     
     //セルを返す
     return cell;
 }
 
-//セルをタップした時に呼び出される ※任意
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-}
-
 //セルの高さを返す ※任意
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80.0;
+    return 44.0;
+}
+
+//平均点を算出して表示するメソッド
+-(void)setAvgScoreOfLabel
+{
+    float avgScore;
+    
+    //計算結果データの配列が存在したら
+    if (fetchDataArray.count > 0) {
+        
+        //それぞれの値を加算して表示
+        int wholeScore = 0;
+        int countScore = 0;
+        
+        for (int i=0; i<fetchDataArray.count; i++) {
+            NSDictionary *countData = [fetchDataArray objectAtIndex:i];
+            int perScore = [[countData objectForKey:@"score"] integerValue];
+            int perSum = [[countData objectForKey:@"sum"] integerValue];
+            
+            wholeScore += perScore * perSum;
+            countScore += perSum;
+        }
+        avgScore = (float)wholeScore / countScore;
+        
+    } else {
+        avgScore = 0.0;
+    }
+    self.currentAvgLabel.text = [NSString stringWithFormat:@"%.2f点", avgScore];
+}
+
+//日付を表示するメソッド
+-(void)setSelectedDayOfLabel
+{
+    self.currentDateLabel.text = [NSString stringWithFormat:@"%d年%d月%d日", year, month, day];
 }
 
 //cellのリロード ※任意
--(void)reloadData{
+-(void)reloadData
+{
     [self.scoreTableView reloadData];
 }
 
@@ -192,6 +234,7 @@
     
     //メンバ変数に値を格納する
     fetchCount = (int)objects.count;
+    NSLog(@"%d", fetchCount);
     
     //空の可変配列を作成する
     NSMutableArray *beforeSortArray = [NSMutableArray new];
@@ -214,37 +257,39 @@
     }
     
     //配列の[キー：sum]に対してソートする
-    NSSortDescriptor *sortDescCondition = [[NSSortDescriptor alloc] initWithKey:@"sum" ascending:NO];
+    NSSortDescriptor *sortDescCondition = [[NSSortDescriptor alloc] initWithKey:@"score" ascending:NO];
     
     //NSSortDescriptorは配列に入れてNSArrayに渡す
     NSArray *sortDescArray = [NSArray arrayWithObjects:sortDescCondition, nil];
     
     //ソートを実行してメンバ変数配列に格納する
     fetchDataArray = [beforeSortArray sortedArrayUsingDescriptors:sortDescArray];
+    NSLog(@"%@", fetchDataArray);
 }
 
-//並び順のデータから支出パーセンテージを取得する
+//並び順のデータからパーセンテージを取得する
 - (NSMutableArray *)getPercentageArray:(NSArray *)array
 {
     NSMutableArray *percentageList = [NSMutableArray new];
     
-    for(int i=0; i<array.count; i++){
+    for (int i=0; i<array.count; i++) {
         NSDictionary *countData = [array objectAtIndex:i];
         NSString *percentageScore = [countData objectForKey:@"sum"];
         
         //割り算をしてパーセンテージをあらかじめ取っておく
         int scoreCountFloatNum = (int)percentageScore.integerValue;
-        float scorePercentage = (scoreCountFloatNum / (float)allCountPrice) * 100;
-        [percentageList addObject:[NSString stringWithFormat:@"%.1f%%", scorePercentage]];
+        float scorePercentage = (scoreCountFloatNum / (float) allCountPrice) * 100;
+        [percentageList addObject:[NSString stringWithFormat:@"%.2f%%", scorePercentage]];
     }
     return percentageList;
 }
 
-- (void)initializePieChart {
+- (void)initializePieChart
+{
     //連結文字列の初期値を設定する
     NSString *targetString = @"";
     
-    for(int i=0; i<fetchDataArray.count; i++){
+    for (int i=0; i<fetchDataArray.count; i++) {
         
         //CoreDataから取得したデータをそれぞれの配列に格納する
         NSDictionary *graphData = [fetchDataArray objectAtIndex:i];
@@ -252,38 +297,38 @@
         NSString *graphExpense  = [graphData objectForKey:@"score"];
         
         //パイチャート内のデータを入れる
-        if(fetchDataArray.count == 1){
+        if (fetchDataArray.count == 1) {
             //データが1つの場合
             targetString = [targetString stringByAppendingString:[NSString stringWithFormat:@"[{value:%@,color:'#%@',label:'%@'}]", graphSum, colorArray[i], graphExpense]];
-        }else{
+        } else {
             //データが2つ以上の場合
-            if(i == 0){
+            if (i == 0) {
                 targetString = [targetString stringByAppendingString:[NSString stringWithFormat:@"[{value:%@,color:'#%@',label:'%@'},", graphSum, colorArray[i], graphExpense]];
-            }else if(i == fetchDataArray.count - 1){
+            } else if (i == fetchDataArray.count - 1){
                 targetString = [targetString stringByAppendingString:[NSString stringWithFormat:@"{value:%@,color:'#%@',label:'%@'}]", graphSum, colorArray[i], graphExpense]];
-            }else{
+            } else {
                 targetString = [targetString stringByAppendingString:[NSString stringWithFormat:@"{value:%@,color:'#%@',label:'%@'},", graphSum, colorArray[i], graphExpense]];
             }
         }
-        
     }
     
-    if(fetchDataArray.count > 0){
+    if (fetchDataArray.count > 0) {
         //実行するjsのファンクションと、dataを配列で渡す
         NSString *initPieChart = [NSString stringWithFormat:@"drawPieChart(%@);", targetString];
+        
         //パイチャートのデータをinitする
         [self.graphWebView stringByEvaluatingJavaScriptFromString:initPieChart];
     }
 }
 
 //月の全科目の合計値を取得
-- (int)calculateWholeSumPerMonth:(NSArray *)array
+- (int)calculateWholeSumPerDay:(NSArray *)array
 {
     //合計値のローカル変数
     int wholeSum = 0;
     
-    //配列が存在すれば月全体の合計値を計算
-    if(array.count > 0){
+    //配列が存在すれば全体の合計値を計算
+    if (array.count > 0) {
         
         for(int i=0; i<array.count; i++){
             NSDictionary *countData = [array objectAtIndex:i];
@@ -296,9 +341,9 @@
 }
 
 //セグメントコントロールの値によって表示するグラフを変える
-- (IBAction)changeChartType:(UISegmentedControl *)sender
+- (IBAction)deviceSegment:(UISegmentedControl *)sender
 {
-    NSString *path = [NSString new];
+    //iPhone版とAppleWatch版
     switch (sender.selectedSegmentIndex) {
         case 0:
             deviseType = 1;
@@ -307,54 +352,49 @@
             deviseType = 2;
             break;
     }
-    path = [[NSBundle mainBundle]pathForResource:@"piechart" ofType:@"html"];
-    NSURL *url = [NSURL fileURLWithPath:path];
-    NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    [self.graphWebView loadRequest:req];
+    segmentIndex = sender.selectedSegmentIndex;
+    
+    //取得するデータの値を変更する
+    [self initGraphDataFromCoreData];
 }
 
+//グラフデータを切り替える
 -(void)initGraphDataFromCoreData
 {
-    //セグメントの初期値を取る
-    self.deviceSegment.selectedSegmentIndex = 0;
-    deviseType = 1;
+    //WebViewのロード
+    [self loadWebViewResource];
     
     //コアデータより科目ごとの合計・月全体の合計を取得する
     [self selectRecordAndCountToCoreData];
     [self reloadData];
     
     //この月全体の合計値を取得する
-    allCountPrice = [self calculateWholeSumPerMonth:fetchDataArray];
+    allCountPrice = [self calculateWholeSumPerDay:fetchDataArray];
     
     //この月全体の合計値を取得する
     percentArray = [self getPercentageArray:fetchDataArray];
+    NSLog(@"%@", percentArray);
     
-    //グラフチャートを表示する
-    NSString *path = [[NSBundle mainBundle]pathForResource:@"barchart" ofType:@"html"];
-    NSURL *url = [NSURL fileURLWithPath:path];
-    NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    [self.graphWebView loadRequest:req];
-}
-
-
-- (IBAction)switchDataResult:(UISegmentedControl *)sender
-{
+    //ラベルに表示する
+    [self setAvgScoreOfLabel];
+    [self setSelectedDayOfLabel];
     
+    //グラフを表示する
+    [self initializePieChart];
 }
 
 //前の日のパラメータを作成する関数
 - (IBAction)prevAction:(UIButton *)sender
 {
     [self setupPrevCalendarData];
-    [self initGraphDataFromCoreData];
 }
 
 //次の日のパラメータを作成する関数
 - (IBAction)nextAction:(UIButton *)sender
 {
     [self setupNextCalendarData];
-    [self initGraphDataFromCoreData];
 }
+
 
 //prevボタン押下に該当するデータを取得
 - (void)setupPrevCalendarData
@@ -368,6 +408,7 @@
     NSDate *prevDate = [prevCalendar dateFromComponents:prevComps];
     
     [self recreateCalendarParameter:prevCalendar dateObject:prevDate];
+    
 }
 
 //nextボタン押下に該当するデータを取得
@@ -398,10 +439,15 @@
     year = (int)currentYear;
     month = (int)currentMonth;
     day = (int)currentDay;
+    
+    //取得するデータの値を変更する
+    [self initGraphDataFromCoreData];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
+
 
 @end

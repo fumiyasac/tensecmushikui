@@ -11,7 +11,8 @@
 #import <CoreData/CoreData.h>
 #import <Social/Social.h>
 
-@interface GameResultController () {
+@interface GameResultController()
+{
     int targetYear;
     int targetMonth;
     int targetDay;
@@ -24,11 +25,17 @@
 
 @implementation GameResultController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
    
     //タイトル
     self.navigationItem.title = @"計算結果";
+
+    //ボタンを活性にする
+    self.syncBannerBtn.enabled = true;
+    self.syncBannerBtn.alpha = 1.0;
+    [self.syncBannerBtn setTitle:@"スコアを記録する" forState:UIControlStateNormal];
     
     //計算結果を保存する
     correctCount = [self.receiveCorrectNum intValue];
@@ -39,10 +46,12 @@
 }
 
 //ラベルにゲーム結果を表示する
-- (void)setResultLabels {
+- (void)setResultLabels
+{
     self.resultDateLabel.text = [NSString stringWithFormat:@"挑戦日：%d年%d月%d日", targetYear,targetMonth, targetDay];
     self.resultScoreLabel.text = [NSString stringWithFormat:@"正解：10問中%d問", correctCount];
     self.resultSecondLabel.text = [NSString stringWithFormat:@"時間：%.3f秒", timeCount];
+    
     //@note:将来的には1:ふつう, 2:ムズイ, 3:マジ鬼とする
     self.resultDifficultyLabel.text = @"難易度：ふつう";
 }
@@ -80,8 +89,8 @@
 }
 
 //[CoreData]answer_idの最大値を取得する
-- (NSInteger)getMaxAnswerId {
-    
+- (NSInteger)getMaxAnswerId
+{
     //NSManagedObjectContextのインスタンスを作成する
     NSManagedObjectContext *managedObjectContext = [[AppDelegate new] managedObjectContext];
     
@@ -120,8 +129,8 @@
     return maxValue;
 }
 
-- (void)setCalendarDate {
-    
+- (void)setCalendarDate
+{
     //現在の日付を取得
     NSDate *now = [NSDate date];
     
@@ -140,33 +149,67 @@
 }
 
 //カウントをコアデータに格納する
-- (IBAction)syncScoreAction:(UIButton *)sender {
+- (IBAction)syncScoreAction:(UIButton *)sender
+{
+    //スコアを登録する
     [self addRecordToCoreData:correctCount totalSeconds:timeCount];
+    
+    //ボタンを非活性にする
+    self.syncBannerBtn.enabled = false;
+    self.syncBannerBtn.alpha = 0.6;
+    [self.syncBannerBtn setTitle:@"戻って再挑戦してね！" forState:UIControlStateNormal];
+    
+    //iOS7.0以降
+    if ([UIAlertController class]) {
+        
+        //UIAlertControllerで呼び出す
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"スコア登録完了!" message:@"今回のスコアが登録されました!" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+            
+        }]];
+        
+        //UIAlertControllerでアラートビューを表示
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+    //それ以前（まあ一応ね）
+    } else {
+
+        //UIAlertViewでアラートビューを表示
+        UIAlertView *alert = [UIAlertView new];
+        alert.title = @"スコア登録完了!";
+        alert.message = @"今回のスコアが登録されました!";
+        alert.delegate = self;
+        [alert addButtonWithTitle:@"OK"];
+        [alert show];
+    }
 }
 
 //twitterへ連携
-- (IBAction)twitterAction:(UIButton *)sender {
+- (IBAction)twitterAction:(UIButton *)sender
+{
     SLComposeViewController *twitterController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     [self socialPostContent:twitterController];
     [self presentViewController:twitterController animated:YES completion:NULL];
 }
 
 //facebookへ連携
-- (IBAction)facebookAction:(UIButton *)sender {
+- (IBAction)facebookAction:(UIButton *)sender
+{
     SLComposeViewController *facebookController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     [self socialPostContent:facebookController];
     [self presentViewController:facebookController animated:YES completion:NULL];
 }
 
 //ソーシャル投稿用メソッド
--(void)socialPostContent:(SLComposeViewController *)controller {
-    
+-(void)socialPostContent:(SLComposeViewController *)controller
+{
     NSString *commentMsg = [NSString stringWithFormat:@"%d年%d月%d日:10秒虫食い算に挑戦したよ！\n正解数：%d問\nかかった時間：%.3f秒", targetYear,targetMonth, targetDay, correctCount, timeCount];
     
     //メッセージ中身
     [controller setInitialText:commentMsg];
     
-    //表示URL中身
+    //@todo:表示URL中身 ※Phase2でサイトができてからする
     //[controller addURL:[NSURL URLWithString:@"http://qiita.com"]];
 }
 

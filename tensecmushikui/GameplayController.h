@@ -12,7 +12,7 @@
 @interface GameplayController : UIViewController<ADBannerViewDelegate>
 
 //フッター広告のインスタンス
-@property (strong, nonatomic) IBOutlet ADBannerView *footerBanner;
+@property (strong, nonatomic) IBOutlet ADBannerView *bottomBanner;
 
 //問題・残り時間
 @property (strong, nonatomic) IBOutlet UILabel *answerAmount;
