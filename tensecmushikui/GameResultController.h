@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
 #import <CoreData/CoreData.h>
+#import "UIDeviseSize.h"
+#import "ColorDefinition.h"
+#import "ResultLabelTableViewCell.h"
+#import "ResultTextTableViewCell.h"
 
-@interface GameResultController : UIViewController<ADBannerViewDelegate>
+@interface GameResultController : UIViewController<UITableViewDelegate,UITableViewDataSource,ADBannerViewDelegate>
 
 //フッター広告のインスタンス
 @property (strong, nonatomic) IBOutlet ADBannerView *bottomBanner;
@@ -19,11 +23,8 @@
 @property (nonatomic ,strong) NSString *receiveCorrectNum;
 @property (nonatomic ,strong) NSString *receiveTotalSec;
 
-//結果表示
-@property (strong, nonatomic) IBOutlet UILabel *resultDateLabel;
-@property (strong, nonatomic) IBOutlet UILabel *resultScoreLabel;
-@property (strong, nonatomic) IBOutlet UILabel *resultSecondLabel;
-@property (strong, nonatomic) IBOutlet UILabel *resultDifficultyLabel;
+//結果表示とPR等表示テーブルビュー
+@property (strong, nonatomic) IBOutlet UITableView *resultTableView;
 
 //「ソーシャル連携」ボタン
 @property (strong, nonatomic) IBOutlet UIButton *twitterBtn;

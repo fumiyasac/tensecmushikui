@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "OpeningImageSlider.h"
+#import "UIDeviseSize.h"
+#import "ColorDefinition.h"
 
 @interface StartController : UIViewController<UIScrollViewDelegate,UINavigationControllerDelegate>
 
 //デバッグラベル（本運用時は非活性）
 @property (strong, nonatomic) IBOutlet UILabel *debugLabel;
+
+//ボタンのインスタンス
+@property (strong, nonatomic) IBOutlet UIButton *startBtn;
 
 //スクロールビュー
 @property (strong, nonatomic) IBOutlet UIScrollView *startScrollView;
@@ -28,6 +33,7 @@
 
 //データの同期を行う
 -(NSArray *)syncProblemDataForWatch;
+-(NSArray *)syncTodayResultToCoreData;
 
 @end
 

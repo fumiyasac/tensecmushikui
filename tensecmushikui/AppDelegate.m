@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "StartController.h"
+#import "ColorDefinition.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+    [UINavigationBar appearance].barTintColor = [ColorDefinition getUIColorFromHex:@"222222"];
+    [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     return YES;
 }
 
@@ -28,7 +32,6 @@
     NSArray *watchKitArray = [userInfo valueForKey:@"watchValue"];
     
     NSString *operationType = watchKitArray[0];
-    NSLog(@"%@",operationType);
     
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
@@ -61,14 +64,25 @@
         
         //カウントをコアデータに格納する
         [sc addRecordToCoreData:correctCount totalSeconds:timeCount];
-        
-    }else if([operationType isEqual:@"select"]){
+    }
+    
+    if([operationType isEqual:@"select"]){
         
         NSArray *problemArray = [sc syncProblemDataForWatch];
-        
         NSData *problemData = [NSKeyedArchiver archivedDataWithRootObject:problemArray];
         reply(@{@"problemData":problemData});
     }
+    
+    if([operationType isEqual:@"reswatch"]){
+        
+        NSArray *todayWatchScoreArray = [sc syncTodayResultToCoreData];
+        NSData *todayWatchScoreData = [NSKeyedArchiver archivedDataWithRootObject:todayWatchScoreArray];
+        reply(@{@"todayWatchScoreData":todayWatchScoreData});
+    }
+    
+    //if([operationType isEqual:@"test"]){
+    //
+    //}
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

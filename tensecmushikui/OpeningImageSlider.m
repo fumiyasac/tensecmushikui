@@ -11,8 +11,7 @@
 @implementation OpeningImageSlider
 
 //イニシャライザ
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if(self){
         //initialization code.
@@ -21,13 +20,10 @@
 }
 
 //カスタムイニシャライザ(一応カスタマイズ等の余地を残すためこの形)
--(id)initWithOpeningView:(NSString *)imageName frame:(CGRect)frame caption:(NSString *)caption
-{
+-(id)initWithOpeningView:(NSString *)imageName frame:(CGRect)frame {
+    
     //イニシャライザで初期化済のインスタンスを取得する
     self = [self initWithFrame:frame];
-    
-    //ラベルの高さ
-    int labelHeight = 25;
     
     //絵を表示したイメージビューを作成する
     CGRect imageFrame = CGRectMake(0, 0, frame.size.width, frame.size.height);
@@ -35,18 +31,8 @@
     imageView.image = [UIImage imageNamed:imageName];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     
-    //キャプションの入ったラベルを作成する
-    UILabel *myLabel = [[UILabel alloc] init];
-    myLabel.text = caption;
-    myLabel.frame = CGRectMake(0, frame.size.height-labelHeight, frame.size.width, labelHeight);
-    myLabel.textAlignment = NSTextAlignmentCenter;
-    myLabel.font = [UIFont systemFontOfSize:12];
-    myLabel.textColor = [UIColor whiteColor];
-    myLabel.backgroundColor = [UIColor grayColor];
-    
     //イメージビューとラベルをサブビューとして追加する
     [self addSubview:imageView];
-    [self addSubview:myLabel];
     
     //出来上がったページを返す
     return self;

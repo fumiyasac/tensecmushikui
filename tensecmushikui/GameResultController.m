@@ -11,8 +11,9 @@
 #import <CoreData/CoreData.h>
 #import <Social/Social.h>
 
-@interface GameResultController()
-{
+@interface GameResultController() {
+    
+    //カレンダー用の年・月・日を表示
     int targetYear;
     int targetMonth;
     int targetDay;
@@ -20,40 +21,217 @@
     //正解数・かかった時間を表示
     int correctCount;
     float timeCount;
+    
+    //メンバ変数（テーブル用）
+    UIImage *prImage1;
+    UIImage *prImage2;
 }
 @end
 
 @implementation GameResultController
 
-- (void)viewDidLoad
-{
+- (void)viewWillAppear:(BOOL)animated {
+    
+    //現在起動中のデバイスを取得
+    NSString *deviceName = [UIDeviseSize getNowDisplayDevice];
+    
+    UIImage *backgroundImage;
+    UIImage *backgroundImage3;
+    
+    //iPhone4s
+    if ([deviceName isEqual:@"iPhone4s"]) {
+        
+        backgroundImage  = [UIImage imageNamed:@"iphone4s_background.jpg"];
+        backgroundImage3  = [UIImage imageNamed:@"iphone4s_btn3.jpg"];
+        prImage1 = [UIImage imageNamed:@"iphone4s_cell1.jpg"];
+        prImage2 = [UIImage imageNamed:@"iphone4s_cell2.jpg"];
+
+    //iPhone5またはiPhone5s
+    } else if ([deviceName isEqual:@"iPhone5"]) {
+        
+        backgroundImage  = [UIImage imageNamed:@"iphone5_background.jpg"];
+        backgroundImage3  = [UIImage imageNamed:@"iphone5_btn3.jpg"];
+        prImage1 = [UIImage imageNamed:@"iphone5_cell1.jpg"];
+        prImage2 = [UIImage imageNamed:@"iphone5_cell2.jpg"];
+        
+    //iPhone6
+    } else if ([deviceName isEqual:@"iPhone6"]) {
+        
+        backgroundImage  = [UIImage imageNamed:@"iphone6_background.jpg"];
+        backgroundImage3  = [UIImage imageNamed:@"iphone6_btn3.jpg"];
+        prImage1 = [UIImage imageNamed:@"iphone6_cell1.jpg"];
+        prImage2 = [UIImage imageNamed:@"iphone6_cell2.jpg"];
+        
+    //iPhone6 plus
+    } else if ([deviceName isEqual:@"iPhone6plus"]) {
+        
+        backgroundImage  = [UIImage imageNamed:@"iphone6plus_background.jpg"];
+        backgroundImage3  = [UIImage imageNamed:@"iphone6plus_btn3.jpg"];
+        prImage1 = [UIImage imageNamed:@"iphone6plus_cell1.jpg"];
+        prImage2 = [UIImage imageNamed:@"iphone6plus_cell2.jpg"];
+    }
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+    
+    //配置済みプロパティの再調整
+    self.syncBannerBtn.frame = CGRectMake(10, [UIDeviseSize getNowDisplayHeight]-190, [UIDeviseSize getNowDisplayWidth]-20, 80);
+    [self.syncBannerBtn setBackgroundImage:backgroundImage3 forState:UIControlStateNormal];
+    [self.syncBannerBtn.layer setBorderColor:[ColorDefinition getUIColorFromHex:@"ffffff"].CGColor];
+    [self.syncBannerBtn.layer setBorderWidth:1.0];
+    
+    self.twitterBtn.frame = CGRectMake(0, [UIDeviseSize getNowDisplayHeight]-100, (double)ceil([UIDeviseSize getNowDisplayWidth]/2), 50);
+    self.facebookBtn.frame = CGRectMake((double)ceil([UIDeviseSize getNowDisplayWidth]/2), [UIDeviseSize getNowDisplayHeight]-100, (double)ceil([UIDeviseSize getNowDisplayWidth]/2), 50);
+    
+    self.resultTableView.frame = CGRectMake(0, 102, [UIDeviseSize getNowDisplayWidth], [UIDeviseSize getNowDisplayHeight]-302);
+}
+
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
    
     //タイトル
     self.navigationItem.title = @"計算結果";
 
+    //デリゲート
+    self.resultTableView.delegate = self;
+    self.resultTableView.dataSource = self;
+    
     //ボタンを活性にする
     self.syncBannerBtn.enabled = true;
     self.syncBannerBtn.alpha = 1.0;
     [self.syncBannerBtn setTitle:@"スコアを記録する" forState:UIControlStateNormal];
     
+    //ボタンのサイズ調整
+    [self.twitterBtn setBackgroundColor:[ColorDefinition getUIColorFromHex:@"80c0e9"]];
+    [self.facebookBtn setBackgroundColor:[ColorDefinition getUIColorFromHex:@"344b8b"]];
+    
     //計算結果を保存する
     correctCount = [self.receiveCorrectNum intValue];
     timeCount = [self.receiveTotalSec floatValue];
     
+    //Xibを読み込む
+    UINib *resultLabelCell = [UINib nibWithNibName:@"ResultLabelTableViewCell" bundle:nil];
+    UINib *resultTextCell = [UINib nibWithNibName:@"ResultTextTableViewCell" bundle:nil];
+    
+    [self.resultTableView registerNib:resultLabelCell forCellReuseIdentifier:@"resultLabelCell"];
+    [self.resultTableView registerNib:resultTextCell forCellReuseIdentifier:@"resultTextCell"];
+    
+    //カレンダーの値をセットする
     [self setCalendarDate];
-    [self setResultLabels];
 }
 
 //ラベルにゲーム結果を表示する
-- (void)setResultLabels
-{
-    self.resultDateLabel.text = [NSString stringWithFormat:@"挑戦日：%d年%d月%d日", targetYear,targetMonth, targetDay];
-    self.resultScoreLabel.text = [NSString stringWithFormat:@"正解：10問中%d問", correctCount];
-    self.resultSecondLabel.text = [NSString stringWithFormat:@"時間：%.3f秒", timeCount];
+//ロード時に呼び出されて、セクション数を返す ※必須
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
+//ロード時に呼び出されて、セクション内のセル数を返す ※必須
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    //@note:将来的には1:ふつう, 2:ムズイ, 3:マジ鬼とする
-    self.resultDifficultyLabel.text = @"難易度：ふつう";
+    switch(section){
+        case 0:
+            return 4;
+        case 1:
+            return 2;
+        default:
+            return 0;
+    }
+}
+
+//ロード時に呼び出されて、セルの内容を返す ※任意
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == 0) {
+        
+        ResultLabelTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"resultLabelCell" forIndexPath:indexPath];
+        
+        if (cell == nil) {
+            cell = [[ResultLabelTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"resultLabelCell"];
+        }
+        
+        //各々のセルに値を入れる
+        if (indexPath.row == 0) {
+            
+            cell.resultTypeLabel.text = @"挑戦日";
+            cell.resultValueLabel.text = [NSString stringWithFormat:@"%d年%d月%d日", targetYear,targetMonth, targetDay];
+        
+        } else if (indexPath.row == 1) {
+            
+            cell.resultTypeLabel.text = @"正解数";
+            cell.resultValueLabel.text = [NSString stringWithFormat:@"10問中%d問", correctCount];
+        
+        } else if (indexPath.row == 2) {
+            
+            cell.resultTypeLabel.text = @"時間";
+            cell.resultValueLabel.text = [NSString stringWithFormat:@"%.3f秒", timeCount];
+        
+        } else if (indexPath.row == 3) {
+            
+            cell.resultTypeLabel.text = @"難易度";
+            //@note:将来的には1:ふつう, 2:ムズイ, 3:マジ鬼とする
+            cell.resultValueLabel.text = @"ふつう";
+            
+        } else {
+            
+            cell.resultTypeLabel.text = @"";
+            cell.resultValueLabel.text = @"";
+        }
+        
+        //クリック時のハイライトをオフにする
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        //アクセサリタイプの指定
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        return cell;
+        
+    } else if (indexPath.section == 1) {
+        
+        ResultTextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"resultTextCell" forIndexPath:indexPath];
+        
+        if (cell == nil) {
+            cell = [[ResultTextTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"resultTextCell"];
+        }
+        
+        if (indexPath.row == 0) {
+            
+            cell.prTextTitle.text = @"いかがです？なかなか難問でしょ？";
+            cell.prTextImage.image = prImage1;
+            cell.prTextDetail.text = @"「10秒虫食い算」をプレイしてくれてありがとうございますm(_ _)m\n虫食い算の暗算って実は以外と難しいんですよね。すでに舐めてかかったあなたは、もうすごーく痛い目を見たかも？だけどもこれに懲りずに再チャレンジをしてみて下さい。またFacebookやTwitterで今日の計算結果やプレイの感想・機能改善の要望等もご遠慮なく是非とも宜しくお願いします！\n※誹謗中傷はしない方向でお願いします。";
+            
+        } else if (indexPath.row == 1) {
+            
+            cell.prTextTitle.text = @"AppleWatchでもプレイ可能！";
+            cell.prTextImage.image = prImage2;
+            cell.prTextDetail.text = @"このゲームはAppleWatchでもプレイが可能です。時計の画面でゲームをするのは、通信教材の付録を思い出すかもしれません。すでにAppleWatchをお持ちの方は移動時間や隙間時間などを活用してチャレンジしてみて下さい！\n※iPhoneの電源や通信状態にはご注意下さい。";
+            
+        } else {
+            
+            cell.prTextTitle.text = @"";
+            cell.prTextDetail.text = @"";
+        }
+        cell.prTextDetail.textColor = [UIColor whiteColor];
+        
+        //クリック時のハイライトをオフにする
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        //アクセサリタイプの指定
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        return cell;
+    }
+    return nil;
+}
+
+//セルの高さを返す ※任意
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    switch (indexPath.section) {
+        case 0:
+            return 44.0;
+        case 1:
+            return 350.0;
+        default:
+            return 0;
+    }
 }
 
 //[CoreData]コアデータ（Answer）に1件の新規データを追加する
@@ -64,7 +242,7 @@
     
     //カウントを取って0だったら1、1より大きければデータの中でanswer_idの最大値に+1をする
     int max_answer_id = 1;
-    if([self getMaxAnswerId] > 0){
+    if ([self getMaxAnswerId] > 0) {
         max_answer_id = (int)[self getMaxAnswerId] + 1;
     }
     
@@ -89,8 +267,8 @@
 }
 
 //[CoreData]answer_idの最大値を取得する
-- (NSInteger)getMaxAnswerId
-{
+- (NSInteger)getMaxAnswerId {
+    
     //NSManagedObjectContextのインスタンスを作成する
     NSManagedObjectContext *managedObjectContext = [[AppDelegate new] managedObjectContext];
     
@@ -121,16 +299,16 @@
     NSInteger maxValue = NSNotFound;
     
     //オブジェクトが取れているかをチェック
-    if(obj == nil){
+    if (obj == nil) {
         NSLog(@"error");
-    }else if([obj count] > 0){
+    } else if([obj count] > 0) {
         maxValue = [obj[0][@"maxAnswerId"] integerValue];
     }
     return maxValue;
 }
 
-- (void)setCalendarDate
-{
+- (void)setCalendarDate {
+    
     //現在の日付を取得
     NSDate *now = [NSDate date];
     
@@ -149,8 +327,8 @@
 }
 
 //カウントをコアデータに格納する
-- (IBAction)syncScoreAction:(UIButton *)sender
-{
+- (IBAction)syncScoreAction:(UIButton *)sender {
+    
     //スコアを登録する
     [self addRecordToCoreData:correctCount totalSeconds:timeCount];
     
@@ -186,24 +364,24 @@
 }
 
 //twitterへ連携
-- (IBAction)twitterAction:(UIButton *)sender
-{
+- (IBAction)twitterAction:(UIButton *)sender {
+    
     SLComposeViewController *twitterController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     [self socialPostContent:twitterController];
     [self presentViewController:twitterController animated:YES completion:NULL];
 }
 
 //facebookへ連携
-- (IBAction)facebookAction:(UIButton *)sender
-{
+- (IBAction)facebookAction:(UIButton *)sender {
+    
     SLComposeViewController *facebookController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     [self socialPostContent:facebookController];
     [self presentViewController:facebookController animated:YES completion:NULL];
 }
 
 //ソーシャル投稿用メソッド
--(void)socialPostContent:(SLComposeViewController *)controller
-{
+-(void)socialPostContent:(SLComposeViewController *)controller {
+    
     NSString *commentMsg = [NSString stringWithFormat:@"%d年%d月%d日:10秒虫食い算に挑戦したよ！\n正解数：%d問\nかかった時間：%.3f秒", targetYear,targetMonth, targetDay, correctCount, timeCount];
     
     //メッセージ中身

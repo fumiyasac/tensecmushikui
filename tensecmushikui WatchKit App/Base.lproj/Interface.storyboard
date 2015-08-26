@@ -1,22 +1,82 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
+        <!--Today-->
+        <scene sceneID="J5p-hW-MHy">
+            <objects>
+                <controller identifier="Today" id="3nL-0B-5Ap" customClass="WKTodayController">
+                    <items>
+                        <label width="1" alignment="left" text="今日の結果" textAlignment="center" id="Kqt-2Q-8a1">
+                            <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                            <variation key="device=watch42mm">
+                                <fontDescription key="font" type="boldSystem" pointSize="18"/>
+                            </variation>
+                        </label>
+                        <label width="1" alignment="left" text="AppleWatchでの結果一覧になります。" numberOfLines="2" id="Hlq-wd-CHs">
+                            <fontDescription key="font" type="system" pointSize="15"/>
+                            <variation key="device=watch42mm">
+                                <fontDescription key="font" type="system" pointSize="17"/>
+                            </variation>
+                        </label>
+                        <label width="136" height="17" alignment="left" text="Label" textAlignment="center" id="s1r-hF-3SJ">
+                            <color key="textColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <table alignment="left" id="uGI-b2-ua4">
+                            <items>
+                                <tableRow identifier="theRow" selectable="NO" id="JRx-pT-GUX" customClass="WKTableCell">
+                                    <group key="rootItem" width="1" height="40" alignment="left" id="fwY-w3-bdK">
+                                        <items>
+                                            <label height="1" alignment="left" text="Label" id="5Sy-wB-kb6">
+                                                <color key="textColor" red="1" green="0.76680478100000005" blue="0.83704120709999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                                            </label>
+                                            <label height="1" alignment="right" verticalAlignment="center" text="Label" textAlignment="right" id="hvN-Ql-WdL">
+                                                <fontDescription key="font" type="boldSystem" pointSize="14"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="scorePercentageLabel" destination="5Sy-wB-kb6" id="2nO-qR-2T2"/>
+                                        <outlet property="scoreTimesLabel" destination="hvN-Ql-WdL" id="rc3-dS-0w8"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="todayAvgLabel" destination="s1r-hF-3SJ" id="ceb-Cp-pov"/>
+                        <outlet property="todayDateLabel" destination="Kqt-2Q-8a1" id="hKi-Zi-vm8"/>
+                        <outlet property="todayScoreTable" destination="uGI-b2-ua4" id="0uo-gX-mel"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="108"/>
+        </scene>
         <!--Start-->
         <scene sceneID="aou-V4-d1y">
             <objects>
                 <controller identifier="Start" id="AgC-eL-Hgc" customClass="WKStartController">
                     <items>
-                        <button width="1" alignment="center" verticalAlignment="bottom" title="挑戦する" id="79K-er-rxL">
+                        <button width="1" alignment="center" verticalAlignment="bottom" title="挑戦してみる" id="ccT-uZ-O01">
                             <fontDescription key="font" type="system" pointSize="15"/>
                             <variation key="device=watch42mm">
                                 <fontDescription key="font" type="system" pointSize="17"/>
                             </variation>
                             <connections>
-                                <action selector="startBtn" destination="AgC-eL-Hgc" id="ry3-Dj-7JT"/>
+                                <action selector="startBtn" destination="AgC-eL-Hgc" id="fbb-2L-wZ6"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="center" verticalAlignment="bottom" title="今日の結果" id="79K-er-rxL">
+                            <fontDescription key="font" type="system" pointSize="15"/>
+                            <variation key="device=watch42mm">
+                                <fontDescription key="font" type="system" pointSize="17"/>
+                            </variation>
+                            <connections>
+                                <action selector="todayBtn" destination="AgC-eL-Hgc" id="dDr-nB-mf8"/>
                             </connections>
                         </button>
                         <label width="1" alignment="left" text="10秒虫食い算" textAlignment="center" id="9br-Fq-NLQ">
@@ -31,9 +91,6 @@
                                 <fontDescription key="font" type="system" pointSize="17"/>
                             </variation>
                         </label>
-                        <imageView width="136" height="46" alignment="left" id="zVg-ET-WTN">
-                            <variation key="device=watch42mm" height="60" width="154"/>
-                        </imageView>
                     </items>
                 </controller>
             </objects>
@@ -268,13 +325,10 @@
                         </button>
                         <group width="1" height="40" alignment="center" verticalAlignment="center" id="4sC-J2-l7c">
                             <items>
-                                <imageView width="40" height="40" alignment="left" id="BEb-5y-E04">
-                                    <variation key="device=watch42mm" height="53" width="53"/>
-                                </imageView>
-                                <label width="90" height="40" alignment="right" text="ベストスコアをiPhoneへ!" textAlignment="left" numberOfLines="2" id="tRu-pb-J3x">
-                                    <fontDescription key="font" type="system" pointSize="15"/>
-                                    <variation key="device=watch42mm" height="53" width="95">
-                                        <fontDescription key="font" type="system" pointSize="15"/>
+                                <label width="136" height="40" alignment="right" text="ベストスコアは是非とも記録しておこう！" textAlignment="left" numberOfLines="2" id="tRu-pb-J3x">
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <variation key="device=watch42mm" height="53" width="156">
+                                        <fontDescription key="font" type="system" pointSize="16"/>
                                     </variation>
                                 </label>
                             </items>
@@ -288,7 +342,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="600" y="347"/>
+            <point key="canvasLocation" x="599.79487179487182" y="346.53846153846155"/>
         </scene>
     </scenes>
 </document>

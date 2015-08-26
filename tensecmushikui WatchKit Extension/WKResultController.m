@@ -62,7 +62,7 @@
     
     //ボタンを押せなくする
     self.syncBtn.enabled = NO;
-    [self.syncBtn setTitle:@"戻って再挑戦してね！"];
+    [self.syncBtn setTitle:@"再挑戦してね！"];
 }
 
 - (void)didDeactivate {

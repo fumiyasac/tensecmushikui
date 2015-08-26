@@ -10,8 +10,8 @@
 #import "AppDelegate.h"
 #import <CoreData/CoreData.h>
 
-@interface StartController ()
-{
+@interface StartController() {
+    
     //ページ画像の可変配列
     NSMutableArray *pages;
     
@@ -20,21 +20,59 @@
     
     //問題
     int dataCount;
+    
+    //デバイス幅・高さ
+    int deviceHeight;
+    int deviceWidth;
 }
 @end
 
 @implementation StartController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     
+    [super viewDidLoad];
+
     //ページデータ（辞書オブジェクト）の配列を作る
     pages = [NSMutableArray array];
-    [pages addObject:@{@"imageName":@"sample15.jpg", @"title":@"タイトル1タイトル1"}];
-    [pages addObject:@{@"imageName":@"sample25.jpg", @"title":@"タイトル2タイトル2"}];
-    [pages addObject:@{@"imageName":@"sample35.jpg", @"title":@"タイトル3タイトル3"}];
+    
+    //現在起動中のデバイスを取得
+    NSString *deviceName = [UIDeviseSize getNowDisplayDevice];
+    
+    //iPhone4s
+    if ([deviceName isEqual:@"iPhone4s"]) {
+        
+        [pages addObject:@{@"imageName":@"iphone4s_image1.jpg"}];
+        [pages addObject:@{@"imageName":@"iphone4s_image2.jpg"}];
+        [pages addObject:@{@"imageName":@"iphone4s_image3.jpg"}];
+        
+    //iPhone5またはiPhone5s
+    } else if ([deviceName isEqual:@"iPhone5"]) {
+        
+        [pages addObject:@{@"imageName":@"iphone5_image1.jpg"}];
+        [pages addObject:@{@"imageName":@"iphone5_image2.jpg"}];
+        [pages addObject:@{@"imageName":@"iphone5_image3.jpg"}];
+        
+    //iPhone6
+    } else if ([deviceName isEqual:@"iPhone6"]) {
+        
+        [pages addObject:@{@"imageName":@"iphone6_image1.jpg"}];
+        [pages addObject:@{@"imageName":@"iphone6_image2.jpg"}];
+        [pages addObject:@{@"imageName":@"iphone6_image3.jpg"}];
+        
+    //iPhone6 plus
+    } else if ([deviceName isEqual:@"iPhone6plus"]) {
+        
+        [pages addObject:@{@"imageName":@"iphone6plus_image1.jpg"}];
+        [pages addObject:@{@"imageName":@"iphone6plus_image2.jpg"}];
+        [pages addObject:@{@"imageName":@"iphone6plus_image3.jpg"}];
+    }
     
     //ページコントロール（ドット）の設定
+    self.startPageControl.pageIndicatorTintColor = [ColorDefinition getUIColorFromHex:@"cccccc"];
+    self.startPageControl.currentPageIndicatorTintColor = [ColorDefinition getUIColorFromHex:@"222222"];
+    [self.startBtn setBackgroundColor:[ColorDefinition getUIColorFromHex:@"222222"]];
+    
     self.startPageControl.numberOfPages = pages.count;
     self.startPageControl.currentPage = 0;
     pageNumber = (int)self.startPageControl.currentPage;
@@ -61,7 +99,6 @@
         //1ページ分の情報を取り出す
         NSDictionary *pageDictionaryImage = pages[i];
         NSString *imageName = pageDictionaryImage[@"imageName"];
-        NSString *caption = pageDictionaryImage[@"title"];
         
         //x座標の基準点をページ分だけずらす
         CGRect pageFrame;
@@ -70,7 +107,7 @@
         pageFrame.size = targetFrame.size;
         
         //OpeningImageSliderクラスで1ページ分のコンテンツ（サブビュー）を作る
-        OpeningImageSlider *targetSlider = [[OpeningImageSlider alloc] initWithOpeningView:(NSString *)imageName frame:(CGRect)pageFrame caption:(NSString *)caption];
+        OpeningImageSlider *targetSlider = [[OpeningImageSlider alloc] initWithOpeningView:(NSString *)imageName frame:(CGRect)pageFrame];
         
         //スクロールビューにページを追加する
         [self.startScrollView addSubview:targetSlider];
@@ -84,8 +121,8 @@
 }
 
 //スクロールのデリゲートメソッド
-- (void)scrollViewDidScroll:(UIScrollView *)sender
-{
+- (void)scrollViewDidScroll:(UIScrollView *)sender {
+    
     //現在のページ番号を調べる
     CGFloat pageWidth = self.startScrollView.frame.size.width;
     pageNumber = floor( ( self.startScrollView.contentOffset.x - pageWidth / 2 ) / pageWidth ) + 1;
@@ -94,6 +131,7 @@
 
 //[デバッグ用]AppleWatchからの計算結果表示
 -(void)switchDebugLabel:(BOOL)flag {
+    
     if (flag) {
         self.debugLabel.alpha = 1;
     }else {
@@ -102,8 +140,8 @@
 }
 
 //[CoreData]コアデータ（Answer）に1件の新規データを追加する
--(void)addRecordToCoreData:(int)score totalSeconds:(float)seconds{
-
+-(void)addRecordToCoreData:(int)score totalSeconds:(float)seconds {
+    
     //NSManagedObjectContextのインスタンス作成
     NSManagedObjectContext *managedObjectContext = [[AppDelegate new] managedObjectContext];
     
@@ -182,12 +220,97 @@
     NSInteger maxValue = NSNotFound;
     
     //オブジェクトが取れているかをチェック
-    if(obj == nil){
+    if (obj == nil) {
         NSLog(@"error");
-    }else if([obj count] > 0){
+    } else if([obj count] > 0) {
         maxValue = [obj[0][@"maxAnswerId"] integerValue];
     }
     return maxValue;
+}
+
+//本日のAppleWatchでのプレイ結果を取得する
+-(NSArray *)syncTodayResultToCoreData {
+    
+    //NSManagedObjectContextのインスタンスを作成する
+    NSManagedObjectContext *managedObjectContext = [[AppDelegate new] managedObjectContext];
+    
+    //現在の日付を取得
+    NSDate *now = [NSDate date];
+    
+    //inUnit:で指定した単位（月）の中で、rangeOfUnit:で指定した単位（日）が取り得る範囲
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    
+    NSUInteger flags;
+    NSDateComponents *comps;
+    
+    flags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday;
+    comps = [calendar components:flags fromDate:now];
+    
+    int targetYear  = (int)comps.year;
+    int targetMonth = (int)comps.month;
+    int targetDay   = (int)comps.day;
+    
+    //NSFetchRequestのインスタンス作成
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    //検索対象のエンティティを作成する
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Answer" inManagedObjectContext:managedObjectContext];
+    [request setEntity:entity];
+    
+    //検索条件を指定
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(year = %d) AND (month = %d) AND (day = %d) AND (devise = 2)", targetYear, targetMonth, targetDay];
+    [request setPredicate:predicate];
+    
+    //NSFetchRequestの中身をディクショナリにして返す
+    [request setResultType:NSDictionaryResultType];
+    
+    //NSExpressionを作成する
+    NSExpression *keyPathExpression = [NSExpression expressionForKeyPath:@"score"];
+    NSExpression *sumExpression = [NSExpression expressionForFunction:@"count:" arguments:@[keyPathExpression]];
+    NSExpressionDescription *expressionDescription = [[NSExpressionDescription alloc] init];
+    
+    //NSExpressionDescriptionを作る
+    [expressionDescription setName:@"sumScoreCountByDay"];
+    [expressionDescription setExpression:sumExpression];
+    [expressionDescription setExpressionResultType:NSInteger64AttributeType];
+    
+    //カラム名：scoreでGroupByをかける
+    [request setPropertiesToFetch:@[@"score", expressionDescription]];
+    [request setPropertiesToGroupBy:@[@"score"]];
+    
+    //NSFetchRequestにセット
+    NSError *error = nil;
+    NSArray *objects = [managedObjectContext executeFetchRequest:request error:&error];
+    
+    //空の可変配列を作成する
+    NSMutableArray *beforeSortArray = [NSMutableArray new];
+    
+    //取得分のデータを可変配列に格納する
+    for (int i = 0; i < objects.count; i++) {
+        
+        //データをオブジェクト→文字列に変換して取得
+        NSManagedObject *object = [objects objectAtIndex:i];
+        NSString *score = [object valueForKey:@"score"];
+        NSString *sumMoneyByYearAndMonth = [object valueForKey:@"sumScoreCountByDay"];
+        
+        //ディクショナリに格納する
+        NSMutableDictionary *loopDictionary = [NSMutableDictionary new];
+        [loopDictionary setObject:sumMoneyByYearAndMonth forKey:@"sum"];
+        [loopDictionary setObject:score forKey:@"score"];
+        
+        //ディクショナリを配列に格納する
+        [beforeSortArray addObject:loopDictionary];
+    }
+    
+    //配列の[キー：score]に対してソートする
+    NSSortDescriptor *sortDescCondition = [[NSSortDescriptor alloc] initWithKey:@"score" ascending:NO];
+    
+    //NSSortDescriptorは配列に入れてNSArrayに渡す
+    NSArray *sortDescArray = [NSArray arrayWithObjects:sortDescCondition, nil];
+    
+    //ソートを実行してメンバ変数配列に格納する
+    NSArray *fetchDataArray = [beforeSortArray sortedArrayUsingDescriptors:sortDescArray];
+    return fetchDataArray;
 }
 
 //問題の同期用メソッド
@@ -218,7 +341,6 @@
         int randomNum = arc4random() % a;
         [rows exchangeObjectAtIndex:a withObjectAtIndex:randomNum];
     }
-    NSLog(@"%@",rows);
     
     //上から10件だけ表示する関数
     for(int i = 0; i < dataCount; i++){

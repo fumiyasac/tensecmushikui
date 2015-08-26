@@ -12,5 +12,6 @@
 @interface WKStartController : WKInterfaceController
 
 - (IBAction)startBtn;
+- (IBAction)todayBtn;
 
 @end

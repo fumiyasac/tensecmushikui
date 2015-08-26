@@ -11,8 +11,8 @@
 @implementation ColorDefinition
 
 //16進数のカラーコードをiOSの設定に変換するメソッド
-+ (UIColor *)getUIColorFromHex:(NSString*)hex
-{
++ (UIColor *)getUIColorFromHex:(NSString*)hex {
+    
     return [UIColor
     colorWithRed:[self getNumberFromHex:hex rangeFrom:0]/255.0
      green:[self getNumberFromHex:hex rangeFrom:2]/255.0
@@ -21,8 +21,8 @@
 }
 
 //カラーコード変換用の関数
-+ (unsigned int)getNumberFromHex:(NSString*)hex rangeFrom:(int)from
-{
++ (unsigned int)getNumberFromHex:(NSString*)hex rangeFrom:(int)from {
+    
     NSString *hexString = [hex substringWithRange:NSMakeRange(from, 2)];
     NSScanner* hexScanner = [NSScanner scannerWithString:hexString];
     unsigned int intColor;

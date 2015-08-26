@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
+#import "UIDeviseSize.h"
 
 @interface GameplayController : UIViewController<ADBannerViewDelegate>
 

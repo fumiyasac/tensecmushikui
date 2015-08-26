@@ -7,11 +7,23 @@
 //
 
 #import "CalculatePointTableViewCell.h"
+#import "UIDeviseSize.h"
 
-@implementation CalculatePointTableViewCell
+@implementation CalculatePointTableViewCell {
+    CGFloat tableViewCellWidth;
+    CGFloat tableViewCellHeight;
+}
 
 - (void)awakeFromNib {
-    // Initialization code
+    
+    //デバイスサイズ調整用の処理
+    tableViewCellWidth = [UIDeviseSize getNowDisplayWidth];
+    tableViewCellHeight = 120;
+    
+    //位置の調整を行う
+    self.frame = CGRectMake(0, 0, tableViewCellWidth, tableViewCellHeight);
+    self.ruleTitle.frame = CGRectMake(15, 10, tableViewCellWidth - 30, 20);
+    self.ruleDetail.frame = CGRectMake(15, 30, tableViewCellWidth - 30, 80);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

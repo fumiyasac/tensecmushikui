@@ -11,6 +11,6 @@
 @interface OpeningImageSlider : UIView
 
 //カスタムイニシャライザの宣言
--(id)initWithOpeningView:(NSString *)imageName frame:(CGRect)frame caption:(NSString *)caption;
+-(id)initWithOpeningView:(NSString *)imageName frame:(CGRect)frame;
 
 @end

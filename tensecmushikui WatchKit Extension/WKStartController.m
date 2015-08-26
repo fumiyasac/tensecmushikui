@@ -8,7 +8,6 @@
 
 #import "WKStartController.h"
 
-
 @interface WKStartController()
 
 @end
@@ -33,7 +32,10 @@
     [self pushControllerWithName:@"Game" context:self];
 }
 
+- (IBAction)todayBtn {
+    
+    //セグエなしの遷移を行う
+    [self pushControllerWithName:@"Today" context:self];
+}
+
 @end
-
-
-

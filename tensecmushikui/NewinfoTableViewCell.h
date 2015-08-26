@@ -10,6 +10,7 @@
 
 @interface NewinfoTableViewCell : UITableViewCell
 
+//最新情報のプロパティ
 @property (strong, nonatomic) IBOutlet UILabel *newinfoCategory;
 @property (strong, nonatomic) IBOutlet UILabel *newinfoDate;
 @property (strong, nonatomic) IBOutlet UILabel *newinfoDetail;

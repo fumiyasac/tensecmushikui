@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
 #import "NewinfoTableViewCell.h"
+#import "CalculatePointTableViewCell.h"
 #import "UIDeviseSize.h"
+#import "ColorDefinition.h"
 
 @interface IntroductionController : UIViewController<UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate,ADBannerViewDelegate>
 
@@ -23,8 +25,5 @@
 //2.これまでの結果を見るボタン
 @property (strong, nonatomic) IBOutlet UIButton *iphoneGameBtn;
 @property (strong, nonatomic) IBOutlet UIButton *viewResultBtn;
-
-//「戻る」ボタンの実装
-- (IBAction)backAction:(UIButton *)sender;
 
 @end

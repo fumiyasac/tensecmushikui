@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "AnalyticsController.h"
 #import "UIDeviseSize.h"
+#import "ColorDefinition.h"
 
 //CALayerクラスのインポート
 #import <QuartzCore/QuartzCore.h>
@@ -16,8 +17,8 @@
 //CoreDataクラスのインポート
 #import <CoreData/CoreData.h>
 
-@interface AnalyticsController()
-{
+@interface AnalyticsController() {
+    
     //表示年月のメンバ変数
     NSDate *now;
     int year;
@@ -49,8 +50,56 @@
 
 @implementation AnalyticsController
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    //現在起動中のデバイスを取得
+    NSString *deviceName = [UIDeviseSize getNowDisplayDevice];
+    
+    UIImage *backgroundImage;
+    
+    //iPhone4s
+    if ([deviceName isEqual:@"iPhone4s"]) {
+        
+        backgroundImage  = [UIImage imageNamed:@"iphone4s_background.jpg"];
+        
+    //iPhone5またはiPhone5s
+    } else if ([deviceName isEqual:@"iPhone5"]) {
+        
+        backgroundImage  = [UIImage imageNamed:@"iphone5_background.jpg"];
+        
+    //iPhone6
+    } else if ([deviceName isEqual:@"iPhone6"]) {
+        
+        backgroundImage  = [UIImage imageNamed:@"iphone6_background.jpg"];
+        
+    //iPhone6 plus
+    } else if ([deviceName isEqual:@"iPhone6plus"]) {
+        
+        backgroundImage  = [UIImage imageNamed:@"iphone6plus_background.jpg"];
+    }
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+    
+    self.graphWebView.frame = CGRectMake(0, 126, [UIDeviseSize getNowDisplayWidth], 170);
+    self.scoreTableView.frame = CGRectMake(0, 296, [UIDeviseSize getNowDisplayWidth], [UIDeviseSize getNowDisplayHeight]-296-110);
+    
+    //下のボタンとセグメントの色つけ
+    [self.prevBtn setBackgroundColor:[ColorDefinition getUIColorFromHex:@"222222"]];
+    [self.nextBtn setBackgroundColor:[ColorDefinition getUIColorFromHex:@"222222"]];
+    [self.deviceSegment setBackgroundColor:[ColorDefinition getUIColorFromHex:@"222222"]];
+    [self.deviceSegment setTintColor:[ColorDefinition getUIColorFromHex:@"ffffff"]];
+}
+
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
+    //ボタンに丸みをつける
+    [self.prevBtn.layer setCornerRadius:20.0];
+    [self.nextBtn.layer setCornerRadius:20.0];
+    [self.prevBtn.layer setBorderWidth:1.0];
+    [self.nextBtn.layer setBorderWidth:1.0];
+    [self.prevBtn.layer setBorderColor:[ColorDefinition getUIColorFromHex:@"ffffff"].CGColor];
+    [self.nextBtn.layer setBorderColor:[ColorDefinition getUIColorFromHex:@"ffffff"].CGColor];
     
     //色の配列を設定する
     colorArray = @[@"f8c6c7",@"f2cb24",@"87c9a3",@"b9e4f7",@"face83",@"d2cce6",@"ccdc47",@"81b7ea",@"434348",@"d79759",@"9e9e9e"];
@@ -96,8 +145,8 @@
 }
 
 //WebViewをLoadする
-- (void)loadWebViewResource
-{
+- (void)loadWebViewResource {
+    
     NSString *path = [[NSBundle mainBundle]pathForResource:@"piechart" ofType:@"html"];
     NSURL *url = [NSURL fileURLWithPath:path];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
@@ -105,26 +154,24 @@
 }
 
 //グラフのベースを読み込む
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    
     [self initializePieChart];
 }
 
 //ロード時に呼び出されて、セクション内のセル数を返す ※必須
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return fetchCount;
 }
 
 //ロード時に呼び出されて、セクション内のセル数を返す ※必須
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 //ロード時に呼び出されて、セルの内容を返す ※任意
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     ScoreTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ScoreCell" forIndexPath:indexPath];
     
     //セルの中に値を入れる
@@ -149,14 +196,13 @@
 }
 
 //セルの高さを返す ※任意
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 44.0;
 }
 
 //平均点を算出して表示するメソッド
--(void)setAvgScoreOfLabel
-{
+-(void)setAvgScoreOfLabel {
+    
     float avgScore;
     
     //計算結果データの配列が存在したら
@@ -168,8 +214,8 @@
         
         for (int i=0; i<fetchDataArray.count; i++) {
             NSDictionary *countData = [fetchDataArray objectAtIndex:i];
-            int perScore = [[countData objectForKey:@"score"] integerValue];
-            int perSum = [[countData objectForKey:@"sum"] integerValue];
+            int perScore = (int)[[countData objectForKey:@"score"] integerValue];
+            int perSum = (int)[[countData objectForKey:@"sum"] integerValue];
             
             wholeScore += perScore * perSum;
             countScore += perSum;
@@ -183,20 +229,18 @@
 }
 
 //日付を表示するメソッド
--(void)setSelectedDayOfLabel
-{
+-(void)setSelectedDayOfLabel {
     self.currentDateLabel.text = [NSString stringWithFormat:@"%d年%d月%d日", year, month, day];
 }
 
 //cellのリロード ※任意
--(void)reloadData
-{
+-(void)reloadData {
     [self.scoreTableView reloadData];
 }
 
 //合計支出の多い順にソートした配列を格納する（バーチャート・パイチャート用）
--(void)selectRecordAndCountToCoreData
-{
+-(void)selectRecordAndCountToCoreData {
+    
     //NSManagedObjectContextのインスタンスを作成する
     NSManagedObjectContext *managedObjectContext = [[AppDelegate new] managedObjectContext];
     
@@ -264,12 +308,11 @@
     
     //ソートを実行してメンバ変数配列に格納する
     fetchDataArray = [beforeSortArray sortedArrayUsingDescriptors:sortDescArray];
-    NSLog(@"%@", fetchDataArray);
 }
 
 //並び順のデータからパーセンテージを取得する
-- (NSMutableArray *)getPercentageArray:(NSArray *)array
-{
+- (NSMutableArray *)getPercentageArray:(NSArray *)array {
+    
     NSMutableArray *percentageList = [NSMutableArray new];
     
     for (int i=0; i<array.count; i++) {
@@ -284,8 +327,8 @@
     return percentageList;
 }
 
-- (void)initializePieChart
-{
+- (void)initializePieChart {
+    
     //連結文字列の初期値を設定する
     NSString *targetString = @"";
     
@@ -318,12 +361,15 @@
         
         //パイチャートのデータをinitする
         [self.graphWebView stringByEvaluatingJavaScriptFromString:initPieChart];
+        self.graphWebView.alpha = 1.0;
+    } else {
+        self.graphWebView.alpha = 0.0;
     }
 }
 
 //月の全科目の合計値を取得
-- (int)calculateWholeSumPerDay:(NSArray *)array
-{
+- (int)calculateWholeSumPerDay:(NSArray *)array {
+    
     //合計値のローカル変数
     int wholeSum = 0;
     
@@ -341,8 +387,8 @@
 }
 
 //セグメントコントロールの値によって表示するグラフを変える
-- (IBAction)deviceSegment:(UISegmentedControl *)sender
-{
+- (IBAction)deviceSegment:(UISegmentedControl *)sender {
+    
     //iPhone版とAppleWatch版
     switch (sender.selectedSegmentIndex) {
         case 0:
@@ -359,8 +405,8 @@
 }
 
 //グラフデータを切り替える
--(void)initGraphDataFromCoreData
-{
+-(void)initGraphDataFromCoreData {
+    
     //WebViewのロード
     [self loadWebViewResource];
     
@@ -384,21 +430,19 @@
 }
 
 //前の日のパラメータを作成する関数
-- (IBAction)prevAction:(UIButton *)sender
-{
+- (IBAction)prevAction:(UIButton *)sender {
     [self setupPrevCalendarData];
 }
 
 //次の日のパラメータを作成する関数
-- (IBAction)nextAction:(UIButton *)sender
-{
+- (IBAction)nextAction:(UIButton *)sender {
     [self setupNextCalendarData];
 }
 
 
 //prevボタン押下に該当するデータを取得
-- (void)setupPrevCalendarData
-{
+- (void)setupPrevCalendarData {
+    
     day = day - 1;
     NSCalendar *prevCalendar = [NSCalendar currentCalendar];
     NSDateComponents *prevComps = [[NSDateComponents alloc] init];
@@ -412,8 +456,8 @@
 }
 
 //nextボタン押下に該当するデータを取得
-- (void)setupNextCalendarData
-{
+- (void)setupNextCalendarData {
+    
     day = day + 1;
     NSCalendar *nextCalendar = [NSCalendar currentCalendar];
     NSDateComponents *nextComps = [[NSDateComponents alloc] init];
@@ -426,8 +470,8 @@
 }
 
 //カレンダーのパラメータを作成する関数
-- (void)recreateCalendarParameter:(NSCalendar *)currentCalendar dateObject:(NSDate *)currentDate
-{
+- (void)recreateCalendarParameter:(NSCalendar *)currentCalendar dateObject:(NSDate *)currentDate {
+    
     flags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday;
     comps = [currentCalendar components:flags fromDate:currentDate];
     
@@ -444,10 +488,8 @@
     [self initGraphDataFromCoreData];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 
 @end

@@ -2,7 +2,7 @@
 //  main.m
 //  tensecmushikui
 //
-//  Created by 酒井文也 on 2015/04/16.
+//  Created by 酒井文也 on 201.5/04/16.
 //  Copyright (c) 2015年 just1factory. All rights reserved.
 //
 

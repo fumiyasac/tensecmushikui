@@ -13,24 +13,18 @@
 
 @interface AnalyticsController : UIViewController<UIWebViewDelegate,UITableViewDelegate,UITableViewDataSource,ADBannerViewDelegate>
 
+//分析結果ページ用のプロパティ
 @property (strong, nonatomic) IBOutlet UILabel *currentDateLabel;
-
 @property (strong, nonatomic) IBOutlet UILabel *currentAvgLabel;
-
 @property (strong, nonatomic) IBOutlet UIWebView *graphWebView;
-
 @property (strong, nonatomic) IBOutlet UITableView *scoreTableView;
-
 @property (strong, nonatomic) IBOutlet UIButton *prevBtn;
-
 @property (strong, nonatomic) IBOutlet UIButton *nextBtn;
-
 @property (strong, nonatomic) IBOutlet UISegmentedControl *deviceSegment;
 
+//分析結果ページ用のアクション
 - (IBAction)prevAction:(UIButton *)sender;
-
 - (IBAction)nextAction:(UIButton *)sender;
-
 - (IBAction)deviceSegment:(UISegmentedControl *)sender;
  
 @end

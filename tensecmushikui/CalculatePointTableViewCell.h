@@ -10,4 +10,7 @@
 
 @interface CalculatePointTableViewCell : UITableViewCell
 
+//四則演算のルールを書いたプロパティ
+@property (strong, nonatomic) IBOutlet UILabel *ruleTitle;
+@property (strong, nonatomic) IBOutlet UILabel *ruleDetail;
 @end

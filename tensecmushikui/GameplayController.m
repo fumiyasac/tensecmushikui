@@ -16,7 +16,7 @@
 #define MAX_COUNT_NUM 10
 #define FETCH_DATA_COUNT 10
 
-@interface GameplayController (){
+@interface GameplayController() {
     
     //問題数・タイマー・遅延時間
     int counter;
@@ -56,6 +56,36 @@
 
 @implementation GameplayController
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    //現在起動中のデバイスを取得
+    NSString *deviceName = [UIDeviseSize getNowDisplayDevice];
+    
+    UIImage *backgroundImage;
+    
+    //iPhone4s
+    if ([deviceName isEqual:@"iPhone4s"]) {
+        
+        backgroundImage  = [UIImage imageNamed:@"iphone4s_background.jpg"];
+        
+    //iPhone5またはiPhone5s
+    } else if ([deviceName isEqual:@"iPhone5"]) {
+        
+        backgroundImage  = [UIImage imageNamed:@"iphone5_background.jpg"];
+        
+    //iPhone6
+    } else if ([deviceName isEqual:@"iPhone6"]) {
+        
+        backgroundImage  = [UIImage imageNamed:@"iphone6_background.jpg"];
+        
+    //iPhone6 plus
+    } else if ([deviceName isEqual:@"iPhone6plus"]) {
+        
+        backgroundImage  = [UIImage imageNamed:@"iphone6plus_background.jpg"];
+    }
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
@@ -66,9 +96,6 @@
     correctNum  = 0;
     totalSec    = 0.000;
     pastCounter = 10;
-    
-    //タイトル
-    self.navigationItem.title = @"ゲーム開始";
     
     //ボタンを全て活性
     [self allAnswerBtnEnabled];
@@ -96,7 +123,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //viewDidLoadで必要な処理があれば記載が必要
+    
+    //タイトル
+    self.navigationItem.title = @"ゲーム開始";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -117,43 +146,43 @@
     totalSec = totalSec + TIMEOUT_SEC;
     pastCounter = DEFAULT_COUNTER;
     
-    if(counter == 0){
+    if (counter == 0) {
         
         timeProblem1Solve = [NSDate date];
         
-    }else if (counter == 1){
+    } else if (counter == 1) {
         
         timeProblem2Solve = [NSDate date];
         
-    }else if (counter == 2){
+    } else if (counter == 2) {
         
         timeProblem3Solve = [NSDate date];
         
-    }else if (counter == 3){
+    } else if (counter == 3) {
         
         timeProblem4Solve = [NSDate date];
         
-    }else if (counter == 4){
+    } else if (counter == 4) {
         
         timeProblem5Solve = [NSDate date];
         
-    }else if (counter == 5){
+    } else if (counter == 5) {
         
         timeProblem6Solve = [NSDate date];
         
-    }else if (counter == 6){
+    } else if (counter == 6) {
         
         timeProblem7Solve = [NSDate date];
         
-    }else if (counter == 7){
+    } else if (counter == 7) {
         
         timeProblem8Solve = [NSDate date];
         
-    }else if (counter == 8){
+    } else if (counter == 8) {
         
         timeProblem9Solve = [NSDate date];
         
-    }else if (counter == 9){
+    } else if (counter == 9) {
         
         timeProblem10Solve = [NSDate date];
     }
@@ -186,13 +215,13 @@
 
     //シャッフル
     int tmpCount = [rows count];
-    for(int a = tmpCount - 1; a > 0; a--){
+    for (int a = tmpCount - 1; a > 0; a--) {
         int randomNum = arc4random() % a;
         [rows exchangeObjectAtIndex:a withObjectAtIndex:randomNum];
     }
     
     //上から10件だけ表示する関数
-    for(int i = 0; i < dataCount; i++){
+    for (int i = 0; i < dataCount; i++) {
         NSArray *row = [[rows objectAtIndex:i] componentsSeparatedByString:@","];
         [problem addObject:@{@"amount":[NSString stringWithFormat:@"%d",i+1], @"calcurate":row[1], @"answer":row[2]}];
     }
@@ -221,9 +250,6 @@
         
         NSMutableArray *result = [NSMutableArray array];
         [result addObject:@[correct,sec]];
-        
-        //Debug.
-        NSLog(@"正解数：%d, 秒数：%.3f",correctNum,totalSec);
         
         //タイマーを殺す
         [perSecTimer invalidate];
@@ -273,7 +299,7 @@
 }
 
 //正解か不正解かを判定するメソッド
-- (void)judgeCurrentAnswer:(int)btnNum{
+- (void)judgeCurrentAnswer:(int)btnNum {
     
     //ボタンを全て非活性
     [self allAnswerBtnDisabled];
@@ -282,52 +308,52 @@
     float tmp;
     
     //問題にかかった秒数を加算する（これもアカンと思うけど...）
-    if(counter == 0){
+    if (counter == 0) {
         
         timeProblem1Solve = [NSDate date];
         tmp= [timeProblem1Solve timeIntervalSinceDate:timeProblem0Solve];
         
-    }else if (counter == 1){
+    } else if (counter == 1) {
         
         timeProblem2Solve = [NSDate date];
         tmp= [timeProblem2Solve timeIntervalSinceDate:timeProblem1Solve];
         
-    }else if (counter == 2){
+    } else if (counter == 2) {
         
         timeProblem3Solve = [NSDate date];
         tmp= [timeProblem3Solve timeIntervalSinceDate:timeProblem2Solve];
         
-    }else if (counter == 3){
+    } else if (counter == 3) {
         
         timeProblem4Solve = [NSDate date];
         tmp= [timeProblem4Solve timeIntervalSinceDate:timeProblem3Solve];
         
-    }else if (counter == 4){
+    } else if (counter == 4) {
         
         timeProblem5Solve = [NSDate date];
         tmp= [timeProblem5Solve timeIntervalSinceDate:timeProblem4Solve];
         
-    }else if (counter == 5){
+    } else if (counter == 5) {
         
         timeProblem6Solve = [NSDate date];
         tmp= [timeProblem6Solve timeIntervalSinceDate:timeProblem5Solve];
         
-    }else if (counter == 6){
+    } else if (counter == 6) {
         
         timeProblem7Solve = [NSDate date];
         tmp= [timeProblem7Solve timeIntervalSinceDate:timeProblem6Solve];
         
-    }else if (counter == 7){
+    } else if (counter == 7) {
         
         timeProblem8Solve = [NSDate date];
         tmp= [timeProblem8Solve timeIntervalSinceDate:timeProblem7Solve];
         
-    }else if (counter == 8){
+    } else if (counter == 8) {
         
         timeProblem9Solve = [NSDate date];
         tmp= [timeProblem8Solve timeIntervalSinceDate:timeProblem8Solve];
         
-    }else if (counter == 9){
+    } else if (counter == 9) {
         
         timeProblem10Solve = [NSDate date];
         tmp= [timeProblem10Solve timeIntervalSinceDate:timeProblem9Solve];
@@ -348,10 +374,14 @@
 }
 
 - (void)killTimerAnotherController {
-    
-    NSLog(@"タイマー破棄完了！");
+
     [perSecTimer fire];
     [doneTimer invalidate];
+}
+
+- (void)setAnswerBtnSize {
+    
+    
 }
 
 - (void)allAnswerBtnEnabled {
