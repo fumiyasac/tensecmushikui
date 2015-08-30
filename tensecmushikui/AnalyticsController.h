@@ -26,5 +26,8 @@
 - (IBAction)prevAction:(UIButton *)sender;
 - (IBAction)nextAction:(UIButton *)sender;
 - (IBAction)deviceSegment:(UISegmentedControl *)sender;
- 
+
+//広告
+@property (strong, nonatomic) IBOutlet ADBannerView *iAdArea;
+
 @end

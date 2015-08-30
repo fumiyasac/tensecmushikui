@@ -95,7 +95,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="22" sectionFooterHeight="22" id="zr4-Hk-Cso">
-                                <rect key="frame" x="0.0" y="64.000005920816108" width="320" height="264"/>
+                                <rect key="frame" x="0.0" y="64.000005903197817" width="320" height="264"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -121,6 +121,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="rPc-Xn-Jra"/>
                     <connections>
+                        <outlet property="iAdArea" destination="k9V-8T-1Wn" id="DoQ-px-ltC"/>
                         <outlet property="iphoneGameBtn" destination="ALe-8X-ReK" id="wZy-Jg-En5"/>
                         <outlet property="newinfoTableView" destination="zr4-Hk-Cso" id="15c-sk-hMJ"/>
                         <outlet property="viewResultBtn" destination="8Rg-59-T79" id="GWN-Mr-zIv"/>
@@ -167,7 +168,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vfn-R7-5RT">
-                                <rect key="frame" x="30" y="208" width="70" height="70"/>
+                                <rect key="frame" x="30" y="200" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -180,7 +181,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lQf-fE-T2i">
-                                <rect key="frame" x="125" y="208" width="70" height="70"/>
+                                <rect key="frame" x="125" y="200" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -193,7 +194,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mQG-ud-o8W">
-                                <rect key="frame" x="220" y="208" width="70" height="70"/>
+                                <rect key="frame" x="220" y="200" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -206,7 +207,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iCH-Mm-05j">
-                                <rect key="frame" x="30" y="297" width="70" height="70"/>
+                                <rect key="frame" x="30" y="290" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -219,7 +220,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YL1-F7-XSl">
-                                <rect key="frame" x="125" y="299" width="70" height="70"/>
+                                <rect key="frame" x="125" y="290" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -232,7 +233,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OgX-z1-uzt">
-                                <rect key="frame" x="220" y="299" width="70" height="70"/>
+                                <rect key="frame" x="220" y="290" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -245,7 +246,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="m6p-Fu-wOC">
-                                <rect key="frame" x="30" y="391" width="70" height="70"/>
+                                <rect key="frame" x="30" y="380" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -258,7 +259,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AfY-Pd-WbD">
-                                <rect key="frame" x="125" y="391" width="70" height="70"/>
+                                <rect key="frame" x="125" y="380" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -271,7 +272,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3w5-pN-mgF">
-                                <rect key="frame" x="220" y="391" width="70" height="70"/>
+                                <rect key="frame" x="220" y="380" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -302,6 +303,7 @@
                         <outlet property="answer8btn" destination="AfY-Pd-WbD" id="L7F-Lb-45D"/>
                         <outlet property="answer9btn" destination="3w5-pN-mgF" id="66H-1U-Ywp"/>
                         <outlet property="answerAmount" destination="v0y-n8-lFZ" id="7qx-5y-wDf"/>
+                        <outlet property="iAdArea" destination="dQk-vt-vyW" id="s3U-xx-Ef6"/>
                         <outlet property="pastTime" destination="onZ-kc-aPy" id="BMW-Km-fSB"/>
                         <outlet property="targetProblem" destination="MoC-AF-ViB" id="KY8-Yp-mTq"/>
                         <segue destination="aGI-hq-9e7" kind="push" identifier="displayResult" id="0cF-zE-dWA"/>
@@ -380,6 +382,7 @@
                     <navigationItem key="navigationItem" id="bLw-iB-L7C"/>
                     <connections>
                         <outlet property="facebookBtn" destination="QSY-vx-w7l" id="Tb5-n5-DWK"/>
+                        <outlet property="iAdArea" destination="P8a-FK-Nm5" id="dvr-du-rlE"/>
                         <outlet property="resultTableView" destination="O2r-cd-Fse" id="N6L-4t-Dux"/>
                         <outlet property="syncBannerBtn" destination="Yy8-RR-ZbB" id="9hf-f6-XEE"/>
                         <outlet property="twitterBtn" destination="B8D-dn-YaL" id="tmh-tb-68k"/>
@@ -486,6 +489,7 @@
                         <outlet property="currentDateLabel" destination="Kmc-Fs-1Ax" id="pR6-qF-fMm"/>
                         <outlet property="deviceSegment" destination="fkI-T3-FrH" id="aRZ-PZ-ps4"/>
                         <outlet property="graphWebView" destination="z9u-X7-pw3" id="sRC-kD-Dj0"/>
+                        <outlet property="iAdArea" destination="fH7-C3-uin" id="z0W-OM-Nhu"/>
                         <outlet property="nextBtn" destination="ZAI-56-HZ5" id="cVJ-Rh-qXu"/>
                         <outlet property="prevBtn" destination="ly7-dQ-98G" id="8OD-Qk-m3U"/>
                         <outlet property="scoreTableView" destination="OOS-Ux-hqZ" id="8kc-Lv-KZm"/>

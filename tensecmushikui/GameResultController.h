@@ -40,4 +40,7 @@
 //「この結果を登録する」ボタンの実装
 - (IBAction)syncScoreAction:(UIButton *)sender;
 
+//広告
+@property (strong, nonatomic) IBOutlet ADBannerView *iAdArea;
+
 @end

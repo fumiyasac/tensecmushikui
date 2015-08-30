@@ -45,4 +45,7 @@
 //戻った際のGameControllerで作動しているタイマーを破棄する
 - (void)killTimerAnotherController;
 
+//広告
+@property (strong, nonatomic) IBOutlet ADBannerView *iAdArea;
+
 @end

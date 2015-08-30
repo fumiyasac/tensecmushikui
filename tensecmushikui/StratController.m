@@ -116,8 +116,8 @@
     //ページコントロールを一番前に持ってくる
     [self.view bringSubviewToFront:self.startPageControl];
     
-    //デバッグモード（Onにしておく）
-    [self switchDebugLabel:true];
+    //デバッグモード
+    [self switchDebugLabel:false];
 }
 
 //スクロールのデリゲートメソッド

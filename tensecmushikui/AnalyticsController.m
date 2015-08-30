@@ -56,31 +56,41 @@
     NSString *deviceName = [UIDeviseSize getNowDisplayDevice];
     
     UIImage *backgroundImage;
+    CGFloat webviewHeight;
     
     //iPhone4s
     if ([deviceName isEqual:@"iPhone4s"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone4s_background.jpg"];
+        webviewHeight = 170;
         
     //iPhone5またはiPhone5s
     } else if ([deviceName isEqual:@"iPhone5"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone5_background.jpg"];
+        webviewHeight = 170;
         
     //iPhone6
     } else if ([deviceName isEqual:@"iPhone6"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone6_background.jpg"];
+        webviewHeight = 195;
         
     //iPhone6 plus
     } else if ([deviceName isEqual:@"iPhone6plus"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone6plus_background.jpg"];
+        webviewHeight = 215;
     }
     self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     
-    self.graphWebView.frame = CGRectMake(0, 126, [UIDeviseSize getNowDisplayWidth], 170);
-    self.scoreTableView.frame = CGRectMake(0, 296, [UIDeviseSize getNowDisplayWidth], [UIDeviseSize getNowDisplayHeight]-296-110);
+    self.graphWebView.frame = CGRectMake(0, 126, [UIDeviseSize getNowDisplayWidth], webviewHeight);
+    self.scoreTableView.frame = CGRectMake(
+        0,
+        126 + webviewHeight,
+        [UIDeviseSize getNowDisplayWidth],
+        [UIDeviseSize getNowDisplayHeight] - (126 + webviewHeight + 110)
+    );
     
     //下のボタンとセグメントの色つけ
     [self.prevBtn setBackgroundColor:[ColorDefinition getUIColorFromHex:@"222222"]];
@@ -142,6 +152,18 @@
     
     //グラフデータをinit
     [self initGraphDataFromCoreData];
+    
+    //iAd
+    [self switchiAdDisplay:false];
+}
+
+//iAd表示
+-(void)switchiAdDisplay:(BOOL)flag {
+    if (flag) {
+        self.iAdArea.alpha = 1;
+    }else {
+        self.iAdArea.alpha = 0;
+    }
 }
 
 //WebViewをLoadする

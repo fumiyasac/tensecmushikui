@@ -26,4 +26,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *iphoneGameBtn;
 @property (strong, nonatomic) IBOutlet UIButton *viewResultBtn;
 
+//広告
+@property (strong, nonatomic) IBOutlet ADBannerView *iAdArea;
+
 @end

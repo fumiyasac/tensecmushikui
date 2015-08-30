@@ -62,28 +62,97 @@
     NSString *deviceName = [UIDeviseSize getNowDisplayDevice];
     
     UIImage *backgroundImage;
+    CGFloat btnCircleRect;
+    CGFloat btnCircleX1;
+    CGFloat btnCircleX2;
+    CGFloat btnCircleX3;
+    CGFloat btnCircleY1;
+    CGFloat btnCircleY2;
+    CGFloat btnCircleY3;
+    CGFloat fontSize;
     
     //iPhone4s
     if ([deviceName isEqual:@"iPhone4s"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone4s_background.jpg"];
+        btnCircleRect = 55.0;
+        btnCircleX1 = 52;
+        btnCircleX2 = ([UIDeviseSize getNowDisplayWidth] - btnCircleRect)/2;
+        btnCircleX3 = [UIDeviseSize getNowDisplayWidth] - 52 - btnCircleRect;
+        fontSize = 27.0;
         
     //iPhone5またはiPhone5s
     } else if ([deviceName isEqual:@"iPhone5"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone5_background.jpg"];
+        btnCircleRect = 70.0;
+        btnCircleX1 = 30;
+        btnCircleX2 = ([UIDeviseSize getNowDisplayWidth] - btnCircleRect)/2;
+        btnCircleX3 = [UIDeviseSize getNowDisplayWidth] - 30 - btnCircleRect;
+        fontSize = 35.0;
         
     //iPhone6
     } else if ([deviceName isEqual:@"iPhone6"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone6_background.jpg"];
+        btnCircleRect = 82.0;
+        btnCircleX1 = 30;
+        btnCircleX2 = ([UIDeviseSize getNowDisplayWidth] - btnCircleRect)/2;
+        btnCircleX3 = [UIDeviseSize getNowDisplayWidth] - 30 - btnCircleRect;
+        fontSize = 38.0;
         
     //iPhone6 plus
     } else if ([deviceName isEqual:@"iPhone6plus"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone6plus_background.jpg"];
+        btnCircleRect = 95.0;
+        btnCircleX1 = 30;
+        btnCircleX2 = ([UIDeviseSize getNowDisplayWidth] - btnCircleRect)/2;
+        btnCircleX3 = [UIDeviseSize getNowDisplayWidth] - 30 - btnCircleRect;
+        fontSize = 44.0;
     }
+    
+    btnCircleY1 = 200;
+    btnCircleY2 = 200 + btnCircleRect + 20;
+    btnCircleY3 = 200 + (btnCircleRect + 20) * 2;
+    
     self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+
+    self.answer1btn.frame = CGRectMake(btnCircleX1, btnCircleY1, btnCircleRect, btnCircleRect);
+    self.answer2btn.frame = CGRectMake(btnCircleX2, btnCircleY1, btnCircleRect, btnCircleRect);
+    self.answer3btn.frame = CGRectMake(btnCircleX3, btnCircleY1, btnCircleRect, btnCircleRect);
+    
+    [self.answer1btn.layer setCornerRadius:btnCircleRect/2];
+    [self.answer2btn.layer setCornerRadius:btnCircleRect/2];
+    [self.answer3btn.layer setCornerRadius:btnCircleRect/2];
+    
+    [self.answer1btn.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
+    [self.answer2btn.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
+    [self.answer3btn.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
+    
+    self.answer4btn.frame = CGRectMake(btnCircleX1, btnCircleY2, btnCircleRect, btnCircleRect);
+    self.answer5btn.frame = CGRectMake(btnCircleX2, btnCircleY2, btnCircleRect, btnCircleRect);
+    self.answer6btn.frame = CGRectMake(btnCircleX3, btnCircleY2, btnCircleRect, btnCircleRect);
+
+    [self.answer4btn.layer setCornerRadius:btnCircleRect/2];
+    [self.answer5btn.layer setCornerRadius:btnCircleRect/2];
+    [self.answer6btn.layer setCornerRadius:btnCircleRect/2];
+
+    [self.answer4btn.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
+    [self.answer5btn.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
+    [self.answer6btn.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
+    
+    self.answer7btn.frame = CGRectMake(btnCircleX1, btnCircleY3, btnCircleRect, btnCircleRect);
+    self.answer8btn.frame = CGRectMake(btnCircleX2, btnCircleY3, btnCircleRect, btnCircleRect);
+    self.answer9btn.frame = CGRectMake(btnCircleX3, btnCircleY3, btnCircleRect, btnCircleRect);
+
+    [self.answer7btn.layer setCornerRadius:btnCircleRect/2];
+    [self.answer8btn.layer setCornerRadius:btnCircleRect/2];
+    [self.answer9btn.layer setCornerRadius:btnCircleRect/2];
+    
+    [self.answer7btn.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
+    [self.answer8btn.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
+    [self.answer9btn.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -126,12 +195,23 @@
     
     //タイトル
     self.navigationItem.title = @"ゲーム開始";
+    
+    //iAd
+    [self switchiAdDisplay:false];
+}
+
+//iAd表示
+-(void)switchiAdDisplay:(BOOL)flag {
+    if (flag) {
+        self.iAdArea.alpha = 1;
+    }else {
+        self.iAdArea.alpha = 0;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 
 //1秒経過時はラベル文字を変更する
 - (void)perSecTimerDone:(NSTimer *)timer{
@@ -214,7 +294,7 @@
     [rows removeObjectAtIndex:(NSInteger)rows.count-1];
 
     //シャッフル
-    int tmpCount = [rows count];
+    int tmpCount = (int)[rows count];
     for (int a = tmpCount - 1; a > 0; a--) {
         int randomNum = arc4random() % a;
         [rows exchangeObjectAtIndex:a withObjectAtIndex:randomNum];
@@ -377,11 +457,6 @@
 
     [perSecTimer fire];
     [doneTimer invalidate];
-}
-
-- (void)setAnswerBtnSize {
-    
-    
 }
 
 - (void)allAnswerBtnEnabled {

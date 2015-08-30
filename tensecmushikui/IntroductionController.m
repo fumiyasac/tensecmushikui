@@ -111,11 +111,23 @@
     
     [self.newinfoTableView registerNib:newinfoCell forCellReuseIdentifier:@"newinfoCell"];
     [self.newinfoTableView registerNib:calcPointCell forCellReuseIdentifier:@"calcPointCell"];
+    
+    //iAd
+    [self switchiAdDisplay:false];
 }
 
 //前の画面に戻すアクション
 - (void)backButtonAction:(UIBarButtonItem *)barItem {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+//iAd表示
+-(void)switchiAdDisplay:(BOOL)flag {
+    if (flag) {
+        self.iAdArea.alpha = 1;
+    }else {
+        self.iAdArea.alpha = 0;
+    }
 }
 
 //ロード時に呼び出されて、セクション数を返す ※必須

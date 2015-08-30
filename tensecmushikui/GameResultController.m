@@ -117,6 +117,18 @@
     
     //カレンダーの値をセットする
     [self setCalendarDate];
+    
+    //iAd
+    [self switchiAdDisplay:false];
+}
+
+//iAd表示
+-(void)switchiAdDisplay:(BOOL)flag {
+    if (flag) {
+        self.iAdArea.alpha = 1;
+    }else {
+        self.iAdArea.alpha = 0;
+    }
 }
 
 //ラベルにゲーム結果を表示する
