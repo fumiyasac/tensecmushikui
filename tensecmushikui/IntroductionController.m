@@ -113,7 +113,7 @@
     [self.newinfoTableView registerNib:calcPointCell forCellReuseIdentifier:@"calcPointCell"];
     
     //iAd
-    [self switchiAdDisplay:false];
+    [self switchiAdDisplay:true];
 }
 
 //前の画面に戻すアクション

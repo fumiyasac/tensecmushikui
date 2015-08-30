@@ -181,9 +181,6 @@
         //終わったらボタンは非活性にしておきたい
         [self allAnswerBtnDisabled];
         
-        NSLog(@"%d",correctNum);
-        NSLog(@"%f",totalSec);
-        
         //10問終わったら結果画面へ遷移
         NSString *correct = [NSString stringWithFormat:@"%d", correctNum];
         NSString *sec = [NSString stringWithFormat:@"%f", totalSec];

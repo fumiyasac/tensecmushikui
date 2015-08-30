@@ -197,7 +197,7 @@
     self.navigationItem.title = @"ゲーム開始";
     
     //iAd
-    [self switchiAdDisplay:false];
+    [self switchiAdDisplay:true];
 }
 
 //iAd表示

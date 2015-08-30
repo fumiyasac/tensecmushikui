@@ -50,7 +50,6 @@
         //iPhoneからwatchへ送られたデータ
         NSData *todayWatchScoreData = replyInfo[@"todayWatchScoreData"];
         results = [NSKeyedUnarchiver unarchiveObjectWithData:todayWatchScoreData];
-        NSLog(@"%@", results);
         
         //テーブルビューを組み立てる
         [self tableDataLoad];
@@ -77,8 +76,6 @@
             NSDictionary *scoreDictionary = [results objectAtIndex:i];
             NSString *scoreCorrect = scoreDictionary[@"score"];
             NSString *scoreSum = scoreDictionary[@"sum"];
-            NSLog(@"%@", scoreCorrect);
-            NSLog(@"%@", scoreSum);
             
             [theRow.scorePercentageLabel setText:[NSString stringWithFormat:@"%@問正解", scoreCorrect]];
             [theRow.scoreTimesLabel setText:[NSString stringWithFormat:@"(%@回)", scoreSum]];

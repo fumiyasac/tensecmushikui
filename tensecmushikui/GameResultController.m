@@ -119,7 +119,7 @@
     [self setCalendarDate];
     
     //iAd
-    [self switchiAdDisplay:false];
+    [self switchiAdDisplay:true];
 }
 
 //iAd表示

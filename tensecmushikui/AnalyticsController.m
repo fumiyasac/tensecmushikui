@@ -154,7 +154,7 @@
     [self initGraphDataFromCoreData];
     
     //iAd
-    [self switchiAdDisplay:false];
+    [self switchiAdDisplay:true];
 }
 
 //iAd表示
@@ -300,7 +300,6 @@
     
     //メンバ変数に値を格納する
     fetchCount = (int)objects.count;
-    NSLog(@"%d", fetchCount);
     
     //空の可変配列を作成する
     NSMutableArray *beforeSortArray = [NSMutableArray new];
@@ -441,7 +440,6 @@
     
     //この月全体の合計値を取得する
     percentArray = [self getPercentageArray:fetchDataArray];
-    NSLog(@"%@", percentArray);
     
     //ラベルに表示する
     [self setAvgScoreOfLabel];
