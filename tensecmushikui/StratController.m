@@ -336,7 +336,7 @@
     [rows removeObjectAtIndex:(NSInteger)rows.count-1];
     
     //シャッフル
-    int tmpCount = [rows count];
+    int tmpCount = (int)[rows count];
     for(int a = tmpCount - 1; a > 0; a--){
         int randomNum = arc4random() % a;
         [rows exchangeObjectAtIndex:a withObjectAtIndex:randomNum];

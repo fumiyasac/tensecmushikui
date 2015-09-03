@@ -7,19 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <iAd/iAd.h>
+//#import <iAd/iAd.h>
 #import "NewinfoTableViewCell.h"
 #import "CalculatePointTableViewCell.h"
 #import "UIDeviseSize.h"
 #import "ColorDefinition.h"
 
-@interface IntroductionController : UIViewController<UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate,ADBannerViewDelegate>
+@interface IntroductionController : UIViewController<
+UITableViewDelegate
+,UITableViewDataSource
+,UINavigationControllerDelegate
+//,ADBannerViewDelegate
+>
 
 //最新情報テーブルビュー
 @property (strong, nonatomic) IBOutlet UITableView *newinfoTableView;
-
-//フッター広告のインスタンス
-@property (strong, nonatomic) IBOutlet ADBannerView *bottomBanner;
 
 //1.iphoneでゲームするボタン
 //2.これまでの結果を見るボタン
@@ -27,6 +29,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *viewResultBtn;
 
 //広告
-@property (strong, nonatomic) IBOutlet ADBannerView *iAdArea;
+//@property (strong, nonatomic) IBOutlet ADBannerView *iAdArea;
+@property (strong, nonatomic) IBOutlet UIButton *adAlter;
 
 @end

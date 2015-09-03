@@ -15,6 +15,11 @@
 		DE0861601B3AD6A200F76A2A /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = DE08615F1B3AD6A200F76A2A /* Answer.m */; };
 		DE2907D11B230B23009969B4 /* Chart.js in Resources */ = {isa = PBXBuildFile; fileRef = DE2907CE1B230B23009969B4 /* Chart.js */; };
 		DE2907D21B230B23009969B4 /* piechart.html in Resources */ = {isa = PBXBuildFile; fileRef = DE2907CF1B230B23009969B4 /* piechart.html */; };
+		DE39079D1B973C3200866A6D /* iphone4s_website.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE3907991B973C3200866A6D /* iphone4s_website.jpg */; };
+		DE39079E1B973C3200866A6D /* iphone5_website.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE39079A1B973C3200866A6D /* iphone5_website.jpg */; };
+		DE39079F1B973C3200866A6D /* iphone6_website.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE39079B1B973C3200866A6D /* iphone6_website.jpg */; };
+		DE3907A01B973C3200866A6D /* iphone6plus_website.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE39079C1B973C3200866A6D /* iphone6plus_website.jpg */; };
+		DE3907A21B98705100866A6D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE3907A11B98705100866A6D /* Images.xcassets */; };
 		DE40BB771B8D23670051B475 /* iphone4s_btn1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE40BB6B1B8D23670051B475 /* iphone4s_btn1.jpg */; };
 		DE40BB781B8D23670051B475 /* iphone4s_btn2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE40BB6C1B8D23670051B475 /* iphone4s_btn2.jpg */; };
 		DE40BB791B8D23670051B475 /* iphone4s_btn3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE40BB6D1B8D23670051B475 /* iphone4s_btn3.jpg */; };
@@ -43,12 +48,9 @@
 		DE8A1DA81ADF31A3007508E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DA61ADF31A3007508E2 /* LaunchScreen.xib */; };
 		DE8A1DB41ADF31A3007508E2 /* tensecmushikuiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DB31ADF31A3007508E2 /* tensecmushikuiTests.m */; };
 		DE8A1DC81ADF31BC007508E2 /* WKStartController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DC71ADF31BC007508E2 /* WKStartController.m */; };
-		DE8A1DCB1ADF31BC007508E2 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DCA1ADF31BC007508E2 /* NotificationController.m */; };
-		DE8A1DCE1ADF31BC007508E2 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DCD1ADF31BC007508E2 /* GlanceController.m */; };
 		DE8A1DD01ADF31BC007508E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DCF1ADF31BC007508E2 /* Images.xcassets */; };
 		DE8A1DD41ADF31BC007508E2 /* tensecmushikui WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DD31ADF31BC007508E2 /* tensecmushikui WatchKit App.app */; };
 		DE8A1DDC1ADF31BC007508E2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DDA1ADF31BC007508E2 /* Interface.storyboard */; };
-		DE8A1DDE1ADF31BC007508E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DDD1ADF31BC007508E2 /* Images.xcassets */; };
 		DE8A1DE11ADF31BC007508E2 /* tensecmushikui WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE8A1DC11ADF31BC007508E2 /* tensecmushikui WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE8A1DEB1ADF39AB007508E2 /* WKGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DEA1ADF39AB007508E2 /* WKGameController.m */; };
 		DE8A1DEE1ADF39C8007508E2 /* WKResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DED1ADF39C8007508E2 /* WKResultController.m */; };
@@ -141,6 +143,11 @@
 		DE08615F1B3AD6A200F76A2A /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
 		DE2907CE1B230B23009969B4 /* Chart.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Chart.js; sourceTree = "<group>"; };
 		DE2907CF1B230B23009969B4 /* piechart.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = piechart.html; sourceTree = "<group>"; };
+		DE3907991B973C3200866A6D /* iphone4s_website.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iphone4s_website.jpg; path = tensecmushikui/iphone4s_website.jpg; sourceTree = "<group>"; };
+		DE39079A1B973C3200866A6D /* iphone5_website.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iphone5_website.jpg; path = tensecmushikui/iphone5_website.jpg; sourceTree = "<group>"; };
+		DE39079B1B973C3200866A6D /* iphone6_website.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iphone6_website.jpg; path = tensecmushikui/iphone6_website.jpg; sourceTree = "<group>"; };
+		DE39079C1B973C3200866A6D /* iphone6plus_website.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iphone6plus_website.jpg; path = tensecmushikui/iphone6plus_website.jpg; sourceTree = "<group>"; };
+		DE3907A11B98705100866A6D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DE40BB6B1B8D23670051B475 /* iphone4s_btn1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iphone4s_btn1.jpg; path = tensecmushikui/iphone4s_btn1.jpg; sourceTree = "<group>"; };
 		DE40BB6C1B8D23670051B475 /* iphone4s_btn2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iphone4s_btn2.jpg; path = tensecmushikui/iphone4s_btn2.jpg; sourceTree = "<group>"; };
 		DE40BB6D1B8D23670051B475 /* iphone4s_btn3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iphone4s_btn3.jpg; path = tensecmushikui/iphone4s_btn3.jpg; sourceTree = "<group>"; };
@@ -179,15 +186,10 @@
 		DE8A1DC51ADF31BC007508E2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		DE8A1DC61ADF31BC007508E2 /* WKStartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKStartController.h; sourceTree = "<group>"; };
 		DE8A1DC71ADF31BC007508E2 /* WKStartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKStartController.m; sourceTree = "<group>"; };
-		DE8A1DC91ADF31BC007508E2 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
-		DE8A1DCA1ADF31BC007508E2 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
-		DE8A1DCC1ADF31BC007508E2 /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
-		DE8A1DCD1ADF31BC007508E2 /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
 		DE8A1DCF1ADF31BC007508E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DE8A1DD31ADF31BC007508E2 /* tensecmushikui WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tensecmushikui WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8A1DD91ADF31BC007508E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE8A1DDB1ADF31BC007508E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		DE8A1DDD1ADF31BC007508E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DE8A1DE91ADF39AB007508E2 /* WKGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKGameController.h; sourceTree = "<group>"; };
 		DE8A1DEA1ADF39AB007508E2 /* WKGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKGameController.m; sourceTree = "<group>"; };
 		DE8A1DEC1ADF39C8007508E2 /* WKResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKResultController.h; sourceTree = "<group>"; };
@@ -423,10 +425,6 @@
 				DE8A1DEA1ADF39AB007508E2 /* WKGameController.m */,
 				DE8A1DEC1ADF39C8007508E2 /* WKResultController.h */,
 				DE8A1DED1ADF39C8007508E2 /* WKResultController.m */,
-				DE8A1DC91ADF31BC007508E2 /* NotificationController.h */,
-				DE8A1DCA1ADF31BC007508E2 /* NotificationController.m */,
-				DE8A1DCC1ADF31BC007508E2 /* GlanceController.h */,
-				DE8A1DCD1ADF31BC007508E2 /* GlanceController.m */,
 				DE8A1DCF1ADF31BC007508E2 /* Images.xcassets */,
 				DE8A1DC31ADF31BC007508E2 /* Supporting Files */,
 			);
@@ -446,7 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8A1DDA1ADF31BC007508E2 /* Interface.storyboard */,
-				DE8A1DDD1ADF31BC007508E2 /* Images.xcassets */,
+				DE3907A11B98705100866A6D /* Images.xcassets */,
 				DE8A1DD81ADF31BC007508E2 /* Supporting Files */,
 			);
 			path = "tensecmushikui WatchKit App";
@@ -519,6 +517,10 @@
 		DEB845681B0B68AA00C48E7A /* production */ = {
 			isa = PBXGroup;
 			children = (
+				DE3907991B973C3200866A6D /* iphone4s_website.jpg */,
+				DE39079A1B973C3200866A6D /* iphone5_website.jpg */,
+				DE39079B1B973C3200866A6D /* iphone6_website.jpg */,
+				DE39079C1B973C3200866A6D /* iphone6plus_website.jpg */,
 				DE40BB831B8E769A0051B475 /* iphone4s_cell1.jpg */,
 				DE40BB841B8E769A0051B475 /* iphone4s_cell2.jpg */,
 				DE40BB851B8E769A0051B475 /* iphone5_cell1.jpg */,
@@ -692,6 +694,7 @@
 					};
 					DE8A1DD21ADF31BC007508E2 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = S5BF5553KY;
 					};
 				};
 			};
@@ -721,6 +724,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE39079E1B973C3200866A6D /* iphone5_website.jpg in Resources */,
 				DEDFAC5A1AE9596B00D2DE30 /* ScoreTableViewCell.xib in Resources */,
 				DED4E1881AEFADC900B159AA /* CalculatePointTableViewCell.xib in Resources */,
 				DE40BB8E1B8E769A0051B475 /* iphone5_cell2.jpg in Resources */,
@@ -751,13 +755,16 @@
 				DEAEDE251B89FEFA0009D450 /* iphone5_image1.jpg in Resources */,
 				DE40BB921B8E769A0051B475 /* iphone6plus_cell2.jpg in Resources */,
 				DE40BB8C1B8E769A0051B475 /* iphone4s_cell2.jpg in Resources */,
+				DE39079F1B973C3200866A6D /* iphone6_website.jpg in Resources */,
 				DE40BB7A1B8D23670051B475 /* iphone5_btn1.jpg in Resources */,
+				DE39079D1B973C3200866A6D /* iphone4s_website.jpg in Resources */,
 				DE40BB811B8D23670051B475 /* iphone6plus_btn2.jpg in Resources */,
 				DE8A1DA81ADF31A3007508E2 /* LaunchScreen.xib in Resources */,
 				DEAEDE331B8A265B0009D450 /* iphone5_background.jpg in Resources */,
 				DE40BB911B8E769A0051B475 /* iphone6plus_cell1.jpg in Resources */,
 				DEAEDE281B89FEFA0009D450 /* iphone6_image1.jpg in Resources */,
 				DE8A1DA51ADF31A3007508E2 /* Images.xcassets in Resources */,
+				DE3907A01B973C3200866A6D /* iphone6plus_website.jpg in Resources */,
 				DE40BB901B8E769A0051B475 /* iphone6_cell2.jpg in Resources */,
 				DEAEDE261B89FEFA0009D450 /* iphone5_image2.jpg in Resources */,
 				DE40BB7C1B8D23670051B475 /* iphone5_btn3.jpg in Resources */,
@@ -791,8 +798,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE3907A21B98705100866A6D /* Images.xcassets in Resources */,
 				DE8A1DDC1ADF31BC007508E2 /* Interface.storyboard in Resources */,
-				DE8A1DDE1ADF31BC007508E2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,10 +842,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE8A1DCB1ADF31BC007508E2 /* NotificationController.m in Sources */,
 				DE8A1DEB1ADF39AB007508E2 /* WKGameController.m in Sources */,
 				DE8A1DC81ADF31BC007508E2 /* WKStartController.m in Sources */,
-				DE8A1DCE1ADF31BC007508E2 /* GlanceController.m in Sources */,
 				DEBFAD171B8344C60096C29A /* WKTableCell.m in Sources */,
 				DE8A1DEE1ADF39C8007508E2 /* WKResultController.m in Sources */,
 				DEBFAD141B833C860096C29A /* WKTodayController.m in Sources */,
@@ -929,7 +934,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -953,7 +958,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -966,7 +972,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -977,12 +983,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Fumiya Sakai (33WV6P3F78)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = tensecmushikui/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0d3c5d26-df2d-479a-824d-fd22bc062356";
+				PRODUCT_NAME = tensecmushikui;
+				PROVISIONING_PROFILE = "2b2659a0-6270-4b53-afa2-4f56f31148cf";
 			};
 			name = Debug;
 		};
@@ -990,12 +998,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Fumiya Sakai (33WV6P3F78)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = tensecmushikui/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0d3c5d26-df2d-479a-824d-fd22bc062356";
+				PRODUCT_NAME = tensecmushikui;
+				PROVISIONING_PROFILE = "2b2659a0-6270-4b53-afa2-4f56f31148cf";
 			};
 			name = Release;
 		};
@@ -1036,7 +1046,9 @@
 		DE8A1DE31ADF31BC007508E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1045,6 +1057,7 @@
 				INFOPLIST_FILE = "tensecmushikui WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
@@ -1054,11 +1067,14 @@
 		DE8A1DE41ADF31BC007508E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				IBSC_MODULE = tensecmushikui_WatchKit_Extension;
 				INFOPLIST_FILE = "tensecmushikui WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";

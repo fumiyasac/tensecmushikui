@@ -37,6 +37,7 @@
     UIImage *backgroundImage;
     UIImage *backgroundImage1;
     UIImage *backgroundImage2;
+    UIImage *alterAdImage;
     
     //iPhone4s
     if ([deviceName isEqual:@"iPhone4s"]) {
@@ -44,6 +45,7 @@
         backgroundImage   = [UIImage imageNamed:@"iphone4s_background.jpg"];
         backgroundImage1  = [UIImage imageNamed:@"iphone4s_btn1.jpg"];
         backgroundImage2  = [UIImage imageNamed:@"iphone4s_btn2.jpg"];
+        alterAdImage      = [UIImage imageNamed:@"iphone4s_website.jpg"];
 
     //iPhone5またはiPhone5s
     } else if ([deviceName isEqual:@"iPhone5"]) {
@@ -51,6 +53,7 @@
         backgroundImage   = [UIImage imageNamed:@"iphone5_background.jpg"];
         backgroundImage1  = [UIImage imageNamed:@"iphone5_btn1.jpg"];
         backgroundImage2  = [UIImage imageNamed:@"iphone5_btn2.jpg"];
+        alterAdImage      = [UIImage imageNamed:@"iphone5_website.jpg"];
         
     //iPhone6
     } else if ([deviceName isEqual:@"iPhone6"]) {
@@ -58,6 +61,7 @@
         backgroundImage   = [UIImage imageNamed:@"iphone6_background.jpg"];
         backgroundImage1  = [UIImage imageNamed:@"iphone6_btn1.jpg"];
         backgroundImage2  = [UIImage imageNamed:@"iphone6_btn2.jpg"];
+        alterAdImage      = [UIImage imageNamed:@"iphone6_website.jpg"];
         
     //iPhone6 plus
     } else if ([deviceName isEqual:@"iPhone6plus"]) {
@@ -65,6 +69,7 @@
         backgroundImage   = [UIImage imageNamed:@"iphone6plus_background.jpg"];
         backgroundImage1  = [UIImage imageNamed:@"iphone6plus_btn1.jpg"];
         backgroundImage2  = [UIImage imageNamed:@"iphone6plus_btn2.jpg"];
+        alterAdImage      = [UIImage imageNamed:@"iphone6plus_website.jpg"];
     }
     self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     
@@ -82,6 +87,8 @@
     [self.viewResultBtn.layer setBorderWidth:1.0];
     
     self.newinfoTableView.frame = CGRectMake(0, 64, [UIDeviseSize getNowDisplayWidth], [UIDeviseSize getNowDisplayHeight]-304);
+    
+    [self.adAlter setBackgroundImage:alterAdImage forState:UIControlStateNormal];
 }
 
 - (void)viewDidLoad {
@@ -113,7 +120,7 @@
     [self.newinfoTableView registerNib:calcPointCell forCellReuseIdentifier:@"calcPointCell"];
     
     //iAd
-    [self switchiAdDisplay:true];
+    [self switchiAdDisplay:false];
 }
 
 //前の画面に戻すアクション
@@ -123,10 +130,8 @@
 
 //iAd表示
 -(void)switchiAdDisplay:(BOOL)flag {
-    if (flag) {
-        self.iAdArea.alpha = 1;
-    }else {
-        self.iAdArea.alpha = 0;
+    if (!flag) {
+        self.adAlter.enabled = false;
     }
 }
 

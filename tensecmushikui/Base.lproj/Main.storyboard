@@ -95,14 +95,10 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="22" sectionFooterHeight="22" id="zr4-Hk-Cso">
-                                <rect key="frame" x="0.0" y="64.00001239005222" width="320" height="264"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="264.000005850364"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="k9V-8T-1Wn">
-                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            </adBannerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8Rg-59-T79">
                                 <rect key="frame" x="10" y="428" width="300" height="80"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -116,12 +112,21 @@
                                     <segue destination="oZr-3i-K12" kind="push" id="i46-KM-xlF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oYX-QQ-BuV">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Webサイトも準備中です">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="rPc-Xn-Jra"/>
                     <connections>
-                        <outlet property="iAdArea" destination="k9V-8T-1Wn" id="DoQ-px-ltC"/>
+                        <outlet property="adAlter" destination="oYX-QQ-BuV" id="7e1-Wt-PJZ"/>
                         <outlet property="iphoneGameBtn" destination="ALe-8X-ReK" id="wZy-Jg-En5"/>
                         <outlet property="newinfoTableView" destination="zr4-Hk-Cso" id="15c-sk-hMJ"/>
                         <outlet property="viewResultBtn" destination="8Rg-59-T79" id="GWN-Mr-zIv"/>
@@ -284,15 +289,21 @@
                                     <action selector="answer9Action:" destination="XjK-bg-38z" eventType="touchUpInside" id="sVv-ah-VJ5"/>
                                 </connections>
                             </button>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dQk-vt-vyW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zkc-YK-rGL">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            </adBannerView>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Webサイトも準備中です">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="0oI-Df-hnU"/>
                     <connections>
+                        <outlet property="adAlter" destination="zkc-YK-rGL" id="vc1-78-g0D"/>
                         <outlet property="answer1btn" destination="Vfn-R7-5RT" id="p36-Yu-5TD"/>
                         <outlet property="answer2btn" destination="lQf-fE-T2i" id="LCz-3H-TkD"/>
                         <outlet property="answer3btn" destination="mQG-ud-o8W" id="Yxa-bK-1NE"/>
@@ -303,7 +314,6 @@
                         <outlet property="answer8btn" destination="AfY-Pd-WbD" id="L7F-Lb-45D"/>
                         <outlet property="answer9btn" destination="3w5-pN-mgF" id="66H-1U-Ywp"/>
                         <outlet property="answerAmount" destination="v0y-n8-lFZ" id="7qx-5y-wDf"/>
-                        <outlet property="iAdArea" destination="dQk-vt-vyW" id="s3U-xx-Ef6"/>
                         <outlet property="pastTime" destination="onZ-kc-aPy" id="BMW-Km-fSB"/>
                         <outlet property="targetProblem" destination="MoC-AF-ViB" id="KY8-Yp-mTq"/>
                         <segue destination="aGI-hq-9e7" kind="push" identifier="displayResult" id="0cF-zE-dWA"/>
@@ -341,10 +351,6 @@
                                     <action selector="facebookAction:" destination="aGI-hq-9e7" eventType="touchUpInside" id="Srn-YO-3pq"/>
                                 </connections>
                             </button>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="P8a-FK-Nm5">
-                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            </adBannerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Yy8-RR-ZbB">
                                 <rect key="frame" x="10" y="378" width="300" height="80"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -376,13 +382,22 @@
                                     <action selector="twitterAction:" destination="aGI-hq-9e7" eventType="touchUpInside" id="zP8-HJ-dX2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="guN-o1-Vmh">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Webサイトも準備中です">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="bLw-iB-L7C"/>
                     <connections>
+                        <outlet property="adAlter" destination="guN-o1-Vmh" id="jt0-Jt-KAh"/>
                         <outlet property="facebookBtn" destination="QSY-vx-w7l" id="Tb5-n5-DWK"/>
-                        <outlet property="iAdArea" destination="P8a-FK-Nm5" id="dvr-du-rlE"/>
                         <outlet property="resultTableView" destination="O2r-cd-Fse" id="N6L-4t-Dux"/>
                         <outlet property="syncBannerBtn" destination="Yy8-RR-ZbB" id="9hf-f6-XEE"/>
                         <outlet property="twitterBtn" destination="B8D-dn-YaL" id="tmh-tb-68k"/>
@@ -400,10 +415,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fH7-C3-uin">
-                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            </adBannerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ly7-dQ-98G">
                                 <rect key="frame" x="11" y="470" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -480,16 +491,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="C2J-au-XCM">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Webサイトも準備中です">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="KaB-sI-m8V"/>
                     <connections>
+                        <outlet property="adAlter" destination="C2J-au-XCM" id="H5b-Rf-5vx"/>
                         <outlet property="currentAvgLabel" destination="mjY-ZS-xjZ" id="YUo-Zf-3n3"/>
                         <outlet property="currentDateLabel" destination="Kmc-Fs-1Ax" id="pR6-qF-fMm"/>
                         <outlet property="deviceSegment" destination="fkI-T3-FrH" id="aRZ-PZ-ps4"/>
                         <outlet property="graphWebView" destination="z9u-X7-pw3" id="sRC-kD-Dj0"/>
-                        <outlet property="iAdArea" destination="fH7-C3-uin" id="z0W-OM-Nhu"/>
                         <outlet property="nextBtn" destination="ZAI-56-HZ5" id="cVJ-Rh-qXu"/>
                         <outlet property="prevBtn" destination="ly7-dQ-98G" id="8OD-Qk-m3U"/>
                         <outlet property="scoreTableView" destination="OOS-Ux-hqZ" id="8kc-Lv-KZm"/>

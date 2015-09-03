@@ -7,17 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <iAd/iAd.h>
+//#import <iAd/iAd.h>
 #import <CoreData/CoreData.h>
 #import "UIDeviseSize.h"
 #import "ColorDefinition.h"
 #import "ResultLabelTableViewCell.h"
 #import "ResultTextTableViewCell.h"
 
-@interface GameResultController : UIViewController<UITableViewDelegate,UITableViewDataSource,ADBannerViewDelegate>
-
-//フッター広告のインスタンス
-@property (strong, nonatomic) IBOutlet ADBannerView *bottomBanner;
+@interface GameResultController : UIViewController<
+UITableViewDelegate
+,UITableViewDataSource
+//,ADBannerViewDelegate
+>
 
 //GameResultController自身のプロパティ
 @property (nonatomic ,strong) NSString *receiveCorrectNum;
@@ -40,7 +41,8 @@
 //「この結果を登録する」ボタンの実装
 - (IBAction)syncScoreAction:(UIButton *)sender;
 
-//広告
-@property (strong, nonatomic) IBOutlet ADBannerView *iAdArea;
+//フッター広告のインスタンス
+//@property (strong, nonatomic) IBOutlet ADBannerView *iAdArea;
+@property (strong, nonatomic) IBOutlet UIButton *adAlter;
 
 @end

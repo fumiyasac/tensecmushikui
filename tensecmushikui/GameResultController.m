@@ -37,12 +37,14 @@
     
     UIImage *backgroundImage;
     UIImage *backgroundImage3;
+    UIImage *alterAdImage;
     
     //iPhone4s
     if ([deviceName isEqual:@"iPhone4s"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone4s_background.jpg"];
-        backgroundImage3  = [UIImage imageNamed:@"iphone4s_btn3.jpg"];
+        backgroundImage3 = [UIImage imageNamed:@"iphone4s_btn3.jpg"];
+        alterAdImage     = [UIImage imageNamed:@"iphone4s_website.jpg"];
         prImage1 = [UIImage imageNamed:@"iphone4s_cell1.jpg"];
         prImage2 = [UIImage imageNamed:@"iphone4s_cell2.jpg"];
 
@@ -50,7 +52,8 @@
     } else if ([deviceName isEqual:@"iPhone5"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone5_background.jpg"];
-        backgroundImage3  = [UIImage imageNamed:@"iphone5_btn3.jpg"];
+        backgroundImage3 = [UIImage imageNamed:@"iphone5_btn3.jpg"];
+        alterAdImage     = [UIImage imageNamed:@"iphone5_website.jpg"];
         prImage1 = [UIImage imageNamed:@"iphone5_cell1.jpg"];
         prImage2 = [UIImage imageNamed:@"iphone5_cell2.jpg"];
         
@@ -58,7 +61,8 @@
     } else if ([deviceName isEqual:@"iPhone6"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone6_background.jpg"];
-        backgroundImage3  = [UIImage imageNamed:@"iphone6_btn3.jpg"];
+        backgroundImage3 = [UIImage imageNamed:@"iphone6_btn3.jpg"];
+        alterAdImage     = [UIImage imageNamed:@"iphone6_website.jpg"];
         prImage1 = [UIImage imageNamed:@"iphone6_cell1.jpg"];
         prImage2 = [UIImage imageNamed:@"iphone6_cell2.jpg"];
         
@@ -66,7 +70,8 @@
     } else if ([deviceName isEqual:@"iPhone6plus"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone6plus_background.jpg"];
-        backgroundImage3  = [UIImage imageNamed:@"iphone6plus_btn3.jpg"];
+        backgroundImage3 = [UIImage imageNamed:@"iphone6plus_btn3.jpg"];
+        alterAdImage     = [UIImage imageNamed:@"iphone6plus_website.jpg"];
         prImage1 = [UIImage imageNamed:@"iphone6plus_cell1.jpg"];
         prImage2 = [UIImage imageNamed:@"iphone6plus_cell2.jpg"];
     }
@@ -82,6 +87,8 @@
     self.facebookBtn.frame = CGRectMake((double)ceil([UIDeviseSize getNowDisplayWidth]/2), [UIDeviseSize getNowDisplayHeight]-100, (double)ceil([UIDeviseSize getNowDisplayWidth]/2), 50);
     
     self.resultTableView.frame = CGRectMake(0, 102, [UIDeviseSize getNowDisplayWidth], [UIDeviseSize getNowDisplayHeight]-302);
+    
+    [self.adAlter setBackgroundImage:alterAdImage forState:UIControlStateNormal];
 }
 
 - (void)viewDidLoad {
@@ -119,15 +126,13 @@
     [self setCalendarDate];
     
     //iAd
-    [self switchiAdDisplay:true];
+    [self switchiAdDisplay:false];
 }
 
 //iAd表示
 -(void)switchiAdDisplay:(BOOL)flag {
-    if (flag) {
-        self.iAdArea.alpha = 1;
-    }else {
-        self.iAdArea.alpha = 0;
+    if (!flag) {
+        self.adAlter.enabled = false;
     }
 }
 

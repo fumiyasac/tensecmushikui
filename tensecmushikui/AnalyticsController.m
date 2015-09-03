@@ -56,30 +56,35 @@
     NSString *deviceName = [UIDeviseSize getNowDisplayDevice];
     
     UIImage *backgroundImage;
+    UIImage *alterAdImage;
     CGFloat webviewHeight;
     
     //iPhone4s
     if ([deviceName isEqual:@"iPhone4s"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone4s_background.jpg"];
+        alterAdImage     = [UIImage imageNamed:@"iphone4s_website.jpg"];
         webviewHeight = 170;
         
     //iPhone5またはiPhone5s
     } else if ([deviceName isEqual:@"iPhone5"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone5_background.jpg"];
+        alterAdImage     = [UIImage imageNamed:@"iphone5_website.jpg"];
         webviewHeight = 170;
         
     //iPhone6
     } else if ([deviceName isEqual:@"iPhone6"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone6_background.jpg"];
+        alterAdImage     = [UIImage imageNamed:@"iphone6_website.jpg"];
         webviewHeight = 195;
         
     //iPhone6 plus
     } else if ([deviceName isEqual:@"iPhone6plus"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone6plus_background.jpg"];
+        alterAdImage     = [UIImage imageNamed:@"iphone6plus_website.jpg"];
         webviewHeight = 215;
     }
     self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
@@ -97,6 +102,8 @@
     [self.nextBtn setBackgroundColor:[ColorDefinition getUIColorFromHex:@"222222"]];
     [self.deviceSegment setBackgroundColor:[ColorDefinition getUIColorFromHex:@"222222"]];
     [self.deviceSegment setTintColor:[ColorDefinition getUIColorFromHex:@"ffffff"]];
+    
+    [self.adAlter setBackgroundImage:alterAdImage forState:UIControlStateNormal];
 }
 
 - (void)viewDidLoad {
@@ -154,15 +161,13 @@
     [self initGraphDataFromCoreData];
     
     //iAd
-    [self switchiAdDisplay:true];
+    [self switchiAdDisplay:false];
 }
 
 //iAd表示
 -(void)switchiAdDisplay:(BOOL)flag {
-    if (flag) {
-        self.iAdArea.alpha = 1;
-    }else {
-        self.iAdArea.alpha = 0;
+    if (!flag) {
+        self.adAlter.enabled = false;
     }
 }
 

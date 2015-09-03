@@ -24,6 +24,7 @@
                         </label>
                         <label width="136" height="17" alignment="left" text="Label" textAlignment="center" id="s1r-hF-3SJ">
                             <color key="textColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <variation key="device=watch42mm" width="156"/>
                         </label>
                         <table alignment="left" id="uGI-b2-ua4">
                             <items>
@@ -54,7 +55,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="235" y="108"/>
+            <point key="canvasLocation" x="234.51282051282053" y="107.66666666666667"/>
         </scene>
         <!--Start-->
         <scene sceneID="aou-V4-d1y">
@@ -85,8 +86,8 @@
                                 <fontDescription key="font" type="boldSystem" pointSize="18"/>
                             </variation>
                         </label>
-                        <label width="1" alignment="left" text="10秒×10問の虫食い算の世界へようこそ!" numberOfLines="2" id="BZs-4J-tNX">
-                            <fontDescription key="font" type="system" pointSize="15"/>
+                        <label width="1" height="43" alignment="left" text="iPhone側のアプリを起動してください。" numberOfLines="3" id="BZs-4J-tNX">
+                            <fontDescription key="font" type="system" pointSize="14"/>
                             <variation key="device=watch42mm">
                                 <fontDescription key="font" type="system" pointSize="17"/>
                             </variation>

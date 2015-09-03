@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <iAd/iAd.h>
+//#import <iAd/iAd.h>
 #import "UIDeviseSize.h"
 
-@interface GameplayController : UIViewController<ADBannerViewDelegate>
-
-//フッター広告のインスタンス
-@property (strong, nonatomic) IBOutlet ADBannerView *bottomBanner;
+//@interface GameplayController : UIViewController<ADBannerViewDelegate>
+@interface GameplayController : UIViewController
 
 //問題・残り時間
 @property (strong, nonatomic) IBOutlet UILabel *answerAmount;
@@ -46,6 +44,8 @@
 - (void)killTimerAnotherController;
 
 //広告
-@property (strong, nonatomic) IBOutlet ADBannerView *iAdArea;
+//@property (strong, nonatomic) IBOutlet ADBannerView *iAdArea;
+@property (strong, nonatomic) IBOutlet UIButton *adAlter;
+
 
 @end

@@ -62,6 +62,7 @@
     NSString *deviceName = [UIDeviseSize getNowDisplayDevice];
     
     UIImage *backgroundImage;
+    UIImage *alterAdImage;
     CGFloat btnCircleRect;
     CGFloat btnCircleX1;
     CGFloat btnCircleX2;
@@ -75,6 +76,7 @@
     if ([deviceName isEqual:@"iPhone4s"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone4s_background.jpg"];
+        alterAdImage     = [UIImage imageNamed:@"iphone4s_website.jpg"];
         btnCircleRect = 55.0;
         btnCircleX1 = 52;
         btnCircleX2 = ([UIDeviseSize getNowDisplayWidth] - btnCircleRect)/2;
@@ -85,6 +87,7 @@
     } else if ([deviceName isEqual:@"iPhone5"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone5_background.jpg"];
+        alterAdImage     = [UIImage imageNamed:@"iphone5_website.jpg"];
         btnCircleRect = 70.0;
         btnCircleX1 = 30;
         btnCircleX2 = ([UIDeviseSize getNowDisplayWidth] - btnCircleRect)/2;
@@ -95,6 +98,7 @@
     } else if ([deviceName isEqual:@"iPhone6"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone6_background.jpg"];
+        alterAdImage     = [UIImage imageNamed:@"iphone6_website.jpg"];
         btnCircleRect = 82.0;
         btnCircleX1 = 30;
         btnCircleX2 = ([UIDeviseSize getNowDisplayWidth] - btnCircleRect)/2;
@@ -105,6 +109,7 @@
     } else if ([deviceName isEqual:@"iPhone6plus"]) {
         
         backgroundImage  = [UIImage imageNamed:@"iphone6plus_background.jpg"];
+        alterAdImage     = [UIImage imageNamed:@"iphone6plus_website.jpg"];
         btnCircleRect = 95.0;
         btnCircleX1 = 30;
         btnCircleX2 = ([UIDeviseSize getNowDisplayWidth] - btnCircleRect)/2;
@@ -153,6 +158,8 @@
     [self.answer7btn.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
     [self.answer8btn.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
     [self.answer9btn.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
+    
+    [self.adAlter setBackgroundImage:alterAdImage forState:UIControlStateNormal];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -197,15 +204,13 @@
     self.navigationItem.title = @"ゲーム開始";
     
     //iAd
-    [self switchiAdDisplay:true];
+    [self switchiAdDisplay:false];
 }
 
 //iAd表示
 -(void)switchiAdDisplay:(BOOL)flag {
-    if (flag) {
-        self.iAdArea.alpha = 1;
-    }else {
-        self.iAdArea.alpha = 0;
+    if (!flag) {
+        self.adAlter.enabled = false;
     }
 }
 

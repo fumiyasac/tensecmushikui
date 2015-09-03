@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <iAd/iAd.h>
+//#import <iAd/iAd.h>
 #import "ScoreTableViewCell.h"
 #import "ColorDefinition.h"
 
-@interface AnalyticsController : UIViewController<UIWebViewDelegate,UITableViewDelegate,UITableViewDataSource,ADBannerViewDelegate>
+@interface AnalyticsController : UIViewController<
+UIWebViewDelegate
+,UITableViewDelegate
+,UITableViewDataSource
+//,ADBannerViewDelegate
+>
 
 //分析結果ページ用のプロパティ
 @property (strong, nonatomic) IBOutlet UILabel *currentDateLabel;
@@ -28,6 +33,7 @@
 - (IBAction)deviceSegment:(UISegmentedControl *)sender;
 
 //広告
-@property (strong, nonatomic) IBOutlet ADBannerView *iAdArea;
+//@property (strong, nonatomic) IBOutlet ADBannerView *iAdArea;
+@property (strong, nonatomic) IBOutlet UIButton *adAlter;
 
 @end
