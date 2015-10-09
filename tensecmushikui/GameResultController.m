@@ -217,9 +217,9 @@
             
         } else if (indexPath.row == 1) {
             
-            cell.prTextTitle.text = @"AppleWatchでもプレイ可能！";
+            cell.prTextTitle.text = @"AppleWatchでも今後対応予定です！";
             cell.prTextImage.image = prImage2;
-            cell.prTextDetail.text = @"このゲームはAppleWatchでもプレイが可能です。時計の画面でゲームをするのは、通信教材の付録を思い出すかもしれません。すでにAppleWatchをお持ちの方は移動時間や隙間時間などを活用してチャレンジしてみて下さい！\n※iPhoneの電源や通信状態にはご注意下さい。";
+            cell.prTextDetail.text = @"このゲームはゆくゆくはAppleWatchでもプレイが可能な形にする予定です。時計の画面でゲームをするのは、通信教材の付録を思い出すかもしれません。すでにAppleWatchをお持ちの方は生暖かく？期待していただければと思います（笑）移動時間や隙間時間などを活用してチャレンジしてみて下さい！\n※iPhoneの電源や通信状態にはご注意下さい。";
             
         } else {
             

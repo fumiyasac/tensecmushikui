@@ -19,7 +19,6 @@
 		DE39079E1B973C3200866A6D /* iphone5_website.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE39079A1B973C3200866A6D /* iphone5_website.jpg */; };
 		DE39079F1B973C3200866A6D /* iphone6_website.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE39079B1B973C3200866A6D /* iphone6_website.jpg */; };
 		DE3907A01B973C3200866A6D /* iphone6plus_website.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE39079C1B973C3200866A6D /* iphone6plus_website.jpg */; };
-		DE3907A21B98705100866A6D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE3907A11B98705100866A6D /* Images.xcassets */; };
 		DE40BB771B8D23670051B475 /* iphone4s_btn1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE40BB6B1B8D23670051B475 /* iphone4s_btn1.jpg */; };
 		DE40BB781B8D23670051B475 /* iphone4s_btn2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE40BB6C1B8D23670051B475 /* iphone4s_btn2.jpg */; };
 		DE40BB791B8D23670051B475 /* iphone4s_btn3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE40BB6D1B8D23670051B475 /* iphone4s_btn3.jpg */; };
@@ -47,13 +46,6 @@
 		DE8A1DA51ADF31A3007508E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DA41ADF31A3007508E2 /* Images.xcassets */; };
 		DE8A1DA81ADF31A3007508E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DA61ADF31A3007508E2 /* LaunchScreen.xib */; };
 		DE8A1DB41ADF31A3007508E2 /* tensecmushikuiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DB31ADF31A3007508E2 /* tensecmushikuiTests.m */; };
-		DE8A1DC81ADF31BC007508E2 /* WKStartController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DC71ADF31BC007508E2 /* WKStartController.m */; };
-		DE8A1DD01ADF31BC007508E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DCF1ADF31BC007508E2 /* Images.xcassets */; };
-		DE8A1DD41ADF31BC007508E2 /* tensecmushikui WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DD31ADF31BC007508E2 /* tensecmushikui WatchKit App.app */; };
-		DE8A1DDC1ADF31BC007508E2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8A1DDA1ADF31BC007508E2 /* Interface.storyboard */; };
-		DE8A1DE11ADF31BC007508E2 /* tensecmushikui WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE8A1DC11ADF31BC007508E2 /* tensecmushikui WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		DE8A1DEB1ADF39AB007508E2 /* WKGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DEA1ADF39AB007508E2 /* WKGameController.m */; };
-		DE8A1DEE1ADF39C8007508E2 /* WKResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DED1ADF39C8007508E2 /* WKResultController.m */; };
 		DE8A1DF51AE141DF007508E2 /* IntroductionController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DF41AE141DF007508E2 /* IntroductionController.m */; };
 		DE8A1DF81AE14247007508E2 /* GameplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DF71AE14247007508E2 /* GameplayController.m */; };
 		DE8A1DFB1AE142A9007508E2 /* AnalyticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A1DFA1AE142A9007508E2 /* AnalyticsController.m */; };
@@ -80,8 +72,6 @@
 		DEBFAD0A1B8302110096C29A /* ResultLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBFAD081B8302110096C29A /* ResultLabelTableViewCell.xib */; };
 		DEBFAD101B8308D80096C29A /* ResultTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBFAD0E1B8308D80096C29A /* ResultTextTableViewCell.m */; };
 		DEBFAD111B8308D80096C29A /* ResultTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBFAD0F1B8308D80096C29A /* ResultTextTableViewCell.xib */; };
-		DEBFAD141B833C860096C29A /* WKTodayController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBFAD131B833C860096C29A /* WKTodayController.m */; };
-		DEBFAD171B8344C60096C29A /* WKTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBFAD161B8344C60096C29A /* WKTableCell.m */; };
 		DED4E1871AEFADC900B159AA /* CalculatePointTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED4E1851AEFADC900B159AA /* CalculatePointTableViewCell.m */; };
 		DED4E1881AEFADC900B159AA /* CalculatePointTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED4E1861AEFADC900B159AA /* CalculatePointTableViewCell.xib */; };
 		DEDFAC591AE9596B00D2DE30 /* ScoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDFAC571AE9596B00D2DE30 /* ScoreTableViewCell.m */; };
@@ -99,20 +89,6 @@
 			remoteGlobalIDString = DE8A1D931ADF31A3007508E2;
 			remoteInfo = tensecmushikui;
 		};
-		DE8A1DD51ADF31BC007508E2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DE8A1D8C1ADF31A3007508E2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DE8A1DD21ADF31BC007508E2;
-			remoteInfo = "tensecmushikui WatchKit App";
-		};
-		DE8A1DDF1ADF31BC007508E2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DE8A1D8C1ADF31A3007508E2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DE8A1DC01ADF31BC007508E2;
-			remoteInfo = "tensecmushikui WatchKit Extension";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -122,7 +98,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				DE8A1DE11ADF31BC007508E2 /* tensecmushikui WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,7 +122,6 @@
 		DE39079A1B973C3200866A6D /* iphone5_website.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iphone5_website.jpg; path = tensecmushikui/iphone5_website.jpg; sourceTree = "<group>"; };
 		DE39079B1B973C3200866A6D /* iphone6_website.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iphone6_website.jpg; path = tensecmushikui/iphone6_website.jpg; sourceTree = "<group>"; };
 		DE39079C1B973C3200866A6D /* iphone6plus_website.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iphone6plus_website.jpg; path = tensecmushikui/iphone6plus_website.jpg; sourceTree = "<group>"; };
-		DE3907A11B98705100866A6D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DE40BB6B1B8D23670051B475 /* iphone4s_btn1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iphone4s_btn1.jpg; path = tensecmushikui/iphone4s_btn1.jpg; sourceTree = "<group>"; };
 		DE40BB6C1B8D23670051B475 /* iphone4s_btn2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iphone4s_btn2.jpg; path = tensecmushikui/iphone4s_btn2.jpg; sourceTree = "<group>"; };
 		DE40BB6D1B8D23670051B475 /* iphone4s_btn3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iphone4s_btn3.jpg; path = tensecmushikui/iphone4s_btn3.jpg; sourceTree = "<group>"; };
@@ -181,19 +155,6 @@
 		DE8A1DAD1ADF31A3007508E2 /* tensecmushikuiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tensecmushikuiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8A1DB21ADF31A3007508E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE8A1DB31ADF31A3007508E2 /* tensecmushikuiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tensecmushikuiTests.m; sourceTree = "<group>"; };
-		DE8A1DC11ADF31BC007508E2 /* tensecmushikui WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "tensecmushikui WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE8A1DC41ADF31BC007508E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE8A1DC51ADF31BC007508E2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		DE8A1DC61ADF31BC007508E2 /* WKStartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKStartController.h; sourceTree = "<group>"; };
-		DE8A1DC71ADF31BC007508E2 /* WKStartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKStartController.m; sourceTree = "<group>"; };
-		DE8A1DCF1ADF31BC007508E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		DE8A1DD31ADF31BC007508E2 /* tensecmushikui WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tensecmushikui WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE8A1DD91ADF31BC007508E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE8A1DDB1ADF31BC007508E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		DE8A1DE91ADF39AB007508E2 /* WKGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKGameController.h; sourceTree = "<group>"; };
-		DE8A1DEA1ADF39AB007508E2 /* WKGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKGameController.m; sourceTree = "<group>"; };
-		DE8A1DEC1ADF39C8007508E2 /* WKResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKResultController.h; sourceTree = "<group>"; };
-		DE8A1DED1ADF39C8007508E2 /* WKResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKResultController.m; sourceTree = "<group>"; };
 		DE8A1DF31AE141DF007508E2 /* IntroductionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionController.h; sourceTree = "<group>"; };
 		DE8A1DF41AE141DF007508E2 /* IntroductionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionController.m; sourceTree = "<group>"; };
 		DE8A1DF61AE14247007508E2 /* GameplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameplayController.h; sourceTree = "<group>"; };
@@ -226,10 +187,6 @@
 		DEBFAD0D1B8308D80096C29A /* ResultTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultTextTableViewCell.h; sourceTree = "<group>"; };
 		DEBFAD0E1B8308D80096C29A /* ResultTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultTextTableViewCell.m; sourceTree = "<group>"; };
 		DEBFAD0F1B8308D80096C29A /* ResultTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultTextTableViewCell.xib; sourceTree = "<group>"; };
-		DEBFAD121B833C860096C29A /* WKTodayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKTodayController.h; sourceTree = "<group>"; };
-		DEBFAD131B833C860096C29A /* WKTodayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKTodayController.m; sourceTree = "<group>"; };
-		DEBFAD151B8344C60096C29A /* WKTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKTableCell.h; sourceTree = "<group>"; };
-		DEBFAD161B8344C60096C29A /* WKTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKTableCell.m; sourceTree = "<group>"; };
 		DED4E1841AEFADC900B159AA /* CalculatePointTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatePointTableViewCell.h; sourceTree = "<group>"; };
 		DED4E1851AEFADC900B159AA /* CalculatePointTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatePointTableViewCell.m; sourceTree = "<group>"; };
 		DED4E1861AEFADC900B159AA /* CalculatePointTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalculatePointTableViewCell.xib; sourceTree = "<group>"; };
@@ -253,13 +210,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DE8A1DAA1ADF31A3007508E2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE8A1DBE1ADF31BC007508E2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -353,8 +303,6 @@
 				DEDFAC5B1AEB765A00D2DE30 /* CoreData.framework */,
 				DE8A1D961ADF31A3007508E2 /* tensecmushikui */,
 				DE8A1DB01ADF31A3007508E2 /* tensecmushikuiTests */,
-				DE8A1DC21ADF31BC007508E2 /* tensecmushikui WatchKit Extension */,
-				DE8A1DD71ADF31BC007508E2 /* tensecmushikui WatchKit App */,
 				DE8A1D951ADF31A3007508E2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -364,8 +312,6 @@
 			children = (
 				DE8A1D941ADF31A3007508E2 /* tensecmushikui.app */,
 				DE8A1DAD1ADF31A3007508E2 /* tensecmushikuiTests.xctest */,
-				DE8A1DC11ADF31BC007508E2 /* tensecmushikui WatchKit Extension.appex */,
-				DE8A1DD31ADF31BC007508E2 /* tensecmushikui WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -408,52 +354,6 @@
 			isa = PBXGroup;
 			children = (
 				DE8A1DB21ADF31A3007508E2 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DE8A1DC21ADF31BC007508E2 /* tensecmushikui WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				DE8A1DC61ADF31BC007508E2 /* WKStartController.h */,
-				DE8A1DC71ADF31BC007508E2 /* WKStartController.m */,
-				DEBFAD151B8344C60096C29A /* WKTableCell.h */,
-				DEBFAD161B8344C60096C29A /* WKTableCell.m */,
-				DEBFAD121B833C860096C29A /* WKTodayController.h */,
-				DEBFAD131B833C860096C29A /* WKTodayController.m */,
-				DE8A1DE91ADF39AB007508E2 /* WKGameController.h */,
-				DE8A1DEA1ADF39AB007508E2 /* WKGameController.m */,
-				DE8A1DEC1ADF39C8007508E2 /* WKResultController.h */,
-				DE8A1DED1ADF39C8007508E2 /* WKResultController.m */,
-				DE8A1DCF1ADF31BC007508E2 /* Images.xcassets */,
-				DE8A1DC31ADF31BC007508E2 /* Supporting Files */,
-			);
-			path = "tensecmushikui WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		DE8A1DC31ADF31BC007508E2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DE8A1DC41ADF31BC007508E2 /* Info.plist */,
-				DE8A1DC51ADF31BC007508E2 /* PushNotificationPayload.apns */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DE8A1DD71ADF31BC007508E2 /* tensecmushikui WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				DE8A1DDA1ADF31BC007508E2 /* Interface.storyboard */,
-				DE3907A11B98705100866A6D /* Images.xcassets */,
-				DE8A1DD81ADF31BC007508E2 /* Supporting Files */,
-			);
-			path = "tensecmushikui WatchKit App";
-			sourceTree = "<group>";
-		};
-		DE8A1DD81ADF31BC007508E2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DE8A1DD91ADF31BC007508E2 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -615,7 +515,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				DE8A1DE01ADF31BC007508E2 /* PBXTargetDependency */,
 			);
 			name = tensecmushikui;
 			productName = tensecmushikui;
@@ -640,39 +539,6 @@
 			productReference = DE8A1DAD1ADF31A3007508E2 /* tensecmushikuiTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DE8A1DC01ADF31BC007508E2 /* tensecmushikui WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE8A1DE51ADF31BC007508E2 /* Build configuration list for PBXNativeTarget "tensecmushikui WatchKit Extension" */;
-			buildPhases = (
-				DE8A1DBD1ADF31BC007508E2 /* Sources */,
-				DE8A1DBE1ADF31BC007508E2 /* Frameworks */,
-				DE8A1DBF1ADF31BC007508E2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DE8A1DD61ADF31BC007508E2 /* PBXTargetDependency */,
-			);
-			name = "tensecmushikui WatchKit Extension";
-			productName = "tensecmushikui WatchKit Extension";
-			productReference = DE8A1DC11ADF31BC007508E2 /* tensecmushikui WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit-extension";
-		};
-		DE8A1DD21ADF31BC007508E2 /* tensecmushikui WatchKit App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE8A1DE21ADF31BC007508E2 /* Build configuration list for PBXNativeTarget "tensecmushikui WatchKit App" */;
-			buildPhases = (
-				DE8A1DD11ADF31BC007508E2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "tensecmushikui WatchKit App";
-			productName = "tensecmushikui WatchKit App";
-			productReference = DE8A1DD31ADF31BC007508E2 /* tensecmushikui WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -688,13 +554,6 @@
 					DE8A1DAC1ADF31A3007508E2 = {
 						CreatedOnToolsVersion = 6.3;
 						TestTargetID = DE8A1D931ADF31A3007508E2;
-					};
-					DE8A1DC01ADF31BC007508E2 = {
-						CreatedOnToolsVersion = 6.3;
-					};
-					DE8A1DD21ADF31BC007508E2 = {
-						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = S5BF5553KY;
 					};
 				};
 			};
@@ -713,8 +572,6 @@
 			targets = (
 				DE8A1D931ADF31A3007508E2 /* tensecmushikui */,
 				DE8A1DAC1ADF31A3007508E2 /* tensecmushikuiTests */,
-				DE8A1DC01ADF31BC007508E2 /* tensecmushikui WatchKit Extension */,
-				DE8A1DD21ADF31BC007508E2 /* tensecmushikui WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -785,24 +642,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE8A1DBF1ADF31BC007508E2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE8A1DD01ADF31BC007508E2 /* Images.xcassets in Resources */,
-				DE8A1DD41ADF31BC007508E2 /* tensecmushikui WatchKit App.app in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE8A1DD11ADF31BC007508E2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE3907A21B98705100866A6D /* Images.xcassets in Resources */,
-				DE8A1DDC1ADF31BC007508E2 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -838,18 +677,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE8A1DBD1ADF31BC007508E2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE8A1DEB1ADF39AB007508E2 /* WKGameController.m in Sources */,
-				DE8A1DC81ADF31BC007508E2 /* WKStartController.m in Sources */,
-				DEBFAD171B8344C60096C29A /* WKTableCell.m in Sources */,
-				DE8A1DEE1ADF39C8007508E2 /* WKResultController.m in Sources */,
-				DEBFAD141B833C860096C29A /* WKTodayController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -857,16 +684,6 @@
 			isa = PBXTargetDependency;
 			target = DE8A1D931ADF31A3007508E2 /* tensecmushikui */;
 			targetProxy = DE8A1DAE1ADF31A3007508E2 /* PBXContainerItemProxy */;
-		};
-		DE8A1DD61ADF31BC007508E2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DE8A1DD21ADF31BC007508E2 /* tensecmushikui WatchKit App */;
-			targetProxy = DE8A1DD51ADF31BC007508E2 /* PBXContainerItemProxy */;
-		};
-		DE8A1DE01ADF31BC007508E2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DE8A1DC01ADF31BC007508E2 /* tensecmushikui WatchKit Extension */;
-			targetProxy = DE8A1DDF1ADF31BC007508E2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -885,14 +702,6 @@
 				DE8A1DA71ADF31A3007508E2 /* Base */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		DE8A1DDA1ADF31BC007508E2 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE8A1DDB1ADF31BC007508E2 /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -935,7 +744,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -973,7 +782,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1000,7 +809,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = tensecmushikui/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
@@ -1044,68 +853,6 @@
 			};
 			name = Release;
 		};
-		DE8A1DE31ADF31BC007508E2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				IBSC_MODULE = tensecmushikui_WatchKit_Extension;
-				INFOPLIST_FILE = "tensecmushikui WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
-			};
-			name = Debug;
-		};
-		DE8A1DE41ADF31BC007508E2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				IBSC_MODULE = tensecmushikui_WatchKit_Extension;
-				INFOPLIST_FILE = "tensecmushikui WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
-			};
-			name = Release;
-		};
-		DE8A1DE61ADF31BC007508E2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "tensecmushikui WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		DE8A1DE71ADF31BC007508E2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "tensecmushikui WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1132,24 +879,6 @@
 			buildConfigurations = (
 				DE8A1DBB1ADF31A3007508E2 /* Debug */,
 				DE8A1DBC1ADF31A3007508E2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DE8A1DE21ADF31BC007508E2 /* Build configuration list for PBXNativeTarget "tensecmushikui WatchKit App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE8A1DE31ADF31BC007508E2 /* Debug */,
-				DE8A1DE41ADF31BC007508E2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DE8A1DE51ADF31BC007508E2 /* Build configuration list for PBXNativeTarget "tensecmushikui WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE8A1DE61ADF31BC007508E2 /* Debug */,
-				DE8A1DE71ADF31BC007508E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

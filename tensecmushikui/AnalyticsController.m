@@ -117,6 +117,7 @@
     [self.nextBtn.layer setBorderWidth:1.0];
     [self.prevBtn.layer setBorderColor:[ColorDefinition getUIColorFromHex:@"ffffff"].CGColor];
     [self.nextBtn.layer setBorderColor:[ColorDefinition getUIColorFromHex:@"ffffff"].CGColor];
+    [self.deviceSegment setEnabled:NO forSegmentAtIndex:1];
     
     //色の配列を設定する
     colorArray = @[@"f8c6c7",@"f2cb24",@"87c9a3",@"b9e4f7",@"face83",@"d2cce6",@"ccdc47",@"81b7ea",@"434348",@"d79759",@"9e9e9e"];
