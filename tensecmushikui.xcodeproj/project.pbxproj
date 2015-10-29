@@ -800,7 +800,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = tensecmushikui;
-				PROVISIONING_PROFILE = "2b2659a0-6270-4b53-afa2-4f56f31148cf";
+				PROVISIONING_PROFILE = "09695984-edc5-4878-889c-2343929e6003";
 			};
 			name = Debug;
 		};
@@ -815,7 +815,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = tensecmushikui;
-				PROVISIONING_PROFILE = "2b2659a0-6270-4b53-afa2-4f56f31148cf";
+				PROVISIONING_PROFILE = "09695984-edc5-4878-889c-2343929e6003";
 			};
 			name = Release;
 		};

@@ -25,12 +25,11 @@ UIWebViewDelegate
 @property (strong, nonatomic) IBOutlet UITableView *scoreTableView;
 @property (strong, nonatomic) IBOutlet UIButton *prevBtn;
 @property (strong, nonatomic) IBOutlet UIButton *nextBtn;
-@property (strong, nonatomic) IBOutlet UISegmentedControl *deviceSegment;
+@property (strong, nonatomic) IBOutlet UILabel *displayDevice;
 
 //分析結果ページ用のアクション
 - (IBAction)prevAction:(UIButton *)sender;
 - (IBAction)nextAction:(UIButton *)sender;
-- (IBAction)deviceSegment:(UISegmentedControl *)sender;
 
 //広告
 //@property (strong, nonatomic) IBOutlet ADBannerView *iAdArea;

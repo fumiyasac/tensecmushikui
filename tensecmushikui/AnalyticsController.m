@@ -38,7 +38,6 @@
     
     //デバイスタイプ
     int deviseType;
-    int segmentIndex;
     
     //データごとの色分け
     NSArray *colorArray;
@@ -100,8 +99,8 @@
     //下のボタンとセグメントの色つけ
     [self.prevBtn setBackgroundColor:[ColorDefinition getUIColorFromHex:@"222222"]];
     [self.nextBtn setBackgroundColor:[ColorDefinition getUIColorFromHex:@"222222"]];
-    [self.deviceSegment setBackgroundColor:[ColorDefinition getUIColorFromHex:@"222222"]];
-    [self.deviceSegment setTintColor:[ColorDefinition getUIColorFromHex:@"ffffff"]];
+
+    [self.displayDevice setTintColor:[ColorDefinition getUIColorFromHex:@"ffffff"]];
     
     [self.adAlter setBackgroundImage:alterAdImage forState:UIControlStateNormal];
 }
@@ -117,7 +116,6 @@
     [self.nextBtn.layer setBorderWidth:1.0];
     [self.prevBtn.layer setBorderColor:[ColorDefinition getUIColorFromHex:@"ffffff"].CGColor];
     [self.nextBtn.layer setBorderColor:[ColorDefinition getUIColorFromHex:@"ffffff"].CGColor];
-    [self.deviceSegment setEnabled:NO forSegmentAtIndex:1];
     
     //色の配列を設定する
     colorArray = @[@"f8c6c7",@"f2cb24",@"87c9a3",@"b9e4f7",@"face83",@"d2cce6",@"ccdc47",@"81b7ea",@"434348",@"d79759",@"9e9e9e"];
@@ -127,7 +125,6 @@
     
     //デバイスタイプ
     deviseType = 1;
-    segmentIndex = 0;
     
     //忘れずデリゲート（webViewDidFinishLoadを拾うため）
     self.graphWebView.delegate = self;
@@ -411,24 +408,6 @@
         
     }
     return wholeSum;
-}
-
-//セグメントコントロールの値によって表示するグラフを変える
-- (IBAction)deviceSegment:(UISegmentedControl *)sender {
-    
-    //iPhone版とAppleWatch版
-    switch (sender.selectedSegmentIndex) {
-        case 0:
-            deviseType = 1;
-            break;
-        case 1:
-            deviseType = 2;
-            break;
-    }
-    segmentIndex = sender.selectedSegmentIndex;
-    
-    //取得するデータの値を変更する
-    [self initGraphDataFromCoreData];
 }
 
 //グラフデータを切り替える
